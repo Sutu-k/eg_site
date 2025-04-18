@@ -1,0 +1,71 @@
+# Utilisation de PHP 8.4 avec Alpine
+FROM php:8.4-fpm-alpine
+
+# Définition du répertoire de travail
+WORKDIR /app
+
+# Installation des dépendances système + Bun
+RUN apk update && apk upgrade && \
+    apk add --no-cache \
+        bash \
+        curl \
+        nginx \
+        supervisor \
+        mysql-client \
+        git \
+        unzip \
+        redis \
+        libzip-dev \
+        oniguruma-dev \
+        autoconf \
+        g++ \
+        make \
+        linux-headers \
+        libtool \
+        zip \
+    && curl -fsSL https://bun.sh/install | bash \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install -j$(nproc) \
+        pdo \
+        pdo_mysql \
+        bcmath \
+        opcache \
+        zip \
+    && pecl install redis \
+    && docker-php-ext-enable redis
+
+# Nettoyage du cache
+RUN rm -rf /var/cache/apk/*
+
+# Ajouter Bun au PATH
+ENV PATH="/root/.bun/bin:${PATH}"
+
+# Installe Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copie des fichiers Laravel
+COPY ./appli /app
+
+# Installe les dépendances PHP
+RUN composer install --no-dev --optimize-autoloader
+
+# Installe les dépendances front-end avec Bun
+RUN bun install && bun run build && rm -rf node_modules
+
+# Fixe les permissions Laravel
+RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache \
+    && chmod -R 775 /app/storage /app/bootstrap/cache
+
+# Copie les fichiers de configuration
+COPY docker/prod/nginx.conf /etc/nginx/nginx.conf
+COPY docker/prod/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Copie du script de post-déploiement
+COPY docker/prod/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Exposition des ports
+EXPOSE 80
+
+# Définir l'entrypoint
+ENTRYPOINT ["/entrypoint.sh"]

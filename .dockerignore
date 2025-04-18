@@ -1,0 +1,64 @@
+# Exclure les dépendances locales pour éviter de polluer l'image
+appli/node_modules
+appli/vendor
+
+# Exclure les fichiers d'environnement sensibles
+appli/.env
+appli/.env.local
+appli/.env.production
+appli/.env.testing
+
+# Ne PAS exclure .env.example pour qu'il soit copié dans l'image
+
+# Exclure les fichiers d'éditeur et d'IDE
+.idea
+.vscode
+*.sublime-workspace
+*.sublime-project
+
+# Exclure les fichiers de logs et temporaires
+appli/storage/*.key
+appli/storage/framework/cache/*
+appli/storage/framework/sessions/*
+appli/storage/framework/views/*
+appli/storage/logs/*
+appli/bootstrap/cache/*
+appli/phpunit.result.cache
+
+# Exclure les fichiers Docker inutiles
+Dockerfile*
+docker-compose*
+.docker
+.dockerignore
+
+# Exclure les fichiers Git
+.git
+.gitignore
+.gitattributes
+
+# Exclure les fichiers de tests et de build
+appli/tests
+appli/coverage
+appli/public/hot
+appli/public/storage
+appli/public/build
+appli/public/css
+appli/public/js
+
+# Exclure les fichiers temporaires et divers
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+README.md
+*.md
+.editorconfig
+.styleci.yml
+.php_cs
+.php_cs.cache
+
+# Exclure les backups et les fichiers spécifiques à ton projet
+backup-db.sh
+backupdb
+spec

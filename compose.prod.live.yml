@@ -1,0 +1,30 @@
+# Configuration pour la production
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/prod/Dockerfile.prod
+    image: ${REGISTRY_NAME:-barakasocial}/app:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      AUTORUN_ENABLED: "true"
+      AUTORUN_LARAVEL_MIGRATION_ISOLATION: "true"
+      APP_ENV: production
+      LOG_CHANNEL: production
+      LOG_LEVEL: debug
+      NGINX_ROOT: /var/www/html/public
+      NGINX_CLIENT_MAX_BODY_SIZE: 100M
+      NGINX_FASTCGI_READ_TIMEOUT: 60
+      PHP_OPCACHE_ENABLE: 1
+      PHP_OPCACHE_VALIDATE_TIMESTAMPS: 0
+    volumes:
+      - ./:/var/www/html
+    expose:
+      - 8080
+      - 80
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
