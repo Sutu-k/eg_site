@@ -177,10 +177,14 @@ export default function Landing() {
                                 {/* Étape 1 - Juillet 2022 avec indicateur de date partagée */}
                                 <div className="flex flex-col items-center group">
                                     <div className="relative">
-                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
-                                            <span className="text-sm font-semibold">Juillet</span>
-                                            <span className="text-xl font-bold">2022</span>
-                                            <span className="text-xs font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Début</span>
+                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)] relative overflow-hidden">
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-eg-secondary to-eg-secondary/70"></div>
+                                            <div className="absolute top-0 left-0 w-full h-full border-t-4 border-white/30 rounded-full"></div>
+                                            <span className="text-sm font-semibold relative z-10">Juillet</span>
+                                            <span className="text-xl font-bold relative z-10">2022</span>
+                                            <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md">
+                                                <span className="text-eg-secondary text-xs font-bold">1</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="transform transition-all duration-300 group-hover:-translate-y-2">
@@ -192,10 +196,14 @@ export default function Landing() {
                                 {/* Étape 2 - Juillet 2022 avec indicateur de date partagée */}
                                 <div className="flex flex-col items-center group">
                                     <div className="relative">
-                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
-                                            <span className="text-sm font-semibold">Juillet</span>
-                                            <span className="text-xl font-bold">2022</span>
-                                            <span className="text-xs font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Fin</span>
+                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)] relative overflow-hidden">
+                                            <div className="absolute inset-0 bg-gradient-to-bl from-eg-secondary to-eg-secondary/70"></div>
+                                            <div className="absolute top-0 left-0 w-full h-full border-b-4 border-white/30 rounded-full"></div>
+                                            <span className="text-sm font-semibold relative z-10">Juillet</span>
+                                            <span className="text-xl font-bold relative z-10">2022</span>
+                                            <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md">
+                                                <span className="text-eg-secondary text-xs font-bold">2</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="transform transition-all duration-300 group-hover:-translate-y-2">
@@ -250,10 +258,14 @@ export default function Landing() {
 
                         {/* Étape 1 */}
                         <div className="mb-12 pl-20 relative group">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
-                                <span className="text-xs font-semibold">Juillet</span>
-                                <span className="text-sm font-bold">2022</span>
-                                <span className="text-[10px] font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Début</span>
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)] relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-eg-secondary to-eg-secondary/70"></div>
+                                <div className="absolute top-0 left-0 w-full h-full border-t-4 border-white/30 rounded-full"></div>
+                                <span className="text-xs font-semibold relative z-10">Juillet</span>
+                                <span className="text-sm font-bold relative z-10">2022</span>
+                                <div className="absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-md">
+                                    <span className="text-eg-secondary text-[10px] font-bold">1</span>
+                                </div>
                             </div>
                             {/* Connecteur */}
                             <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
@@ -265,10 +277,14 @@ export default function Landing() {
 
                         {/* Étape 2 */}
                         <div className="mb-12 pl-20 relative group">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
-                                <span className="text-xs font-semibold">Juillet</span>
-                                <span className="text-sm font-bold">2022</span>
-                                <span className="text-[10px] font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Fin</span>
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)] relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-bl from-eg-secondary to-eg-secondary/70"></div>
+                                <div className="absolute top-0 left-0 w-full h-full border-b-4 border-white/30 rounded-full"></div>
+                                <span className="text-xs font-semibold relative z-10">Juillet</span>
+                                <span className="text-sm font-bold relative z-10">2022</span>
+                                <div className="absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-md">
+                                    <span className="text-eg-secondary text-[10px] font-bold">2</span>
+                                </div>
                             </div>
                             {/* Connecteur */}
                             <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
