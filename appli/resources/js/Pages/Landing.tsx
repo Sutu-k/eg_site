@@ -505,82 +505,140 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="bg-eg-primary-light text-eg-dark px-4 py-2 rounded-full text-sm font-semibold">NOS SERVICES</span>
-                        <h2 className="text-3xl font-bold text-gray-900 mt-4 mb-6">Comment nous pouvons vous aider</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mt-4 mb-6">Nous proposons les accompagnements suivants</h2>
                         <p className="max-w-3xl mx-auto text-gray-700">
                             Notre équipe d'experts propose un accompagnement sur mesure pour répondre à vos défis spécifiques.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Service 1 */}
-                        <div className="flex items-start p-6 bg-gray-50 rounded-lg">
-                            <div className="flex-shrink-0 mr-4">
-                                <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                                    </svg>
+                    <div className="space-y-12">
+                        {/* Service 1 - Renforcement des capacités institutionnelles */}
+                        <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/4 flex justify-center md:justify-start">
+                                    <div className="w-20 h-20 bg-eg-primary-light rounded-full flex items-center justify-center text-eg-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Renforcement des capacités</h3>
-                                <p className="text-gray-600">
-                                    Formation sur mesure et coaching pour développer les compétences des équipes locales
-                                    et favoriser l'autonomie des organisations.
-                                </p>
+                                <div className="md:w-3/4">
+                                    <h3 className="text-xl font-semibold text-eg-dark mb-4">RENFORCEMENT DES CAPACITÉS INSTITUTIONNELLES</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Delivery Units :</strong> Création de delivery units pour une meilleure coordination et suivi des projets</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Formulation de politiques cohérentes et stratégies complètes</strong> pour aborder des défis complexes, basé sur des données probantes pour une meilleure planification stratégique</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Études d'impact et évaluation :</strong> Mesure de l'efficacité des interventions et de leur impact</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Service 2 */}
-                        <div className="flex items-start p-6 bg-gray-50 rounded-lg">
-                            <div className="flex-shrink-0 mr-4">
-                                <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                                    </svg>
+                        {/* Service 2 - Optimisation des ressources disponibles */}
+                        <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/4 flex justify-center md:justify-start">
+                                    <div className="w-20 h-20 bg-eg-primary-light rounded-full flex items-center justify-center text-eg-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Structuration de projets</h3>
-                                <p className="text-gray-600">
-                                    Conception, planification et suivi de projets complexes, avec une méthodologie rigoureuse
-                                    adaptée au contexte local.
-                                </p>
+                                <div className="md:w-3/4">
+                                    <h3 className="text-xl font-semibold text-eg-dark mb-4">OPTIMISATION DES RESSOURCES DISPONIBLES</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Cartographie des Ressources :</strong> Utilisation de Systèmes d'Information Géographique (SIG) et de bases de données centralisées pour identifier les lacunes et optimiser la planification</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Cadre de gouvernance avec un mécanisme de Suivi et Évaluation :</strong> Définir des KPI, produire des rapports réguliers et effectuer des audits pour garantir la transparence et l'efficacité</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Service 3 */}
-                        <div className="flex items-start p-6 bg-gray-50 rounded-lg">
-                            <div className="flex-shrink-0 mr-4">
-                                <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                    </svg>
+                        {/* Service 3 - Mobilisation des ressources financières */}
+                        <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/4 flex justify-center md:justify-start">
+                                    <div className="w-20 h-20 bg-eg-primary-light rounded-full flex items-center justify-center text-eg-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Outils de gestion</h3>
-                                <p className="text-gray-600">
-                                    Développement et implémentation d'outils de suivi, d'évaluation et de reporting
-                                    pour une prise de décision éclairée.
-                                </p>
+                                <div className="md:w-3/4">
+                                    <h3 className="text-xl font-semibold text-eg-dark mb-4">MOBILISATION DES RESSOURCES FINANCIÈRES</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Partenariats Public-Privé (PPP) :</strong> Facilitation des collaborations stratégiques et partage des risques pour financer des projets d'infrastructure</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Financements Internationaux :</strong> Solliciter des financements auprès de la Banque mondiale, du FMI, des banques régionales de développement ou de fonds d'investissements dédiés</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Service 4 */}
-                        <div className="flex items-start p-6 bg-gray-50 rounded-lg">
-                            <div className="flex-shrink-0 mr-4">
-                                <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                    </svg>
+                        {/* Service 4 - Innovation digitale */}
+                        <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/4 flex justify-center md:justify-start">
+                                    <div className="w-20 h-20 bg-eg-primary-light rounded-full flex items-center justify-center text-eg-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div className="md:w-3/4">
+                                    <h3 className="text-xl font-semibold text-eg-dark mb-4">INNOVATION DIGITALE</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Outils de Productivité :</strong> Développement et déploiement d'applications logicielles pour améliorer l'efficacité des processus</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Automatisation et IA :</strong> Utiliser l'automatisation et l'intelligence artificielle pour optimiser les processus décisionnels et de gestion</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Innovation digitale</h3>
-                                <p className="text-gray-600">
-                                    Intégration de solutions technologiques adaptées pour optimiser les processus
-                                    et améliorer l'efficacité opérationnelle.
-                                </p>
+                        </div>
+
+                        {/* Service 5 - Autre assistance technique */}
+                        <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+                            <div className="flex flex-col md:flex-row gap-6">
+                                <div className="md:w-1/4 flex justify-center md:justify-start">
+                                    <div className="w-20 h-20 bg-eg-primary-light rounded-full flex items-center justify-center text-eg-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div className="md:w-3/4">
+                                    <h3 className="text-xl font-semibold text-eg-dark mb-4">AUTRE ASSISTANCE TECHNIQUE</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-eg-primary font-bold mr-2">•</span>
+                                            <span><strong>Gestion des Risques, Développement de Politiques et de Régulations,</strong> Mise en place de systèmes pour améliorer la collecte, le traitement et l'utilisation des données pour une prise de décision éclairée</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
