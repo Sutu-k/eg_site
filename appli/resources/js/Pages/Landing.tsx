@@ -18,10 +18,10 @@ export default function Landing() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                            Des solutions stratégiques pour un impact durable en Afrique de l'Ouest
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
+                            Des solutions <span className="text-[#AEFF8E]">stratégiques</span> pour un impact durable en Afrique de l'Ouest
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/90 mb-10">
+                        <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
                             EG Conseil est un cabinet de conseil en stratégie et gestion de projets à impact en Afrique de l'Ouest.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
