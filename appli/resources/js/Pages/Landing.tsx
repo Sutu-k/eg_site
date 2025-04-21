@@ -349,13 +349,11 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
                         <div className="inline-block">
-                            <span className="bg-white text-eg-primary px-5 py-2 rounded-md text-sm font-semibold shadow-md transform -rotate-1">NOS EXPERTISES</span>
+                            <span className="bg-white text-eg-primary px-5 py-2 rounded-md text-sm font-semibold">DOMAINES D'INTERVENTION</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4">
-                            <span className="relative inline-block">
-                                Domaines d'intervention
-                                <span className="absolute bottom-0 left-0 w-full h-1 bg-white rounded-full"></span>
-                            </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 relative inline-block">
+                            Nos expertises
+                            <span className="absolute bottom-0 left-0 w-full h-1 bg-white rounded-full"></span>
                         </h2>
                         <p className="max-w-3xl mx-auto text-white/90 text-lg">
                             Nous intervenons dans des secteurs stratégiques pour le développement durable de l'Afrique de l'Ouest.
@@ -365,7 +363,10 @@ export default function Landing() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Santé */}
                         <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-eg-primary to-eg-primary-dark opacity-0 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
+                            {/* Image de fond */}
+                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/sante-afrique.jpg')" }}></div>
+                            {/* Overlay au survol */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-eg-primary to-eg-primary-dark opacity-70 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
                             <div className="h-1 bg-eg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                             <div className="p-8 relative z-10">
                                 <div className="w-16 h-16 bg-eg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500">
@@ -373,92 +374,125 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-500">Santé Globale</h3>
-                                <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                                <h3 className="text-2xl font-bold text-white mb-3">Santé Globale</h3>
+                                <p className="text-white/90">
                                 Nous apportons des solutions innovantes aux défis de la santé publique, en mettant l'accent sur l'accessibilité et l'efficacité des services de santé.
                                 </p>
-                                <div className="mt-6 pt-6 border-t border-gray-100 group-hover:border-white/10 transition-colors duration-500">
-                                    <span className="text-eg-primary font-semibold group-hover:text-white transition-colors duration-500 flex items-center">
+                                <div className="mt-6 pt-6 border-t border-white/20">
+                                    <a href="#contact" onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                        // Présélectionner le sujet Santé dans le formulaire
+                                        const subjectSelect = document.getElementById('subject') as HTMLSelectElement;
+                                        if (subjectSelect) subjectSelect.value = 'sante';
+                                    }} className="text-white font-semibold flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300">
                                         Découvrir
                                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {/* Éducation */}
                         <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-eg-secondary to-eg-secondary-dark opacity-0 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
+                            {/* Image de fond */}
+                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/education-afrique.jpg')" }}></div>
+                            {/* Overlay au survol */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-eg-secondary to-eg-secondary-dark opacity-70 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
                             <div className="h-1 bg-eg-secondary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                             <div className="p-8 relative z-10">
-                                <div className="w-16 h-16 bg-eg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500">
-                                    <svg className="w-8 h-8 text-eg-secondary group-hover:text-white transition-colors duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-500">Éducation</h3>
-                                <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                                <h3 className="text-2xl font-bold text-white mb-3">Éducation</h3>
+                                <p className="text-white/90">
                                 Notre engagement envers l'éducation se traduit par des stratégies visant à révolutionner les méthodes pédagogiques et à améliorer l'expérience d'apprentissage.
                                 </p>
-                                <div className="mt-6 pt-6 border-t border-gray-100 group-hover:border-white/10 transition-colors duration-500">
-                                    <span className="text-eg-secondary font-semibold group-hover:text-white transition-colors duration-500 flex items-center">
+                                <div className="mt-6 pt-6 border-t border-white/20">
+                                    <a href="#contact" onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                        // Présélectionner le sujet Éducation dans le formulaire
+                                        const subjectSelect = document.getElementById('subject') as HTMLSelectElement;
+                                        if (subjectSelect) subjectSelect.value = 'education';
+                                    }} className="text-white font-semibold flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300">
                                         Découvrir
                                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {/* Industrie */}
                         <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-eg-accent to-eg-accent-dark opacity-0 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
+                            {/* Image de fond */}
+                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/industrie-afrique.jpg')" }}></div>
+                            {/* Overlay au survol */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-eg-accent to-eg-accent-dark opacity-70 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
                             <div className="h-1 bg-eg-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                             <div className="p-8 relative z-10">
-                                <div className="w-16 h-16 bg-eg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500">
-                                    <svg className="w-8 h-8 text-eg-accent group-hover:text-white transition-colors duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-500">Industrie</h3>
-                                <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                                <h3 className="text-2xl font-bold text-white mb-3">Industrie</h3>
+                                <p className="text-white/90">
                                 Nous apportons des solutions innovantes pour stimuler la croissance industrielle, en mettant l'accent sur la transformation des ressources locales, l'optimisation des chaînes d'approvisionnement.
                                 </p>
-                                <div className="mt-6 pt-6 border-t border-gray-100 group-hover:border-white/10 transition-colors duration-500">
-                                    <span className="text-eg-accent font-semibold group-hover:text-white transition-colors duration-500 flex items-center">
+                                <div className="mt-6 pt-6 border-t border-white/20">
+                                    <a href="#contact" onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                        // Présélectionner le sujet Industrie dans le formulaire
+                                        const subjectSelect = document.getElementById('subject') as HTMLSelectElement;
+                                        if (subjectSelect) subjectSelect.value = 'industrie';
+                                    }} className="text-white font-semibold flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300">
                                         Découvrir
                                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {/* RSE */}
                         <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                            <div className="absolute inset-0 bg-gradient-to-br from-eg-lime to-eg-lime-dark opacity-0 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
+                            {/* Image de fond */}
+                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/rse-afrique.jpg')" }}></div>
+                            {/* Overlay au survol */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-eg-lime to-eg-lime-dark opacity-70 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
                             <div className="h-1 bg-eg-lime transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                             <div className="p-8 relative z-10">
-                                <div className="w-16 h-16 bg-eg-lime/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500">
-                                    <svg className="w-8 h-8 text-eg-lime group-hover:text-white transition-colors duration-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <svg className="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-500">RSE</h3>
-                                <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500">
+                                <h3 className="text-2xl font-bold text-white mb-3">RSE</h3>
+                                <p className="text-white/90">
                                 Accompagnement des organisations publiques et privées dans l’intégration de l’équité, du genre et des enjeux environnementaux dans leurs stratégies de responsabilité sociétale.
                                 </p>
-                                <div className="mt-6 pt-6 border-t border-gray-100 group-hover:border-white/10 transition-colors duration-500">
-                                    <span className="text-eg-lime font-semibold group-hover:text-white transition-colors duration-500 flex items-center">
+                                <div className="mt-6 pt-6 border-t border-white/20">
+                                    <a href="#contact" onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                        // Présélectionner le sujet RSE dans le formulaire
+                                        const subjectSelect = document.getElementById('subject') as HTMLSelectElement;
+                                        if (subjectSelect) subjectSelect.value = 'rse';
+                                    }} className="text-white font-semibold flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300">
                                         Découvrir
                                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -780,6 +814,10 @@ export default function Landing() {
                                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-eg-primary"
                                     >
                                         <option value="">Sélectionner un sujet</option>
+                                        <option value="sante">Santé Globale</option>
+                                        <option value="education">Éducation</option>
+                                        <option value="industrie">Industrie</option>
+                                        <option value="rse">RSE</option>
                                         <option value="conseil">Conseil stratégique</option>
                                         <option value="projet">Projet spécifique</option>
                                         <option value="partenariat">Partenariat</option>
