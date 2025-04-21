@@ -94,7 +94,7 @@ export default function About() {
         {
             date: 'Septembre 2022',
             title: 'Premier grand projet',
-            description: 'Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée dans le cadre d'un projet à impact social.'
+            description: 'Accompagnement de la relance de la plus grande unité industrielle de transformation d\'huile de palme en Guinée dans le cadre d\'un projet à impact social.'
         },
         {
             date: 'Juillet 2022',
