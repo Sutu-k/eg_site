@@ -1,5 +1,6 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import { Link, Head } from '@inertiajs/react';
+import { handleSmoothScroll, scrollToAnchorOnLoad } from '@/utils/smoothScroll';
 
 interface EGLayoutProps {
     title: string;
@@ -8,35 +9,84 @@ interface EGLayoutProps {
 
 const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>('');
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    // Appliquer le défilement vers l'ancre lors du chargement de la page
+    useEffect(() => {
+        scrollToAnchorOnLoad(80); // Offset de 80px pour le header sticky
+    }, []);
+
+    // Suivre la section active au défilement
+    useEffect(() => {
+        const handleScroll = () => {
+            // Obtenir toutes les sections
+            const sections = document.querySelectorAll('section[id]');
+
+            // Trouver la section actuellement visible
+            for (const section of sections) {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionId = section.getAttribute('id');
+
+                // Si la section est visible dans la fenêtre
+                if (sectionTop <= 100 && sectionTop >= -100 && sectionId) {
+                    setActiveSection(sectionId);
+                    break;
+                }
+            }
+        };
+
+        // Ajouter l'écouteur d'événement de défilement
+        window.addEventListener('scroll', handleScroll);
+
+        // Lancer une première fois pour initialiser la section active
+        handleScroll();
+
+        // Nettoyer l'écouteur d'événement lors du démontage du composant
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const menuItems = [
         { text: 'Accueil', href: '/' },
-        { text: 'À Propos', href: '/a-propos' },
-        { text: 'Domaines d\'Intervention', href: '/domaines' },
-        { text: 'Services', href: '/services' },
-        { text: 'Réalisations', href: '/realisations' },
-        { text: 'Actualités', href: '/actualites' },
-        { text: 'Contact', href: '/contact' },
+        { text: 'À propos', href: '/#presentation' },
+        { text: 'Domaines', href: '/#domaines' },
+        { text: 'Services', href: '/#services' },
+        { text: 'Réalisations', href: '/#realisations' },
+        { text: 'Notre approche', href: '/#approche' },
+        { text: 'Contact', href: '/#contact' },
     ];
+
+    // Fonction pour déterminer si un lien est actif
+    const isLinkActive = (href: string): boolean => {
+        if (href === '/') {
+            return activeSection === '' || activeSection === 'hero';
+        }
+        if (href.startsWith('/#')) {
+            const sectionId = href.substring(2);
+            return activeSection === sectionId;
+        }
+        return false;
+    };
 
     return (
         <div className="flex flex-col min-h-screen bg-white">
             <Head title={title} />
 
             {/* En-tête */}
-            <header className="bg-white shadow-md">
+            <header className="bg-white shadow-eg sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <div className="flex items-center">
                             <Link href="/">
-                                <span className="flex items-center">
+                                <span className="flex items-center hover:opacity-90 transition-opacity duration-300">
                                     <span className="text-eg-primary text-3xl font-bold">EG</span>
-                                    <span className="ml-2 text-eg-dark text-xl">Conseil</span>
+                                    <span className="ml-2 text-eg-secondary text-xl">Conseil</span>
                                 </span>
                             </Link>
                         </div>
@@ -44,31 +94,27 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                         {/* Menu de navigation - Desktop */}
                         <nav className="hidden md:flex space-x-6">
                             {menuItems.map((item, index) => (
-                                <Link
+                                <a
                                     key={index}
                                     href={item.href}
-                                    className="text-eg-gray-dark hover:text-eg-primary transition-colors duration-200 font-medium"
+                                    className={`text-eg-gray-dark hover:text-eg-primary transition-colors duration-200 font-medium relative group ${
+                                        isLinkActive(item.href) ? 'text-eg-primary' : ''
+                                    }`}
+                                    onClick={(e) => handleSmoothScroll(e, 80)}
                                 >
                                     {item.text}
-                                </Link>
+                                    <span className={`absolute bottom-0 left-0 h-0.5 bg-eg-primary transition-all duration-300 ${
+                                        isLinkActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                                    }`}></span>
+                                </a>
                             ))}
                         </nav>
-
-                        {/* Bouton devis */}
-                        <div className="hidden md:block">
-                            <Link
-                                href="/contact"
-                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-eg-primary hover:bg-eg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-eg-primary"
-                            >
-                                Demander un devis
-                            </Link>
-                        </div>
 
                         {/* Bouton menu mobile */}
                         <div className="md:hidden">
                             <button
                                 type="button"
-                                className="p-2 rounded-md inline-flex items-center justify-center text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light focus:outline-none"
+                                className="p-2 rounded-md inline-flex items-center justify-center text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light focus:outline-none transition-colors duration-200"
                                 onClick={toggleMobileMenu}
                             >
                                 <span className="sr-only">Ouvrir le menu</span>
@@ -94,25 +140,23 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
 
                 {/* Menu mobile */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden bg-white">
+                    <div className="md:hidden bg-white border-t border-eg-gray-light">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             {menuItems.map((item, index) => (
-                                <Link
+                                <a
                                     key={index}
                                     href={item.href}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light"
-                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light transition-colors duration-200 ${
+                                        isLinkActive(item.href) ? 'text-eg-primary bg-eg-gray-light' : ''
+                                    }`}
+                                    onClick={(e) => {
+                                        handleSmoothScroll(e, 80);
+                                        setMobileMenuOpen(false);
+                                    }}
                                 >
                                     {item.text}
-                                </Link>
+                                </a>
                             ))}
-                            <Link
-                                href="/contact"
-                                className="block w-full text-center mt-4 px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-eg-primary hover:bg-eg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-eg-primary"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                Demander un devis
-                            </Link>
                         </div>
                     </div>
                 )}
@@ -126,12 +170,12 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
             {/* Pied de page */}
             <footer className="bg-eg-dark text-white">
                 <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Logo et description */}
                         <div className="col-span-1 md:col-span-1">
                             <div className="flex items-center">
                                 <span className="text-white text-3xl font-bold">EG</span>
-                                <span className="ml-2 text-eg-secondary text-xl">Conseil</span>
+                                <span className="ml-2 text-eg-lime text-xl">Conseil</span>
                             </div>
                             <p className="mt-4 text-sm text-gray-300">
                                 EG Conseil, fondée le 27 juillet 2022 à Conakry, est une société de
@@ -141,41 +185,9 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                             </p>
                         </div>
 
-                        {/* Liens rapides */}
+                        {/* Informations de contact */}
                         <div>
-                            <h3 className="text-sm font-semibold text-eg-secondary uppercase tracking-wider">
-                                Navigation
-                            </h3>
-                            <ul className="mt-4 space-y-2">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-sm text-gray-300 hover:text-white"
-                                        >
-                                            {item.text}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Domaines d'intervention */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-eg-secondary uppercase tracking-wider">
-                                Domaines d'intervention
-                            </h3>
-                            <ul className="mt-4 space-y-2">
-                                <li><Link href="/domaines/sante" className="text-sm text-gray-300 hover:text-white">Santé Globale</Link></li>
-                                <li><Link href="/domaines/education" className="text-sm text-gray-300 hover:text-white">Éducation</Link></li>
-                                <li><Link href="/domaines/industrie" className="text-sm text-gray-300 hover:text-white">Industrie</Link></li>
-                                <li><Link href="/domaines/rse" className="text-sm text-gray-300 hover:text-white">RSE</Link></li>
-                            </ul>
-                        </div>
-
-                        {/* Contact */}
-                        <div>
-                            <h3 className="text-sm font-semibold text-eg-secondary uppercase tracking-wider">
+                            <h3 className="text-sm font-semibold text-eg-lime uppercase tracking-wider">
                                 Contact
                             </h3>
                             <ul className="mt-4 space-y-2">
@@ -210,19 +222,19 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                             </p>
                             <div className="flex space-x-6 mt-4 md:mt-0">
                                 {/* Réseaux sociaux */}
-                                <a href="#" className="text-gray-300 hover:text-white">
+                                <a href="#" className="text-gray-300 hover:text-eg-lime transition-colors duration-200">
                                     <span className="sr-only">Facebook</span>
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                                     </svg>
                                 </a>
-                                <a href="#" className="text-gray-300 hover:text-white">
+                                <a href="#" className="text-gray-300 hover:text-eg-lime transition-colors duration-200">
                                     <span className="sr-only">Twitter</span>
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                                     </svg>
                                 </a>
-                                <a href="#" className="text-gray-300 hover:text-white">
+                                <a href="#" className="text-gray-300 hover:text-eg-lime transition-colors duration-200">
                                     <span className="sr-only">LinkedIn</span>
                                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />

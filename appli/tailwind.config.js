@@ -16,32 +16,34 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                // Couleurs principales d'EG Conseil
-                'eg-primary': '#4CAF50',          // Vert principal
-                'eg-secondary': '#8BC34A',        // Vert clair
-                'eg-lime': '#CDDC39',             // Vert lime
-                'eg-dark': '#2E7D32',             // Vert forêt
-                'eg-accent': '#009688',           // Turquoise
-                'eg-gray-dark': '#424242',        // Gris foncé
-                'eg-gray-light': '#F5F5F5',       // Gris clair
+                // Couleurs principales d'EG Conseil selon l'ordre d'importance
+                'eg-primary': '#455F51',         // Vert foncé (principale)
+                'eg-secondary': '#549E39',       // Vert moyen
+                'eg-tertiary': '#8AB833',        // Vert clair
+                'eg-accent': '#C0CF3A',          // Vert lime
+                'eg-highlight': '#029676',       // Turquoise
 
-                // Nuances supplémentaires
-                'eg-primary-light': '#66BB6A',    // Vert principal plus clair
-                'eg-primary-dark': '#388E3C',     // Vert principal plus foncé
-                'eg-accent-light': '#26A69A',     // Turquoise clair
-                'eg-accent-dark': '#00796B',      // Turquoise foncé
+                // Variations des couleurs principales
+                'eg-primary-light': '#5A7668',   // Version plus claire du vert foncé
+                'eg-primary-dark': '#364A40',    // Version plus foncée du vert foncé
+                'eg-secondary-light': '#6AB84C', // Version plus claire du vert moyen
+                'eg-secondary-dark': '#458730',  // Version plus foncée du vert moyen
+
+                // Couleurs fonctionnelles
+                'eg-gray-dark': '#424242',       // Gris foncé
+                'eg-gray-light': '#F5F5F5',      // Gris clair
             },
             backgroundImage: {
                 'hero-pattern': "url('/img/hero-bg.jpg')",
-                'footer-pattern': "linear-gradient(90deg, var(--tw-colors-eg-dark) 0%, var(--tw-colors-eg-primary) 100%)",
+                'footer-pattern': "linear-gradient(90deg, var(--tw-colors-eg-primary) 0%, var(--tw-colors-eg-secondary) 100%)",
             },
             borderRadius: {
                 'xl': '1rem',
                 '2xl': '2rem',
             },
             boxShadow: {
-                'eg': '0 10px 25px -5px rgba(76, 175, 80, 0.1), 0 8px 10px -6px rgba(76, 175, 80, 0.1)',
-                'eg-lg': '0 20px 25px -5px rgba(76, 175, 80, 0.2), 0 8px 10px -6px rgba(76, 175, 80, 0.2)',
+                'eg': '0 10px 25px -5px rgba(69, 95, 81, 0.1), 0 8px 10px -6px rgba(69, 95, 81, 0.1)',
+                'eg-lg': '0 20px 25px -5px rgba(69, 95, 81, 0.2), 0 8px 10px -6px rgba(69, 95, 81, 0.2)',
             },
             animation: {
                 'fade-in': 'fadeIn 0.5s ease-in-out',
