@@ -160,121 +160,162 @@ export default function Landing() {
                     {/* Timeline simple avec cercles et lignes */}
                     <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">Notre parcours en <span className="text-eg-secondary">5 étapes clés</span></h3>
 
-                    {/* Version desktop de la timeline simple */}
+                    {/* Version desktop de la timeline avancée */}
                     <div className="hidden lg:block relative mb-20">
                         <div className="max-w-6xl mx-auto px-4 relative">
-                            {/* Ligne horizontale principale */}
-                            <div className="absolute left-0 right-0 h-1 bg-eg-secondary" style={{ top: '40px' }}></div>
+                            {/* Ligne horizontale avec dégradé pour montrer la progression */}
+                            <div className="absolute left-0 right-0 h-1.5 bg-gradient-to-r from-eg-secondary via-eg-secondary to-eg-secondary/30" style={{ top: '40px' }}></div>
 
-                            {/* Pas de points intermédiaires */}
+                            {/* Connecteurs entre les cercles */}
+                            <div className="absolute left-[22%] w-4 h-4 transform rotate-45 border-t-2 border-r-2 border-eg-secondary" style={{ top: '38px' }}></div>
+                            <div className="absolute left-[42%] w-4 h-4 transform rotate-45 border-t-2 border-r-2 border-eg-secondary" style={{ top: '38px' }}></div>
+                            <div className="absolute left-[62%] w-4 h-4 transform rotate-45 border-t-2 border-r-2 border-eg-secondary" style={{ top: '38px' }}></div>
+                            <div className="absolute left-[82%] w-4 h-4 transform rotate-45 border-t-2 border-r-2 border-eg-secondary" style={{ top: '38px' }}></div>
 
                             {/* Étapes */}
                             <div className="relative grid grid-cols-5 gap-4">
-                                {/* Étape 1 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10">
-                                        <span className="text-sm font-semibold">Juillet</span>
-                                        <span className="text-xl font-bold">2022</span>
+                                {/* Étape 1 - Juillet 2022 avec indicateur de date partagée */}
+                                <div className="flex flex-col items-center group">
+                                    <div className="relative">
+                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
+                                            <span className="text-sm font-semibold">Juillet</span>
+                                            <span className="text-xl font-bold">2022</span>
+                                            <span className="text-xs font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Début</span>
+                                        </div>
                                     </div>
-                                    <h4 className="text-lg font-bold text-center mb-2">Création à Conakry</h4>
-                                    <p className="text-sm text-gray-700 text-center">Vision de proposer des solutions sur mesure dans le conseil en stratégie et gestion, avec une spécialisation dans le contexte africain.</p>
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <h4 className="text-lg font-bold text-center mb-2">Création à Conakry</h4>
+                                        <p className="text-sm text-gray-700 text-center opacity-80 group-hover:opacity-100">Vision de proposer des solutions sur mesure dans le conseil en stratégie et gestion, avec une spécialisation dans le contexte africain.</p>
+                                    </div>
                                 </div>
 
-                                {/* Étape 2 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10">
-                                        <span className="text-sm font-semibold">Juillet</span>
-                                        <span className="text-xl font-bold">2022</span>
+                                {/* Étape 2 - Juillet 2022 avec indicateur de date partagée */}
+                                <div className="flex flex-col items-center group">
+                                    <div className="relative">
+                                        <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
+                                            <span className="text-sm font-semibold">Juillet</span>
+                                            <span className="text-xl font-bold">2022</span>
+                                            <span className="text-xs font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Fin</span>
+                                        </div>
                                     </div>
-                                    <h4 className="text-lg font-bold text-center mb-2">Collaboration dans l'Éducation</h4>
-                                    <p className="text-sm text-gray-700 text-center">Début d'une collaboration significative dans le domaine de l'éducation, avec un focus sur l'innovation pédagogique pour les niveaux primaire, collège et lycée, visant à améliorer la qualité et l'efficacité de l'enseignement..</p>
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <h4 className="text-lg font-bold text-center mb-2">Collaboration dans l'Éducation</h4>
+                                        <p className="text-sm text-gray-700 text-center opacity-80 group-hover:opacity-100">Début d'une collaboration significative dans le domaine de l'éducation, avec un focus sur l'innovation pédagogique.</p>
+                                    </div>
                                 </div>
 
                                 {/* Étape 3 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10">
+                                <div className="flex flex-col items-center group">
+                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                         <span className="text-sm font-semibold">Septembre</span>
                                         <span className="text-xl font-bold">2022</span>
                                     </div>
-                                    <h4 className="text-lg font-bold text-center mb-2">Premier grand projet</h4>
-                                    <p className="text-sm text-gray-700 text-center">Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée.</p>
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <h4 className="text-lg font-bold text-center mb-2">Premier grand projet</h4>
+                                        <p className="text-sm text-gray-700 text-center opacity-80 group-hover:opacity-100">Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée.</p>
+                                    </div>
                                 </div>
 
                                 {/* Étape 4 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10">
+                                <div className="flex flex-col items-center group">
+                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                         <span className="text-sm font-semibold">Janvier</span>
                                         <span className="text-xl font-bold">2023</span>
                                     </div>
-                                    <h4 className="text-lg font-bold text-center mb-2">Engagement dans la Santé publique</h4>
-                                    <p className="text-sm text-gray-700 text-center">Accompagnement du Service Genre et Équité du MSHP pour renforcer la gestion, la planification et la coordination.</p>
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <h4 className="text-lg font-bold text-center mb-2">Engagement dans la Santé publique</h4>
+                                        <p className="text-sm text-gray-700 text-center opacity-80 group-hover:opacity-100">Accompagnement du Service Genre et Équité du MSHP pour renforcer la gestion, la planification et la coordination.</p>
+                                    </div>
                                 </div>
 
                                 {/* Étape 5 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10">
+                                <div className="flex flex-col items-center group">
+                                    <div className="w-20 h-20 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white mb-4 z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                         <span className="text-sm font-semibold">Janvier</span>
                                         <span className="text-xl font-bold">2024</span>
                                     </div>
-                                    <h4 className="text-lg font-bold text-center mb-2">Soutien au PEV</h4>
-                                    <p className="text-sm text-gray-700 text-center">Intensification de l'implication dans le secteur de la santé avec l'accompagnement du Programme Élargi de Vaccination (PEV), financé par Gavi.</p>
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <h4 className="text-lg font-bold text-center mb-2">Soutien au PEV</h4>
+                                        <p className="text-sm text-gray-700 text-center opacity-80 group-hover:opacity-100">Intensification de l'implication dans le secteur de la santé avec l'accompagnement du Programme Élargi de Vaccination (PEV).</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Version mobile/tablette - Timeline verticale avec cercles uniformes */}
+                    {/* Version mobile/tablette - Timeline verticale avancée */}
                     <div className="lg:hidden relative mb-10 px-4">
-                        <div className="absolute left-8 top-0 bottom-0 w-1 bg-eg-secondary"></div>
+                        {/* Ligne verticale avec dégradé pour montrer la progression */}
+                        <div className="absolute left-8 top-0 bottom-0 w-1.5 bg-gradient-to-b from-eg-secondary via-eg-secondary to-eg-secondary/30"></div>
 
                         {/* Étape 1 */}
-                        <div className="mb-8 pl-20 relative">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10">
+                        <div className="mb-12 pl-20 relative group">
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                 <span className="text-xs font-semibold">Juillet</span>
                                 <span className="text-sm font-bold">2022</span>
+                                <span className="text-[10px] font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Début</span>
                             </div>
-                            <h4 className="text-lg font-bold mb-2">Création à Conakry</h4>
-                            <p className="text-sm text-gray-700">Vision de proposer des solutions sur mesure dans le conseil en stratégie et gestion, avec une spécialisation dans le contexte africain.</p>
+                            {/* Connecteur */}
+                            <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
+                            <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                                <h4 className="text-lg font-bold mb-2">Création à Conakry</h4>
+                                <p className="text-sm text-gray-700 opacity-80 group-hover:opacity-100">Vision de proposer des solutions sur mesure dans le conseil en stratégie et gestion, avec une spécialisation dans le contexte africain.</p>
+                            </div>
                         </div>
 
                         {/* Étape 2 */}
-                        <div className="mb-8 pl-20 relative">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10">
+                        <div className="mb-12 pl-20 relative group">
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                 <span className="text-xs font-semibold">Juillet</span>
                                 <span className="text-sm font-bold">2022</span>
+                                <span className="text-[10px] font-medium bg-white text-eg-secondary px-1 rounded absolute -top-1 -right-1">Fin</span>
                             </div>
-                            <h4 className="text-lg font-bold mb-2">Collaboration dans l'Éducation</h4>
-                            <p className="text-sm text-gray-700">Début d'une collaboration significative dans le domaine de l'éducation, avec un focus sur l'innovation pédagogique.</p>
+                            {/* Connecteur */}
+                            <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
+                            <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                                <h4 className="text-lg font-bold mb-2">Collaboration dans l'Éducation</h4>
+                                <p className="text-sm text-gray-700 opacity-80 group-hover:opacity-100">Début d'une collaboration significative dans le domaine de l'éducation, avec un focus sur l'innovation pédagogique.</p>
+                            </div>
                         </div>
 
                         {/* Étape 3 */}
-                        <div className="mb-8 pl-20 relative">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10">
+                        <div className="mb-12 pl-20 relative group">
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                 <span className="text-xs font-semibold">Septembre</span>
                                 <span className="text-sm font-bold">2022</span>
                             </div>
-                            <h4 className="text-lg font-bold mb-2">Premier grand projet</h4>
-                            <p className="text-sm text-gray-700">Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée.</p>
+                            {/* Connecteur */}
+                            <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
+                            <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                                <h4 className="text-lg font-bold mb-2">Premier grand projet</h4>
+                                <p className="text-sm text-gray-700 opacity-80 group-hover:opacity-100">Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée.</p>
+                            </div>
                         </div>
 
                         {/* Étape 4 */}
-                        <div className="mb-8 pl-20 relative">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10">
+                        <div className="mb-12 pl-20 relative group">
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                 <span className="text-xs font-semibold">Janvier</span>
                                 <span className="text-sm font-bold">2023</span>
                             </div>
-                            <h4 className="text-lg font-bold mb-2">Engagement dans la Santé publique</h4>
-                            <p className="text-sm text-gray-700">Accompagnement du Service Genre et Équité du MSHP pour renforcer la gestion, la planification et la coordination.</p>
+                            {/* Connecteur */}
+                            <div className="absolute left-[18px] top-[60px] h-[40px] w-1.5 bg-eg-secondary transform rotate-[30deg] origin-top"></div>
+                            <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                                <h4 className="text-lg font-bold mb-2">Engagement dans la Santé publique</h4>
+                                <p className="text-sm text-gray-700 opacity-80 group-hover:opacity-100">Accompagnement du Service Genre et Équité du MSHP pour renforcer la gestion, la planification et la coordination.</p>
+                            </div>
                         </div>
 
                         {/* Étape 5 */}
-                        <div className="mb-8 pl-20 relative">
-                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10">
+                        <div className="mb-8 pl-20 relative group">
+                            <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-eg-secondary flex flex-col items-center justify-center text-white z-10 transition-all duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(84,158,57,0.3)] group-hover:shadow-[0_0_20px_rgba(84,158,57,0.5)]">
                                 <span className="text-xs font-semibold">Janvier</span>
                                 <span className="text-sm font-bold">2024</span>
                             </div>
-                            <h4 className="text-lg font-bold mb-2">Soutien au PEV</h4>
-                            <p className="text-sm text-gray-700">Intensification de l'implication dans le secteur de la santé avec l'accompagnement du Programme Élargi de Vaccination (PEV).</p>
+                            <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                                <h4 className="text-lg font-bold mb-2">Soutien au PEV</h4>
+                                <p className="text-sm text-gray-700 opacity-80 group-hover:opacity-100">Intensification de l'implication dans le secteur de la santé avec l'accompagnement du Programme Élargi de Vaccination (PEV).</p>
+                            </div>
                         </div>
                     </div>
                 </div>
