@@ -13,21 +13,21 @@ export default function Landing() {
             {/* Hero Section */}
             <section id="hero" className="relative bg-eg-dark overflow-hidden">
                 {/* Background image avec overlay */}
-                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://placehold.co/1920x1080/2E7D32/FFFFFF?text=EG+Conseil+Hero')` }}></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-eg-dark/90 to-eg-primary-dark/70"></div>
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/img/background_eg.png')` }}></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#549E39]/90 to-transparent"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                            Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                            Des solutions stratégiques pour un impact durable en Afrique de l'Ouest
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 mb-10">
-                            Nous connectons les meilleures pratiques internationales aux réalités locales pour des résultats concrets.
+                            EG Conseil est un cabinet de conseil en stratégie et gestion de projets à impact en Afrique de l'Ouest.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                             <a
                                 href="#contact"
-                                className="px-8 py-4 bg-eg-primary hover:bg-eg-primary-dark text-white font-medium rounded-lg shadow-lg transition duration-300 text-center text-lg"
+                                className="px-8 py-4 bg-[#549E39] hover:bg-[#458730] text-white font-medium rounded-lg shadow-lg transition duration-300 text-center text-lg"
                             >
                                 Nous contacter
                             </a>
