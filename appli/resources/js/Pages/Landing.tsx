@@ -73,69 +73,147 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* Présentation rapide */}
-            <section id="presentation" className="py-16 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col md:flex-row md:items-center md:space-x-12">
-                        <div className="md:w-1/2 mb-10 md:mb-0">
-                            <span className="bg-eg-primary-light text-eg-dark px-4 py-2 rounded-full text-sm font-semibold">À PROPOS DE NOUS</span>
-                            <h2 className="text-3xl font-bold text-gray-900 mt-4 mb-6">
-                                Qui est EG Conseil ?
-                            </h2>
-                            <p className="text-gray-700 mb-6">
-                                EG Conseil, fondée le 27 juillet 2022 à Conakry, est une société de
-                                conseil en stratégie et gestion qui se distingue par son approche
-                                innovante et sa profonde connaissance des dynamiques locales et
-                                régionales de l'Afrique de l'Ouest.
-                            </p>
-                            <p className="text-gray-700 mb-6">
-                                Notre mission est de développer et d'implémenter des
-                                solutions sur mesure qui s'inscrivent parfaitement dans le contexte
-                                local, combinant connaissances du terrain et meilleures pratiques internationales.
-                            </p>
+            {/* À propos de nous - Design moderne et dynamique */}
+            <section id="presentation" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+                {/* Éléments décoratifs */}
+                <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#549E39]/10 rounded-bl-full transform rotate-12"></div>
+                <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-[#549E39]/10 rounded-tr-full"></div>
+                <div className="absolute top-1/4 left-10 w-16 h-16 bg-[#AEFF8E]/30 rounded-full"></div>
+                <div className="absolute bottom-1/4 right-10 w-24 h-24 bg-[#AEFF8E]/20 rounded-full"></div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    {/* En-tête de section avec style moderne */}
+                    <div className="text-center mb-16">
+                        <div className="inline-block">
+                            <span className="bg-[#549E39] text-white px-5 py-2 rounded-lg text-sm font-bold shadow-md transform hover:scale-105 transition-transform duration-300">À PROPOS DE NOUS</span>
                         </div>
-                        <div className="md:w-1/2">
-                            <div className="grid grid-cols-2 gap-4">
-                                {/* Valeur 1 - Transparence */}
-                                <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                                    <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-6 mb-4 relative inline-block">
+                            Notre Histoire & Notre Vision
+                            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#549E39] rounded-full"></span>
+                        </h2>
+                    </div>
+
+                    {/* Carte de présentation avec effet de profondeur */}
+                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-20 transform hover:scale-[1.01] transition-all duration-300">
+                        <div className="md:flex">
+                            <div className="md:w-2/5 bg-[#549E39] p-8 md:p-12 flex items-center justify-center">
+                                <div className="text-center">
+                                    <div className="w-24 h-24 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Transparence</h3>
-                                    <p className="text-gray-600 text-sm">Honnêteté et ouverture qui renforcent la confiance de nos partenaires.</p>
+                                    <h3 className="text-3xl font-bold text-white mb-4">Qui sommes-nous ?</h3>
+                                    <p className="text-white/90 text-lg">
+                                        Fondée en juillet 2022 à Conakry, EG Conseil est votre partenaire stratégique pour un impact durable en Afrique de l'Ouest.
+                                    </p>
                                 </div>
-                                {/* Valeur 2 - Innovation */}
-                                <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                                    <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                        </svg>
+                            </div>
+                            <div className="md:w-3/5 p-8 md:p-12">
+                                <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                                    EG Conseil se distingue par son <span className="font-semibold text-[#549E39]">approche innovante</span> et sa profonde connaissance des dynamiques locales et régionales de l'Afrique de l'Ouest.
+                                </p>
+                                <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                                    Notre mission est de développer et d'implémenter des <span className="font-semibold text-[#549E39]">solutions sur mesure</span> qui s'inscrivent parfaitement dans le contexte local de l'Afrique de l'Ouest, particulièrement en Guinée.
+                                </p>
+                                <p className="text-gray-700 text-lg leading-relaxed">
+                                    Notre ambition est de créer un <span className="font-semibold text-[#549E39]">impact durable</span> sur les communautés que nous servons, en alliant connaissances locales et meilleures pratiques internationales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Timeline moderne et interactive */}
+                    <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">Notre parcours en <span className="text-[#549E39]">5 étapes clés</span></h3>
+
+                    <div className="relative">
+                        {/* Ligne centrale */}
+                        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#549E39] to-[#AEFF8E] rounded-full"></div>
+
+                        {/* Étapes */}
+                        <div className="space-y-12 md:space-y-0">
+                            {/* Étape 1 */}
+                            <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                                <div className="md:text-right mb-8 md:mb-0 md:pr-10">
+                                    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 inline-block">
+                                        <span className="text-xs font-bold text-[#549E39] uppercase tracking-wider">Juillet 2022</span>
+                                        <h4 className="text-xl font-bold text-gray-900 mt-2 mb-3">Création à Conakry</h4>
+                                        <p className="text-gray-700">Vision de proposer des solutions sur mesure dans le conseil en stratégie et gestion, avec une spécialisation dans le contexte africain.</p>
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Innovation</h3>
-                                    <p className="text-gray-600 text-sm">Valorisation de la pensée innovante pour des solutions avant-gardistes.</p>
                                 </div>
-                                {/* Valeur 3 - Durabilité */}
-                                <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                                    <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                                <div className="hidden md:block"></div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 md:translate-y-0 flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-[#549E39] rounded-full flex items-center justify-center shadow-lg z-10">
+                                        <span className="text-white font-bold">1</span>
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Durabilité</h3>
-                                    <p className="text-gray-600 text-sm">Stratégies servant les intérêts actuels sans compromettre ceux des générations futures.</p>
                                 </div>
-                                {/* Valeur 4 - Efficience */}
-                                <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                                    <div className="w-12 h-12 bg-eg-primary-light rounded-lg flex items-center justify-center text-eg-dark mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                        </svg>
+                            </div>
+
+                            {/* Étape 2 */}
+                            <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                                <div className="hidden md:block"></div>
+                                <div className="md:pl-10 mb-8 md:mb-0">
+                                    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 inline-block">
+                                        <span className="text-xs font-bold text-[#549E39] uppercase tracking-wider">Juillet 2022</span>
+                                        <h4 className="text-xl font-bold text-gray-900 mt-2 mb-3">Collaboration dans l'Éducation</h4>
+                                        <p className="text-gray-700">Début d'une collaboration significative dans le domaine de l'éducation, avec un focus sur l'innovation pédagogique pour les niveaux primaire, collège et lycée.</p>
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Efficience</h3>
-                                    <p className="text-gray-600 text-sm">Optimisation constante pour offrir la meilleure valeur à nos clients.</p>
+                                </div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 md:translate-y-0 flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-[#549E39] rounded-full flex items-center justify-center shadow-lg z-10">
+                                        <span className="text-white font-bold">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Étape 3 */}
+                            <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                                <div className="md:text-right mb-8 md:mb-0 md:pr-10">
+                                    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 inline-block">
+                                        <span className="text-xs font-bold text-[#549E39] uppercase tracking-wider">Septembre 2022</span>
+                                        <h4 className="text-xl font-bold text-gray-900 mt-2 mb-3">Premier grand projet</h4>
+                                        <p className="text-gray-700">Accompagnement de la relance de la plus grande unité industrielle de transformation d'huile de palme en Guinée dans le cadre d'un projet à impact social.</p>
+                                    </div>
+                                </div>
+                                <div className="hidden md:block"></div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 md:translate-y-0 flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-[#549E39] rounded-full flex items-center justify-center shadow-lg z-10">
+                                        <span className="text-white font-bold">3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Étape 4 */}
+                            <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                                <div className="hidden md:block"></div>
+                                <div className="md:pl-10 mb-8 md:mb-0">
+                                    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 inline-block">
+                                        <span className="text-xs font-bold text-[#549E39] uppercase tracking-wider">Janvier 2023</span>
+                                        <h4 className="text-xl font-bold text-gray-900 mt-2 mb-3">Engagement dans la Santé publique</h4>
+                                        <p className="text-gray-700">Accompagnement du Service Genre et Équité du MSHP pour renforcer la gestion, la planification et la coordination.</p>
+                                    </div>
+                                </div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 md:translate-y-0 flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-[#549E39] rounded-full flex items-center justify-center shadow-lg z-10">
+                                        <span className="text-white font-bold">4</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Étape 5 */}
+                            <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                                <div className="md:text-right mb-8 md:mb-0 md:pr-10">
+                                    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 inline-block">
+                                        <span className="text-xs font-bold text-[#549E39] uppercase tracking-wider">Janvier 2024</span>
+                                        <h4 className="text-xl font-bold text-gray-900 mt-2 mb-3">Soutien au PEV</h4>
+                                        <p className="text-gray-700">Intensification de l'implication dans le secteur de la santé avec l'accompagnement du Programme Élargi de Vaccination (PEV) financé par Gavi.</p>
+                                    </div>
+                                </div>
+                                <div className="hidden md:block"></div>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 md:translate-y-0 flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-[#549E39] rounded-full flex items-center justify-center shadow-lg z-10">
+                                        <span className="text-white font-bold">5</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
