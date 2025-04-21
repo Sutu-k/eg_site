@@ -97,13 +97,13 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                                 <a
                                     key={index}
                                     href={item.href}
-                                    className={`text-eg-gray-dark hover:text-eg-secondary transition-colors duration-200 font-medium relative group ${
-                                        isLinkActive(item.href) ? 'text-eg-secondary' : ''
+                                    className={`text-eg-gray-dark hover:text-eg-primary transition-colors duration-200 font-medium relative group ${
+                                        isLinkActive(item.href) ? 'text-eg-primary' : ''
                                     }`}
                                     onClick={(e) => handleSmoothScroll(e, 80)}
                                 >
                                     {item.text}
-                                    <span className={`absolute bottom-0 left-0 h-0.5 bg-eg-secondary transition-all duration-300 ${
+                                    <span className={`absolute bottom-0 left-0 h-0.5 bg-eg-primary transition-all duration-300 ${
                                         isLinkActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
                                     }`}></span>
                                 </a>
@@ -114,7 +114,7 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                         <div className="md:hidden">
                             <button
                                 type="button"
-                                className="p-2 rounded-md inline-flex items-center justify-center text-eg-gray-dark hover:text-eg-secondary hover:bg-eg-gray-light focus:outline-none transition-colors duration-200"
+                                className="p-2 rounded-md inline-flex items-center justify-center text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light focus:outline-none transition-colors duration-200"
                                 onClick={toggleMobileMenu}
                             >
                                 <span className="sr-only">Ouvrir le menu</span>
@@ -146,8 +146,8 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                                 <a
                                     key={index}
                                     href={item.href}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium text-eg-gray-dark hover:text-eg-secondary hover:bg-eg-gray-light transition-colors duration-200 ${
-                                        isLinkActive(item.href) ? 'text-eg-secondary bg-eg-gray-light' : ''
+                                    className={`block px-3 py-2 rounded-md text-base font-medium text-eg-gray-dark hover:text-eg-primary hover:bg-eg-gray-light transition-colors duration-200 ${
+                                        isLinkActive(item.href) ? 'text-eg-primary bg-eg-gray-light' : ''
                                     }`}
                                     onClick={(e) => {
                                         handleSmoothScroll(e, 80);
