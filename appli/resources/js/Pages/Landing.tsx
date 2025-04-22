@@ -32,6 +32,15 @@ type ProjectType = {
     points: string[];
 }
 
+type TeamMember = {
+    id: number;
+    name: string;
+    role: string;
+    description?: string;
+    photo: string;
+    color: string;
+}
+
 export default function Landing() {
     const [showAccelerateurModal, setShowAccelerateurModal] = useState(false);
     // État pour le modal des projets
@@ -129,6 +138,50 @@ export default function Landing() {
                 "Gestion de plusieurs milliards d'actifs pour : BNP Paribas, JP Morgan, AFD, Aviva...",
                 "Structuration de dossiers et outils de stress-test pour la résilience financière"
             ]
+        }
+    ];
+
+    // Membres de l'équipe
+    const teamMembers: TeamMember[] = [
+        {
+            id: 1,
+            name: "Oumar CAMARA",
+            role: "Directeur Général",
+            description: "Expert en finance, stratégie et gestion de projets d'envergure.",
+            photo: "/img/team/oumar-camara.jpg", // À remplacer par la vraie photo
+            color: "eg-primary"
+        },
+        {
+            id: 2,
+            name: "Mariama DIALLO",
+            role: "Assistante Administrative et Financière",
+            description: "Spécialiste en gestion administrative et finances.",
+            photo: "/img/team/mariama-diallo.jpg", // À remplacer par la vraie photo
+            color: "eg-secondary"
+        },
+        {
+            id: 3,
+            name: "Ibrahim SYLLA",
+            role: "Responsable des Projets",
+            description: "Expert en gestion de projets et suivi-évaluation.",
+            photo: "/img/team/ibrahim-sylla.jpg", // À remplacer par la vraie photo
+            color: "eg-tertiary"
+        },
+        {
+            id: 4,
+            name: "Fatoumata SOUMAH",
+            role: "Informaticienne",
+            description: "Experte en développement web et solutions digitales.",
+            photo: "/img/team/fatoumata-soumah.jpg", // À remplacer par la vraie photo
+            color: "eg-accent"
+        },
+        {
+            id: 5,
+            name: "Mohamed BAH",
+            role: "Data Scientist",
+            description: "Spécialiste en analyse de données et intelligence artificielle.",
+            photo: "/img/team/mohamed-bah.jpg", // À remplacer par la vraie photo
+            color: "eg-highlight"
         }
     ];
 
@@ -1112,7 +1165,7 @@ export default function Landing() {
             </section>
 
             {/* Section Notre équipe */}
-            <section id="equipe" className="py-20 bg-gradient-to-br from-white to-eg-gray-light relative overflow-hidden">
+            <section id="equipe" className="py-24 bg-gradient-to-br from-white to-eg-gray-light relative overflow-hidden">
                 {/* Éléments décoratifs */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-40 -right-40 w-96 h-96 bg-eg-primary opacity-5 rounded-full"></div>
@@ -1121,7 +1174,7 @@ export default function Landing() {
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-20">
                         <div className="inline-block">
                             <span className="bg-eg-primary text-white px-5 py-2 rounded-md text-sm font-semibold shadow-eg">NOTRE ÉQUIPE</span>
                         </div>
@@ -1134,145 +1187,258 @@ export default function Landing() {
                         </p>
                     </div>
 
-                    {/* Direction */}
-                    <div className="mb-16">
-                        <div className="flex flex-col items-center">
-                            <div className="relative w-48 h-48 rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white">
-                                <div className="absolute inset-0 bg-gradient-to-br from-eg-primary to-eg-primary-dark opacity-10"></div>
-                                <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 className="text-2xl font-bold text-eg-primary mb-1">Oumar CAMARA</h3>
-                            <p className="text-xl text-eg-secondary font-semibold mb-3">Directeur Général</p>
-                            <p className="text-center max-w-lg text-eg-gray-dark">
-                                Expert en finance, stratégie et gestion de projets d'envergure.
-                            </p>
-                        </div>
-                    </div>
+                    {/* Direction et équipe principale - Nouvelle disposition */}
+                    <div className="flex flex-col lg:flex-row gap-10 mb-20">
+                        {/* Directeur à gauche */}
+                        <div className="lg:w-1/3">
+                            <div className="bg-white rounded-xl shadow-eg p-8 transform transition-all duration-500 hover:-translate-y-2 h-full flex flex-col items-center justify-center">
+                                <div className="relative">
+                                    <div className="w-56 h-56 rounded-full overflow-hidden mb-8 shadow-xl border-4 border-white relative transition-transform duration-500 hover:scale-105">
+                                        {/* Cercle d'effet de lumière */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-eg-primary to-eg-primary-dark opacity-10 z-10"></div>
 
-                    {/* Équipe principale */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                        {/* Assistante administrative et financière */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-primary w-full"></div>
-                            <div className="p-6">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-16 h-16 bg-eg-primary-light/20 rounded-full flex items-center justify-center mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        {/* Image ou placeholder */}
+                                        {teamMembers[0].photo ? (
+                                            <img
+                                                src={teamMembers[0].photo}
+                                                alt={teamMembers[0].name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-28 w-28 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                </svg>
+                                            </div>
+                                        )}
+
+                                        {/* Élément décoratif de bordure */}
+                                        <div className="absolute inset-0 border-4 border-eg-primary/30 rounded-full"></div>
+                                    </div>
+
+                                    {/* Badge décoratif */}
+                                    <div className="absolute -bottom-2 -right-2 bg-eg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transform rotate-12">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                         </svg>
                                     </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-eg-primary group-hover:text-eg-secondary transition-colors duration-300">Assistante administrative et financière</h3>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        {/* Responsable des projets */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-secondary w-full"></div>
-                            <div className="p-6">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-16 h-16 bg-eg-secondary-light/20 rounded-full flex items-center justify-center mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                                        </svg>
+                                <div className="text-center mt-6">
+                                    <h3 className="text-2xl font-bold text-eg-dark mb-2">{teamMembers[0].name}</h3>
+                                    <div className="inline-block bg-eg-primary/10 px-4 py-1 rounded-full mb-4">
+                                        <p className="text-xl text-eg-primary font-semibold">{teamMembers[0].role}</p>
                                     </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-eg-secondary group-hover:text-eg-primary transition-colors duration-300">Responsable des projets</h3>
-                                    </div>
+                                    <p className="text-center text-eg-gray-dark">
+                                        {teamMembers[0].description}
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Informaticienne */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-tertiary w-full"></div>
-                            <div className="p-6">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-16 h-16 bg-eg-tertiary/20 rounded-full flex items-center justify-center mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-eg-tertiary group-hover:text-eg-secondary transition-colors duration-300">Informaticienne</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {/* Équipe principale à droite */}
+                        <div className="lg:w-2/3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 h-full">
+                                {teamMembers.slice(1).map((member) => (
+                                    <div key={member.id} className="group h-full">
+                                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group-hover:shadow-2xl h-full">
+                                            {/* Bande colorée en haut */}
+                                            <div className={`h-2 bg-${member.color} w-full`}></div>
 
-                        {/* Data Scientist */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-accent w-full"></div>
-                            <div className="p-6">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-16 h-16 bg-eg-accent/20 rounded-full flex items-center justify-center mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-eg-accent group-hover:text-eg-tertiary transition-colors duration-300">Data Scientist</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                            <div className="p-6 flex flex-col items-center h-full">
+                                                {/* Photo (circulaire) */}
+                                                <div className="relative w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-500">
+                                                    {member.photo ? (
+                                                        <img
+                                                            src={member.photo}
+                                                            alt={member.name}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    ) : (
+                                                        <div className={`w-full h-full bg-${member.color}/10 flex items-center justify-center`}>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" className={`h-14 w-14 text-${member.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                            </svg>
+                                                        </div>
+                                                    )}
+                                                </div>
 
-                        {/* Personnel polyvalent */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-highlight w-full"></div>
-                            <div className="p-6">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-16 h-16 bg-eg-highlight/20 rounded-full flex items-center justify-center mr-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-highlight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
+                                                {/* Informations */}
+                                                <h3 className={`text-lg font-bold text-${member.color} mb-2 text-center`}>{member.name}</h3>
+                                                <p className="text-eg-gray-dark font-medium mb-3 text-center">{member.role}</p>
+
+                                                {member.description && (
+                                                    <p className="text-eg-gray text-center text-sm mb-4">{member.description}</p>
+                                                )}
+
+                                                {/* Ligne décorative */}
+                                                <div className={`w-10 h-1 bg-${member.color} rounded-full mt-auto group-hover:w-20 transition-all duration-500`}></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-eg-highlight group-hover:text-eg-accent transition-colors duration-300">Personnel polyvalent</h3>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Analystes */}
-                    <div className="bg-white rounded-xl shadow-eg overflow-hidden mb-16">
-                        <div className="h-2 bg-gradient-to-r from-eg-primary via-eg-secondary to-eg-tertiary w-full"></div>
-                        <div className="p-8">
-                            <div className="flex items-center mb-6">
-                                <div className="w-16 h-16 bg-eg-primary-light/20 rounded-full flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
+                    {/* Section Consultants et Analystes */}
+                    <div className="mt-20 grid md:grid-cols-2 gap-8">
+                        {/* Consultants régionaux - Inspiré de l'image */}
+                        <div className="bg-green-50 border-2 border-dashed border-green-400 rounded-xl p-6 relative">
+                            <h3 className="text-2xl font-bold text-center uppercase mb-8">Niveau régional</h3>
+
+                            {/* Bloc central avec texte */}
+                            <div className="bg-cyan-500 rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
+                                <p className="font-bold text-xl">8 Consultants</p>
+                                <p>expérimentés dans les 8 Régions administratives</p>
+                            </div>
+
+                            {/* Photos en cercle */}
+                            <div className="relative min-h-[180px]">
+                                {/* Photo en haut */}
+                                <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold text-eg-primary">Analystes</h3>
-                                    <p className="text-eg-gray-dark">Une équipe de 4 analystes spécialisés dans différents domaines d'expertise</p>
+
+                                {/* Photo à gauche supérieur */}
+                                <div className="absolute top-[15px] left-0">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo à gauche inférieur */}
+                                <div className="absolute top-[80px] left-[-5px]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo en bas à gauche */}
+                                <div className="absolute bottom-0 left-[15%]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo en bas au centre */}
+                                <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo en bas à droite */}
+                                <div className="absolute bottom-0 right-[15%]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo à droite inférieur */}
+                                <div className="absolute top-[80px] right-[-5px]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo à droite supérieur */}
+                                <div className="absolute top-[15px] right-0">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Consultants */}
-                    <div className="bg-white rounded-xl shadow-eg overflow-hidden">
-                        <div className="h-2 bg-gradient-to-r from-eg-secondary via-eg-tertiary to-eg-accent w-full"></div>
-                        <div className="p-8">
-                            <div className="flex items-center mb-6">
-                                <div className="w-16 h-16 bg-eg-secondary-light/20 rounded-full flex items-center justify-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                    </svg>
+                        {/* Analystes - Avec la même structure que les consultants */}
+                        <div className="bg-amber-50 border-2 border-dashed border-amber-400 rounded-xl p-6 relative">
+                            <h3 className="text-2xl font-bold text-center uppercase mb-8">Niveau central</h3>
+
+                            {/* Bloc central avec texte */}
+                            <div className="bg-amber-500 rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
+                                <p className="font-bold text-xl">4 Analystes</p>
+                                <p>spécialisés dans différents domaines d'expertise</p>
+                            </div>
+
+                            {/* Photos en cercle - Moins de photos pour les analystes */}
+                            <div className="relative min-h-[180px]">
+                                {/* Photo en haut */}
+                                <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold text-eg-secondary">Consultants régionaux</h3>
-                                    <p className="text-eg-gray-dark">8 consultants nationaux spécialisés en santé publique, suivi-évaluation, audit et développement</p>
+
+                                {/* Photo à gauche */}
+                                <div className="absolute top-[50px] left-[10%]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo en bas */}
+                                <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Photo à droite */}
+                                <div className="absolute top-[50px] right-[10%]">
+                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
