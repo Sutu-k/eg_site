@@ -1556,33 +1556,6 @@ export default function Landing() {
                     </div>
                 </div>
             )}
-
-            {/* Modal des projets */}
-            {selectedProject && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" onClick={closeProjectModal}>
-                    <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in-down" onClick={e => e.stopPropagation()}>
-                        <button
-                            onClick={closeProjectModal}
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-
-                        <div className="p-8">
-                            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-                            <p className="text-gray-600 mb-6">{selectedProject.subtitle}</p>
-                            <p className="text-gray-700 mb-8">{selectedProject.description}</p>
-                            <ul className="list-disc pl-6 mb-6">
-                                {selectedProject.points.map((point, index) => (
-                                    <li key={index}>{point}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            )}
         </EGLayout>
     );
 }
