@@ -185,6 +185,40 @@ export default function Landing() {
         }
     ];
 
+    // Consultants régionaux
+    type Consultant = {
+        id: number;
+        name: string;
+        region: string;
+        photo: string;
+    }
+
+    const consultants: Consultant[] = [
+        { id: 1, name: "Mohamed Sylla", region: "Conakry", photo: "/img/team/consultants/consultant1.jpg" },
+        { id: 2, name: "Fatoumata Bah", region: "Kindia", photo: "/img/team/consultants/consultant2.jpg" },
+        { id: 3, name: "Mamadou Diallo", region: "Boké", photo: "/img/team/consultants/consultant3.jpg" },
+        { id: 4, name: "Aminata Camara", region: "Labé", photo: "/img/team/consultants/consultant4.jpg" },
+        { id: 5, name: "Ibrahim Sow", region: "Kankan", photo: "/img/team/consultants/consultant5.jpg" },
+        { id: 6, name: "Mariama Touré", region: "Faranah", photo: "/img/team/consultants/consultant6.jpg" },
+        { id: 7, name: "Ousmane Barry", region: "N'Zérékoré", photo: "/img/team/consultants/consultant7.jpg" },
+        { id: 8, name: "Kadiatou Baldé", region: "Mamou", photo: "/img/team/consultants/consultant8.jpg" }
+    ];
+
+    // Analystes
+    type Analyste = {
+        id: number;
+        name: string;
+        specialite: string;
+        photo: string;
+    }
+
+    const analystes: Analyste[] = [
+        { id: 1, name: "Moussa Kourouma", specialite: "Données financières", photo: "/img/team/analystes/analyste1.jpg" },
+        { id: 2, name: "Aissatou Diallo", specialite: "Études de marché", photo: "/img/team/analystes/analyste2.jpg" },
+        { id: 3, name: "Souleymane Camara", specialite: "Analyse sectorielle", photo: "/img/team/analystes/analyste3.jpg" },
+        { id: 4, name: "Fatima Koné", specialite: "Évaluation de projets", photo: "/img/team/analystes/analyste4.jpg" }
+    ];
+
     // Fonction pour ouvrir le modal de projet
     const openProjectModal = (project: ProjectType) => {
         setSelectedProject(project);
@@ -734,40 +768,40 @@ export default function Landing() {
                                         <div className="flex-shrink-0">
                                             <div className="w-16 h-16 bg-eg-primary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
                                         <div className="flex-1">
                                             <h3 className="text-xl md:text-2xl font-bold text-eg-primary mb-3 group-hover:text-eg-secondary transition-colors duration-300">
                                                 RENFORCEMENT DES CAPACITÉS INSTITUTIONNELLES
                                             </h3>
                                             <ul className="space-y-2 text-gray-700">
-                                                <li className="flex items-start">
+                                        <li className="flex items-start">
                                                     <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Delivery Units :</strong> Création de delivery units pour une meilleure coordination et suivi des projets</span>
-                                                </li>
-                                                <li className="flex items-start">
+                                        </li>
+                                        <li className="flex items-start">
                                                     <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Formulation de politiques et stratégies :</strong> Pour aborder des défis complexes, basé sur des données probantes</span>
-                                                </li>
-                                                <li className="flex items-start">
+                                        </li>
+                                        <li className="flex items-start">
                                                     <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Études d'impact et évaluation :</strong> Mesure de l'efficacité des interventions et de leur impact</span>
-                                                </li>
-                                            </ul>
+                                        </li>
+                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -788,32 +822,32 @@ export default function Landing() {
                                         <div className="flex-shrink-0">
                                             <div className="w-16 h-16 bg-eg-secondary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
                                         <div className="flex-1">
                                             <h3 className="text-xl md:text-2xl font-bold text-eg-secondary mb-3 group-hover:text-eg-primary transition-colors duration-300">
                                                 OPTIMISATION DES RESSOURCES DISPONIBLES
                                             </h3>
                                             <ul className="space-y-2 text-gray-700">
-                                                <li className="flex items-start">
+                                        <li className="flex items-start">
                                                     <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Cartographie des Ressources :</strong> Utilisation de SIG et bases de données centralisées</span>
-                                                </li>
-                                                <li className="flex items-start">
+                                        </li>
+                                        <li className="flex items-start">
                                                     <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Cadre de gouvernance avec Suivi et Évaluation :</strong> Définir des KPI et effectuer des audits réguliers</span>
-                                                </li>
-                                            </ul>
+                                        </li>
+                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -834,32 +868,32 @@ export default function Landing() {
                                         <div className="flex-shrink-0">
                                             <div className="w-16 h-16 bg-eg-tertiary rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                </div>
                                         <div className="flex-1">
                                             <h3 className="text-xl md:text-2xl font-bold text-eg-tertiary mb-3 group-hover:text-eg-highlight transition-colors duration-300">
                                                 MOBILISATION DES RESSOURCES FINANCIÈRES
                                             </h3>
                                             <ul className="space-y-2 text-gray-700">
-                                                <li className="flex items-start">
+                                        <li className="flex items-start">
                                                     <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Partenariats Public-Privé (PPP) :</strong> Facilitation des collaborations stratégiques et partage des risques</span>
-                                                </li>
-                                                <li className="flex items-start">
+                                        </li>
+                                        <li className="flex items-start">
                                                     <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Financements Internationaux :</strong> Banque mondiale, FMI, banques régionales de développement</span>
-                                                </li>
-                                            </ul>
+                                        </li>
+                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -880,32 +914,32 @@ export default function Landing() {
                                         <div className="flex-shrink-0">
                                             <div className="w-16 h-16 bg-eg-highlight rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                        </svg>
+                                    </div>
+                                </div>
                                         <div className="flex-1">
                                             <h3 className="text-xl md:text-2xl font-bold text-eg-highlight mb-3 group-hover:text-eg-accent transition-colors duration-300">
                                                 INNOVATION DIGITALE
                                             </h3>
                                             <ul className="space-y-2 text-gray-700">
-                                                <li className="flex items-start">
+                                        <li className="flex items-start">
                                                     <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Outils de Productivité :</strong> Développement d'applications pour améliorer l'efficacité des processus</span>
-                                                </li>
-                                                <li className="flex items-start">
+                                        </li>
+                                        <li className="flex items-start">
                                                     <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Automatisation et IA :</strong> Optimisation des processus décisionnels et de gestion</span>
-                                                </li>
-                                            </ul>
+                                        </li>
+                                    </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -926,16 +960,16 @@ export default function Landing() {
                                         <div className="flex-shrink-0">
                                             <div className="w-16 h-16 bg-eg-accent rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                </svg>
-                                            </div>
-                                        </div>
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
                                         <div className="flex-1">
                                             <h3 className="text-xl md:text-2xl font-bold text-eg-accent mb-3 group-hover:text-eg-tertiary transition-colors duration-300">
                                                 AUTRE ASSISTANCE TECHNIQUE
                                             </h3>
                                             <ul className="space-y-2 text-gray-700">
-                                                <li className="flex items-start">
+                                        <li className="flex items-start">
                                                     <span className="text-eg-highlight mr-2 mt-1 flex-shrink-0">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -950,10 +984,10 @@ export default function Landing() {
                                                         </svg>
                                                     </span>
                                                     <span><strong className="text-eg-gray-dark">Collecte et analyse de données :</strong> Amélioration de la collecte et utilisation des données pour des décisions éclairées</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -1065,10 +1099,10 @@ export default function Landing() {
                                             Voir détails
                                             <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                            </svg>
+                                    </svg>
                                         </button>
-                                    </div>
                                 </div>
+                            </div>
 
                                 {/* Bouton d'info */}
                                 <button
@@ -1083,7 +1117,7 @@ export default function Landing() {
                                 </button>
                             </div>
                         ))}
-                    </div>
+                        </div>
 
                     {/* Bouton d'action */}
                     <div className="mt-12 text-center">
@@ -1097,10 +1131,10 @@ export default function Landing() {
                             <span>Discuter de votre projet</span>
                             <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
+                                    </svg>
                         </a>
-                    </div>
-                </div>
+                                </div>
+                            </div>
 
                 {/* Modal pour les détails du projet */}
                 {selectedProject && (
@@ -1126,7 +1160,7 @@ export default function Landing() {
                                         <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                     </svg>
                                 </button>
-                            </div>
+                        </div>
 
                             {/* Contenu */}
                             <div className="p-6 overflow-y-auto">
@@ -1138,12 +1172,12 @@ export default function Landing() {
                                         <li key={idx} className="flex items-start">
                                             <svg className="h-6 w-6 text-eg-secondary flex-shrink-0 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
+                                    </svg>
                                             <span className="text-gray-700">{point}</span>
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                                </div>
 
                             {/* Pied de page du modal */}
                             <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
@@ -1157,10 +1191,10 @@ export default function Landing() {
                                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
                                     </button>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 )}
             </section>
 
@@ -1208,13 +1242,13 @@ export default function Landing() {
                                             <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-28 w-28 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                                </svg>
-                                            </div>
+                                        </svg>
+                                    </div>
                                         )}
 
                                         {/* Élément décoratif de bordure */}
                                         <div className="absolute inset-0 border-4 border-eg-primary/30 rounded-full"></div>
-                                    </div>
+                                </div>
 
                                     {/* Badge décoratif */}
                                     <div className="absolute -bottom-2 -right-2 bg-eg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transform rotate-12">
@@ -1233,8 +1267,8 @@ export default function Landing() {
                                         {teamMembers[0].description}
                                     </p>
                                 </div>
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
 
                         {/* Équipe principale à droite */}
                         <div className="lg:w-2/3">
@@ -1258,10 +1292,10 @@ export default function Landing() {
                                                         <div className={`w-full h-full bg-${member.color}/10 flex items-center justify-center`}>
                                                             <svg xmlns="http://www.w3.org/2000/svg" className={`h-14 w-14 text-${member.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                                            </svg>
-                                                        </div>
+                                        </svg>
+                                    </div>
                                                     )}
-                                                </div>
+                                    </div>
 
                                                 {/* Informations */}
                                                 <h3 className={`text-lg font-bold text-${member.color} mb-2 text-center`}>{member.name}</h3>
@@ -1277,169 +1311,290 @@ export default function Landing() {
                                         </div>
                                     </div>
                                 ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     {/* Section Consultants et Analystes */}
                     <div className="mt-20 grid md:grid-cols-2 gap-8">
                         {/* Consultants régionaux - Inspiré de l'image */}
-                        <div className="bg-green-50 border-2 border-dashed border-green-400 rounded-xl p-6 relative">
-                            <h3 className="text-2xl font-bold text-center uppercase mb-8">Niveau régional</h3>
+                        <div className="bg-[#C0CF3A]/10 border-2 border-dashed border-[#8AB833] rounded-xl p-6 relative">
+                            <h3 className="text-2xl font-bold text-center uppercase mb-8 text-[#455F51]">Niveau régional</h3>
 
                             {/* Bloc central avec texte */}
-                            <div className="bg-cyan-500 rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
+                            <div className="bg-[#549E39] rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
                                 <p className="font-bold text-xl">8 Consultants</p>
                                 <p>expérimentés dans les 8 Régions administratives</p>
-                            </div>
+                                </div>
 
                             {/* Photos en cercle */}
                             <div className="relative min-h-[180px]">
-                                {/* Photo en haut */}
-                                <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {/* Positions des consultants autour du centre */}
+                                {consultants.length > 0 && (
+                                    <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[0].photo ? (
+                                                <img
+                                                    src={consultants[0].photo}
+                                                    alt={consultants[0].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[0].name.substring(0, 2)}</span>
+                            </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[0].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à gauche supérieur */}
-                                <div className="absolute top-[15px] left-0">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 1 && (
+                                    <div className="absolute top-[15px] left-0">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[1].photo ? (
+                                                <img
+                                                    src={consultants[1].photo}
+                                                    alt={consultants[1].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#549E39] font-medium">{consultants[1].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[1].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à gauche inférieur */}
-                                <div className="absolute top-[80px] left-[-5px]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 2 && (
+                                    <div className="absolute top-[80px] left-[-5px]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[2].photo ? (
+                                                <img
+                                                    src={consultants[2].photo}
+                                                    alt={consultants[2].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[2].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[2].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo en bas à gauche */}
-                                <div className="absolute bottom-0 left-[15%]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 3 && (
+                                    <div className="absolute bottom-0 left-[15%]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[3].photo ? (
+                                                <img
+                                                    src={consultants[3].photo}
+                                                    alt={consultants[3].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#C0CF3A] font-medium">{consultants[3].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[3].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo en bas au centre */}
-                                <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 4 && (
+                                    <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[4].photo ? (
+                                                <img
+                                                    src={consultants[4].photo}
+                                                    alt={consultants[4].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#549E39] font-medium">{consultants[4].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[4].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo en bas à droite */}
-                                <div className="absolute bottom-0 right-[15%]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 5 && (
+                                    <div className="absolute bottom-0 right-[15%]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[5].photo ? (
+                                                <img
+                                                    src={consultants[5].photo}
+                                                    alt={consultants[5].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[5].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[5].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à droite inférieur */}
-                                <div className="absolute top-[80px] right-[-5px]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 6 && (
+                                    <div className="absolute top-[80px] right-[-5px]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[6].photo ? (
+                                                <img
+                                                    src={consultants[6].photo}
+                                                    alt={consultants[6].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#029676]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#029676] font-medium">{consultants[6].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[6].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à droite supérieur */}
-                                <div className="absolute top-[15px] right-0">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {consultants.length > 7 && (
+                                    <div className="absolute top-[15px] right-0">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {consultants[7].photo ? (
+                                                <img
+                                                    src={consultants[7].photo}
+                                                    alt={consultants[7].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#455F51]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#455F51] font-medium">{consultants[7].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {consultants[7].region}
                                         </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </div>
 
                         {/* Analystes - Avec la même structure que les consultants */}
-                        <div className="bg-amber-50 border-2 border-dashed border-amber-400 rounded-xl p-6 relative">
-                            <h3 className="text-2xl font-bold text-center uppercase mb-8">Niveau central</h3>
+                        <div className="bg-[#455F51]/10 border-2 border-dashed border-[#029676] rounded-xl p-6 relative">
+                            <h3 className="text-2xl font-bold text-center uppercase mb-8 text-[#455F51]">Niveau central</h3>
 
                             {/* Bloc central avec texte */}
-                            <div className="bg-amber-500 rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
+                            <div className="bg-[#029676] rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
                                 <p className="font-bold text-xl">4 Analystes</p>
                                 <p>spécialisés dans différents domaines d'expertise</p>
                             </div>
 
                             {/* Photos en cercle - Moins de photos pour les analystes */}
                             <div className="relative min-h-[180px]">
-                                {/* Photo en haut */}
-                                <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {analystes.length > 0 && (
+                                    <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {analystes[0].photo ? (
+                                                <img
+                                                    src={analystes[0].photo}
+                                                    alt={analystes[0].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#549E39] font-medium">{analystes[0].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {analystes[0].specialite}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à gauche */}
-                                <div className="absolute top-[50px] left-[10%]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-secondary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {analystes.length > 1 && (
+                                    <div className="absolute top-[50px] left-[10%]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {analystes[1].photo ? (
+                                                <img
+                                                    src={analystes[1].photo}
+                                                    alt={analystes[1].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#8AB833] font-medium">{analystes[1].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {analystes[1].specialite}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo en bas */}
-                                <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-tertiary/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {analystes.length > 2 && (
+                                    <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {analystes[2].photo ? (
+                                                <img
+                                                    src={analystes[2].photo}
+                                                    alt={analystes[2].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#C0CF3A] font-medium">{analystes[2].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {analystes[2].specialite}
                                         </div>
                                     </div>
-                                </div>
+                                )}
 
-                                {/* Photo à droite */}
-                                <div className="absolute top-[50px] right-[10%]">
-                                    <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
-                                        <div className="w-full h-full bg-eg-accent/10 flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-eg-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                            </svg>
+                                {analystes.length > 3 && (
+                                    <div className="absolute top-[50px] right-[10%]">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                            {analystes[3].photo ? (
+                                                <img
+                                                    src={analystes[3].photo}
+                                                    alt={analystes[3].name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#029676]/10 flex items-center justify-center">
+                                                    <span className="text-xs text-[#029676] font-medium">{analystes[3].name.substring(0, 2)}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
+                                            {analystes[3].specialite}
                                         </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>
