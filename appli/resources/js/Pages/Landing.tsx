@@ -523,190 +523,244 @@ export default function Landing() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Service 1 - Renforcement des capacités institutionnelles */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-primary w-full"></div>
-                            <div className="p-8">
-                                <div className="flex items-start gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-eg-primary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-transform duration-500 group-hover:rotate-6">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                            </svg>
+                    {/* Conteneur vertical pour tous les services avec ligne de progression */}
+                    <div className="relative space-y-8 pb-8">
+                        {/* Ligne de progression verticale */}
+                        <div className="absolute left-8 top-10 bottom-10 w-1 bg-gradient-to-b from-eg-primary via-eg-secondary to-eg-tertiary rounded-full hidden sm:block"></div>
+
+                        {/* Service 1 - Renforcement des capacités institutionnelles - Sans retrait */}
+                        <div className="group relative animate-fade-in-up opacity-0" style={{animationDelay: '250ms'}}>
+                            {/* Indicateur numéroté */}
+                            <div className="absolute -left-3 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                                <div className="w-10 h-10 rounded-full bg-white shadow-lg border-2 border-eg-primary flex items-center justify-center font-bold text-eg-primary">1</div>
+                            </div>
+                            <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg group-hover:-translate-y-2 sm:pl-12 relative z-0">
+                                <div className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-eg-primary-light/10 to-transparent transition-all duration-700 ease-out group-hover:w-full"></div>
+                                <div className="h-2 bg-eg-primary w-full"></div>
+                                <div className="p-6 md:p-7 relative">
+                                    <div className="flex items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 bg-eg-primary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-eg-primary mb-4 group-hover:text-eg-secondary transition-colors duration-300">RENFORCEMENT DES CAPACITÉS INSTITUTIONNELLES</h3>
-                                        <ul className="space-y-3 text-gray-700">
-                                            <li className="flex items-start">
-                                                <span className="text-eg-secondary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Delivery Units :</strong> Création de delivery units pour une meilleure coordination et suivi des projets</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <span className="text-eg-secondary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Formulation de politiques cohérentes et stratégies complètes</strong> pour aborder des défis complexes, basé sur des données probantes pour une meilleure planification stratégique</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <span className="text-eg-secondary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Études d'impact et évaluation :</strong> Mesure de l'efficacité des interventions et de leur impact</span>
-                                            </li>
-                                        </ul>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-bold text-eg-primary mb-3 group-hover:text-eg-secondary transition-colors duration-300">
+                                                RENFORCEMENT DES CAPACITÉS INSTITUTIONNELLES
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Delivery Units :</strong> Création de delivery units pour une meilleure coordination et suivi des projets</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Formulation de politiques et stratégies :</strong> Pour aborder des défis complexes, basé sur des données probantes</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Études d'impact et évaluation :</strong> Mesure de l'efficacité des interventions et de leur impact</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Service 2 - Optimisation des ressources disponibles */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-secondary w-full"></div>
-                            <div className="p-8">
-                                <div className="flex items-start gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-eg-secondary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-transform duration-500 group-hover:rotate-6">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                            </svg>
+                        {/* Service 2 - Optimisation des ressources disponibles - Avec retrait */}
+                        <div className="group relative animate-fade-in-up opacity-0" style={{animationDelay: '350ms'}}>
+                            {/* Indicateur numéroté */}
+                            <div className="absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                                <div className="w-10 h-10 rounded-full bg-white shadow-lg border-2 border-eg-secondary flex items-center justify-center font-bold text-eg-secondary">2</div>
+                            </div>
+                            <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg group-hover:-translate-y-2 sm:ml-24 md:ml-32 lg:ml-64 sm:pr-12 relative z-0">
+                                <div className="absolute top-0 right-0 w-0 h-full bg-gradient-to-l from-eg-secondary-light/10 to-transparent transition-all duration-700 ease-out group-hover:w-full"></div>
+                                <div className="h-2 bg-eg-secondary w-full"></div>
+                                <div className="p-6 md:p-7 relative">
+                                    <div className="flex items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 bg-eg-secondary-light rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-eg-secondary mb-4 group-hover:text-eg-primary transition-colors duration-300">OPTIMISATION DES RESSOURCES DISPONIBLES</h3>
-                                        <ul className="space-y-3 text-gray-700">
-                                            <li className="flex items-start">
-                                                <span className="text-eg-tertiary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Cartographie des Ressources :</strong> Utilisation de Systèmes d'Information Géographique (SIG) et de bases de données centralisées pour identifier les lacunes et optimiser la planification</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <span className="text-eg-tertiary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Cadre de gouvernance avec un mécanisme de Suivi et Évaluation :</strong> Définir des KPI, produire des rapports réguliers et effectuer des audits pour garantir la transparence et l'efficacité</span>
-                                            </li>
-                                        </ul>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-bold text-eg-secondary mb-3 group-hover:text-eg-primary transition-colors duration-300">
+                                                OPTIMISATION DES RESSOURCES DISPONIBLES
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Cartographie des Ressources :</strong> Utilisation de SIG et bases de données centralisées</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Cadre de gouvernance avec Suivi et Évaluation :</strong> Définir des KPI et effectuer des audits réguliers</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Service 3 - Mobilisation des ressources financières */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-tertiary w-full"></div>
-                            <div className="p-8">
-                                <div className="flex items-start gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-eg-tertiary rounded-2xl flex items-center justify-center text-white shadow-md transform transition-transform duration-500 group-hover:rotate-6">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
+                        {/* Service 3 - Mobilisation des ressources financières - Sans retrait */}
+                        <div className="group relative animate-fade-in-up opacity-0" style={{animationDelay: '450ms'}}>
+                            {/* Indicateur numéroté */}
+                            <div className="absolute -left-3 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                                <div className="w-10 h-10 rounded-full bg-white shadow-lg border-2 border-eg-tertiary flex items-center justify-center font-bold text-eg-tertiary">3</div>
+                            </div>
+                            <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg group-hover:-translate-y-2 sm:pl-12 relative z-0">
+                                <div className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-eg-tertiary-light/10 to-transparent transition-all duration-700 ease-out group-hover:w-full"></div>
+                                <div className="h-2 bg-eg-tertiary w-full"></div>
+                                <div className="p-6 md:p-7 relative">
+                                    <div className="flex items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 bg-eg-tertiary rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-eg-tertiary mb-4 group-hover:text-eg-highlight transition-colors duration-300">MOBILISATION DES RESSOURCES FINANCIÈRES</h3>
-                                        <ul className="space-y-3 text-gray-700">
-                                            <li className="flex items-start">
-                                                <span className="text-eg-accent mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Partenariats Public-Privé (PPP) :</strong> Facilitation des collaborations stratégiques et partage des risques pour financer des projets d'infrastructure</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <span className="text-eg-accent mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Financements Internationaux :</strong> Solliciter des financements auprès de la Banque mondiale, du FMI, des banques régionales de développement ou de fonds d'investissements dédiés</span>
-                                            </li>
-                                        </ul>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-bold text-eg-tertiary mb-3 group-hover:text-eg-highlight transition-colors duration-300">
+                                                MOBILISATION DES RESSOURCES FINANCIÈRES
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Partenariats Public-Privé (PPP) :</strong> Facilitation des collaborations stratégiques et partage des risques</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Financements Internationaux :</strong> Banque mondiale, FMI, banques régionales de développement</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Service 4 - Innovation digitale */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg hover:-translate-y-2 group">
-                            <div className="h-2 bg-eg-highlight w-full"></div>
-                            <div className="p-8">
-                                <div className="flex items-start gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-eg-highlight rounded-2xl flex items-center justify-center text-white shadow-md transform transition-transform duration-500 group-hover:rotate-6">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                            </svg>
+                        {/* Service 4 - Innovation digitale - Avec retrait */}
+                        <div className="group relative animate-fade-in-up opacity-0" style={{animationDelay: '550ms'}}>
+                            {/* Indicateur numéroté */}
+                            <div className="absolute -right-3 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                                <div className="w-10 h-10 rounded-full bg-white shadow-lg border-2 border-eg-highlight flex items-center justify-center font-bold text-eg-highlight">4</div>
+                            </div>
+                            <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg group-hover:-translate-y-2 sm:ml-24 md:ml-32 lg:ml-64 sm:pr-12 relative z-0">
+                                <div className="absolute top-0 right-0 w-0 h-full bg-gradient-to-l from-eg-highlight/10 to-transparent transition-all duration-700 ease-out group-hover:w-full"></div>
+                                <div className="h-2 bg-eg-highlight w-full"></div>
+                                <div className="p-6 md:p-7 relative">
+                                    <div className="flex items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 bg-eg-highlight rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-eg-highlight mb-4 group-hover:text-eg-accent transition-colors duration-300">INNOVATION DIGITALE</h3>
-                                        <ul className="space-y-3 text-gray-700">
-                                            <li className="flex items-start">
-                                                <span className="text-eg-secondary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Outils de Productivité :</strong> Développement et déploiement d'applications logicielles pour améliorer l'efficacité des processus</span>
-                                            </li>
-                                            <li className="flex items-start">
-                                                <span className="text-eg-secondary mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Automatisation et IA :</strong> Utiliser l'automatisation et l'intelligence artificielle pour optimiser les processus décisionnels et de gestion</span>
-                                            </li>
-                                        </ul>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-bold text-eg-highlight mb-3 group-hover:text-eg-accent transition-colors duration-300">
+                                                INNOVATION DIGITALE
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Outils de Productivité :</strong> Développement d'applications pour améliorer l'efficacité des processus</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Automatisation et IA :</strong> Optimisation des processus décisionnels et de gestion</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Ajout du Service 5 - centré sur la nouvelle rangée */}
-                    <div className="mt-8 flex justify-center">
-                        {/* Service 5 - Autre assistance technique */}
-                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg hover:-translate-y-2 group max-w-2xl">
-                            <div className="h-2 bg-eg-accent w-full"></div>
-                            <div className="p-8">
-                                <div className="flex items-start gap-6">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-20 h-20 bg-eg-accent rounded-2xl flex items-center justify-center text-white shadow-md transform transition-transform duration-500 group-hover:rotate-6">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
+                        {/* Service 5 - Autre assistance technique - Sans retrait */}
+                        <div className="group relative animate-fade-in-up opacity-0" style={{animationDelay: '650ms'}}>
+                            {/* Indicateur numéroté */}
+                            <div className="absolute -left-3 top-1/2 transform -translate-y-1/2 z-10 hidden sm:block">
+                                <div className="w-10 h-10 rounded-full bg-white shadow-lg border-2 border-eg-accent flex items-center justify-center font-bold text-eg-accent">5</div>
+                            </div>
+                            <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:shadow-eg-lg group-hover:-translate-y-2 sm:pl-12 relative z-0">
+                                <div className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-eg-accent/10 to-transparent transition-all duration-700 ease-out group-hover:w-full"></div>
+                                <div className="h-2 bg-eg-accent w-full"></div>
+                                <div className="p-6 md:p-7 relative">
+                                    <div className="flex items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 bg-eg-accent rounded-2xl flex items-center justify-center text-white shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-eg-accent mb-4 group-hover:text-eg-tertiary transition-colors duration-300">AUTRE ASSISTANCE TECHNIQUE</h3>
-                                        <ul className="space-y-3 text-gray-700">
-                                            <li className="flex items-start">
-                                                <span className="text-eg-highlight mr-2 mt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                    </svg>
-                                                </span>
-                                                <span><strong className="text-eg-gray-dark">Gestion des Risques, Développement de Politiques et de Régulations,</strong> Mise en place de systèmes pour améliorer la collecte, le traitement et l'utilisation des données pour une prise de décision éclairée</span>
-                                            </li>
-                                        </ul>
+                                        <div className="flex-1">
+                                            <h3 className="text-xl md:text-2xl font-bold text-eg-accent mb-3 group-hover:text-eg-tertiary transition-colors duration-300">
+                                                AUTRE ASSISTANCE TECHNIQUE
+                                            </h3>
+                                            <ul className="space-y-2 text-gray-700">
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-highlight mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Gestion des Risques et Développement de Politiques :</strong> Mise en place de systèmes d'aide à la décision</span>
+                                                </li>
+                                                <li className="flex items-start">
+                                                    <span className="text-eg-highlight mr-2 mt-1 flex-shrink-0">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </span>
+                                                    <span><strong className="text-eg-gray-dark">Collecte et analyse de données :</strong> Amélioration de la collecte et utilisation des données pour des décisions éclairées</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
