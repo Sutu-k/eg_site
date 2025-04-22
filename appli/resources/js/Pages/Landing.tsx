@@ -21,8 +21,126 @@ const modalStyles = `
 }
 `;
 
+// Définition du type pour les projets
+type ProjectType = {
+    id: number;
+    title: string;
+    subtitle: string;
+    image: string;
+    category: string;
+    description: string;
+    points: string[];
+}
+
 export default function Landing() {
     const [showAccelerateurModal, setShowAccelerateurModal] = useState(false);
+    // État pour le modal des projets
+    const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+
+    // Liste des projets pour les réalisations
+    const projects: ProjectType[] = [
+        {
+            id: 1,
+            title: "GAVI / Ministère de la Santé",
+            subtitle: "Renforcement des capacités institutionnelles",
+            image: "/img/realisations/gavi-mshp.jpg",
+            category: "Renforcement des capacités",
+            description: "Renforcement des capacités institutionnelles : PEV + Service Genre et Équité",
+            points: [
+                "Renforcement des capacités en gestion, planification stratégique, coordination et suivi-évaluation",
+                "Élaboration de documents stratégiques : Stratégie Nationale de Vaccination et Plan Stratégique Genre et Équité du MSHP",
+                "Appui à la mobilisation de subventions pour environ 50 millions USD (CDS3, FAE, FPP, TCA 2023–2025)"
+            ]
+        },
+        {
+            id: 2,
+            title: "UNICEF / Ministère de la Santé",
+            subtitle: "Digitalisation d'outils de gestion du PEV",
+            image: "/img/realisations/unicef-mshp.jpg",
+            category: "Digitalisation",
+            description: "Digitalisation d'outils de gestion du PEV Guinée",
+            points: [
+                "Création d'un outil pour suivre et optimiser la chaîne du froid",
+                "Formation des équipes pour une meilleure utilisation et maintenance",
+                "Réduction des pertes et meilleure disponibilité des vaccins"
+            ]
+        },
+        {
+            id: 3,
+            title: "UE / Expertise France",
+            subtitle: "Déploiement d'outils de gestion digitaux",
+            image: "/img/realisations/ue-expertise-france.jpg",
+            category: "Outils digitaux",
+            description: "Déploiement d'outils de gestion digitaux",
+            points: [
+                "Cartographie des initiatives nutritionnelles en Guinée",
+                "Formation des parties prenantes à l'usage de la cartographie",
+                "Renforcement de la planification et coordination"
+            ]
+        },
+        {
+            id: 4,
+            title: "Institut Français de Guinée",
+            subtitle: "Intégration de l'IA dans les processus de gestion",
+            image: "/img/realisations/institut-francais.jpg",
+            category: "Intelligence Artificielle",
+            description: "Intégration de l'IA dans les processus de gestion",
+            points: [
+                "Agents IA pour améliorer gestion, communication et suivi des OSC",
+                "Formations pour professionnaliser les OSC guinéennes",
+                "Meilleure efficacité organisationnelle et impact local"
+            ]
+        },
+        {
+            id: 5,
+            title: "Banque Mondiale (PDAIG)",
+            subtitle: "Restructuration d'une entreprise de transformation agricole",
+            image: "/img/realisations/banque-mondiale-pdaig.jpg",
+            category: "Restructuration",
+            description: "Restructuration d'une entreprise de transformation agricole – Sydam",
+            points: [
+                "Diagnostic organisationnel : identifier les axes d'amélioration",
+                "Plan de redressement : optimisation des coûts et rentabilité",
+                "Formation des dirigeants pour une gestion durable"
+            ]
+        },
+        {
+            id: 6,
+            title: "Harpie Group",
+            subtitle: "Restructuration d'une entreprise de transformation d'huile de palme",
+            image: "/img/realisations/harpie-group.jpg",
+            category: "Transformation agricole",
+            description: "Restructuration d'une entreprise de transformation d'huile de palme en Guinée",
+            points: [
+                "Diagnostic approfondi des enjeux de l'unité de transformation",
+                "Élaboration de dossiers de financement",
+                "Business plan et projections stratégiques"
+            ]
+        },
+        {
+            id: 7,
+            title: "Institutions financières internationales",
+            subtitle: "Mise en place de processus de gestion digitaux pour banques européennes",
+            image: "/img/realisations/institutions-financieres.jpg",
+            category: "Finance internationale",
+            description: "Mise en place de processus de gestion digitaux pour banques européennes",
+            points: [
+                "+10 projets complexes menés selon les normes internationales",
+                "Gestion de plusieurs milliards d'actifs pour : BNP Paribas, JP Morgan, AFD, Aviva...",
+                "Structuration de dossiers et outils de stress-test pour la résilience financière"
+            ]
+        }
+    ];
+
+    // Fonction pour ouvrir le modal de projet
+    const openProjectModal = (project: ProjectType) => {
+        setSelectedProject(project);
+    };
+
+    // Fonction pour fermer le modal de projet
+    const closeProjectModal = () => {
+        setSelectedProject(null);
+    };
 
     return (
         <EGLayout title="EG Conseil - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest">
@@ -839,6 +957,14 @@ export default function Landing() {
                     <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full border-4 border-white"></div>
                 </div>
 
+                {/* Pattern décoratif */}
+                <div className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+                        backgroundSize: '60px'
+                    }}
+                ></div>
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
                         <span className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold">IMPACT</span>
@@ -848,330 +974,160 @@ export default function Landing() {
                         </p>
                     </div>
 
-                    <div className="space-y-12">
-                        {/* Projet 1 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="100">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/gavi-mshp.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Renforcement des capacités
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Gavi – Ministère de la Santé et de l'Hygiène Publique
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Renforcement des capacités institutionnelles : PEV + Service Genre et Équité
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Renforcement des capacités en gestion, planification stratégique, coordination et suivi-évaluation</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Élaboration de documents stratégiques : Stratégie Nationale de Vaccination et Plan Stratégique Genre et Équité du MSHP</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Appui à la mobilisation de subventions pour environ 50 millions USD (CDS3, FAE, FPP, TCA 2023–2025)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 2 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="200">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/unicef-mshp.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Digitalisation
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    UNICEF – Ministère de la Santé et de l'Hygiène Publique
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Digitalisation d'outils de gestion du PEV Guinée
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Création d'un outil pour suivre et optimiser la chaîne du froid</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Formation des équipes pour une meilleure utilisation et maintenance</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Réduction des pertes et meilleure disponibilité des vaccins</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 3 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="300">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/ue-expertise-france.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Outils digitaux
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Union Européenne / Expertise France – MSHP
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Déploiement d'outils de gestion digitaux
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Cartographie des initiatives nutritionnelles en Guinée</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Formation des parties prenantes à l'usage de la cartographie</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Renforcement de la planification et coordination</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 4 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="400">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/institut-francais.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Intelligence Artificielle
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Institut Français de Guinée – Coopération Française
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Intégration de l'IA dans les processus de gestion
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Agents IA pour améliorer gestion, communication et suivi des OSC</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Formations pour professionnaliser les OSC guinéennes</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Meilleure efficacité organisationnelle et impact local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 5 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="500">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/banque-mondiale-pdaig.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Restructuration
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Banque Mondiale (PDAIG)
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Restructuration d'une entreprise de transformation agricole – Sydam
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Diagnostic organisationnel : identifier les axes d'amélioration</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Plan de redressement : optimisation des coûts et rentabilité</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Formation des dirigeants pour une gestion durable</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 6 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="600">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/harpie-group.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Transformation agricole
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Harpie Group
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Restructuration d'une entreprise de transformation d'huile de palme en Guinée
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Diagnostic approfondi des enjeux de l'unité de transformation</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Élaboration de dossiers de financement</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Business plan et projections stratégiques</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Projet 7 */}
-                        <div className="group relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
-                             data-aos="fade-up" data-aos-delay="700">
-                            <div className="absolute inset-0 bg-cover bg-center"
-                                 style={{backgroundImage: "url('/img/realisations/institutions-financieres.jpg')"}}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-90"></div>
-
-                            <div className="relative p-8 lg:p-12 h-full flex flex-col justify-end">
-                                <div className="mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                                        Finance internationale
-                                    </span>
-                                </div>
-                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-eg-lime transition-colors duration-300">
-                                    Institutions financières internationales
-                                </h3>
-                                <p className="text-white/80 mb-6 max-w-3xl transform translate-y-0 group-hover:translate-y-0 transition-all duration-300 opacity-80 group-hover:opacity-100">
-                                    Mise en place de processus de gestion digitaux pour banques européennes
-                                </p>
-
-                                <div className="space-y-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">+10 projets complexes menés selon les normes internationales</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Gestion de plusieurs milliards d'actifs pour : BNP Paribas, JP Morgan, AFD, Aviva...</span>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <svg className="h-6 w-6 text-eg-lime flex-shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-white">Structuration de dossiers et outils de stress-test pour la résilience financière</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    {/* Filtre de catégories (option future) */}
+                    <div className="flex justify-center mb-10 flex-wrap gap-2">
+                        <button className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium transition-colors duration-300 backdrop-blur-sm border border-white/10 active">
+                            Tous
+                        </button>
+                        <button className="px-4 py-2 bg-white/5 hover:bg-white/20 text-white/80 hover:text-white rounded-full text-sm font-medium transition-colors duration-300 backdrop-blur-sm border border-white/10">
+                            Santé
+                        </button>
+                        <button className="px-4 py-2 bg-white/5 hover:bg-white/20 text-white/80 hover:text-white rounded-full text-sm font-medium transition-colors duration-300 backdrop-blur-sm border border-white/10">
+                            Digital
+                        </button>
+                        <button className="px-4 py-2 bg-white/5 hover:bg-white/20 text-white/80 hover:text-white rounded-full text-sm font-medium transition-colors duration-300 backdrop-blur-sm border border-white/10">
+                            Finance
+                        </button>
+                        <button className="px-4 py-2 bg-white/5 hover:bg-white/20 text-white/80 hover:text-white rounded-full text-sm font-medium transition-colors duration-300 backdrop-blur-sm border border-white/10">
+                            Transformation
+                        </button>
                     </div>
 
-                    {/* Élément décoratif et appel à l'action */}
-                    <div className="mt-16 text-center">
-                        <div className="relative inline-block">
-                            <a href="#contact"
-                               onClick={(e) => {
-                                   e.preventDefault();
-                                   document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
-                               }}
-                               className="inline-flex items-center px-8 py-4 bg-white text-eg-primary hover:bg-eg-lime hover:text-white font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg group"
+                    {/* Grille des réalisations */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                        {/* Génération dynamique des projets */}
+                        {projects.map((project, index) => (
+                            <div
+                                key={project.id}
+                                className={`group relative h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] cursor-pointer ${
+                                    project.id === 7 ? "md:col-span-2 lg:col-span-1" : ""
+                                }`}
+                                onClick={() => openProjectModal(project)}
                             >
-                                <span>Discuter de votre projet</span>
-                                <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                </svg>
-                            </a>
-                            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-                                <div className="w-16 h-1 bg-eg-lime rounded-full opacity-50"></div>
+                                {/* Image de fond */}
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style={{backgroundImage: `url('${project.image}')`}}
+                                ></div>
+
+                                {/* Overlay avec dégradé subtil */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 opacity-90 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+                                {/* Tag de catégorie */}
+                                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                                        {project.category}
+                                    </span>
+                                </div>
+
+                                {/* Contenu */}
+                                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                    <h3 className="text-xl font-bold text-white mb-2 transform group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
+                                    <p className="text-white/80 text-sm mb-6 line-clamp-2 transform group-hover:translate-y-0 transition-transform duration-300">{project.subtitle}</p>
+
+                                    {/* Bouton "Voir plus" qui apparaît au survol */}
+                                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                        <button className="text-white text-sm font-medium flex items-center">
+                                            Voir détails
+                                            <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Bouton d'info */}
+                                <button
+                                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-colors duration-300"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        openProjectModal(project);
+                                    }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                                    </svg>
+                                </button>
                             </div>
-                        </div>
+                        ))}
+                    </div>
+
+                    {/* Bouton d'action */}
+                    <div className="mt-12 text-center">
+                        <a href="#contact"
+                           onClick={(e) => {
+                               e.preventDefault();
+                               document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+                           }}
+                           className="inline-flex items-center px-8 py-4 bg-white text-eg-primary hover:bg-eg-lime hover:text-white font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg group"
+                        >
+                            <span>Discuter de votre projet</span>
+                            <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
+
+                {/* Modal pour les détails du projet */}
+                {selectedProject && (
+                    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={closeProjectModal}>
+                        <div
+                            className="bg-white rounded-xl overflow-hidden shadow-2xl max-w-3xl w-full animate-fade-in-down max-h-[90vh] flex flex-col"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Image d'en-tête */}
+                            <div className="relative h-56 bg-cover bg-center" style={{backgroundImage: `url('${selectedProject.image}')`}}>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 p-6">
+                                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full mb-2">
+                                        {selectedProject.category}
+                                    </span>
+                                    <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
+                                </div>
+                                <button
+                                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 flex items-center justify-center text-white hover:bg-black/50 transition-colors duration-300"
+                                    onClick={closeProjectModal}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            {/* Contenu */}
+                            <div className="p-6 overflow-y-auto">
+                                <p className="text-gray-700 mb-6 text-lg">{selectedProject.description}</p>
+
+                                <h4 className="text-lg font-semibold text-eg-primary mb-4">Points clés du projet</h4>
+                                <ul className="space-y-3">
+                                    {selectedProject.points.map((point, idx) => (
+                                        <li key={idx} className="flex items-start">
+                                            <svg className="h-6 w-6 text-eg-secondary flex-shrink-0 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Pied de page du modal */}
+                            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                                <div className="flex justify-end">
+                                    <button
+                                        className="px-6 py-2 bg-eg-primary text-white rounded-lg hover:bg-eg-primary-dark transition-colors duration-300 flex items-center"
+                                        onClick={closeProjectModal}
+                                    >
+                                        Fermer
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Section IA/Approche innovante */}
@@ -1596,6 +1552,33 @@ export default function Landing() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal des projets */}
+            {selectedProject && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" onClick={closeProjectModal}>
+                    <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in-down" onClick={e => e.stopPropagation()}>
+                        <button
+                            onClick={closeProjectModal}
+                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div className="p-8">
+                            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
+                            <p className="text-gray-600 mb-6">{selectedProject.subtitle}</p>
+                            <p className="text-gray-700 mb-8">{selectedProject.description}</p>
+                            <ul className="list-disc pl-6 mb-6">
+                                {selectedProject.points.map((point, index) => (
+                                    <li key={index}>{point}</li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
