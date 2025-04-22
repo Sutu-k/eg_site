@@ -1332,7 +1332,7 @@ export default function Landing() {
                                 {/* Positions des consultants autour du centre */}
                                 {consultants.length > 0 && (
                                     <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[0].photo ? (
                                                 <img
                                                     src={consultants[0].photo}
@@ -1344,6 +1344,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#8AB833] font-medium">{consultants[0].name.substring(0, 2)}</span>
                             </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[0].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[0].region}
@@ -1353,7 +1357,7 @@ export default function Landing() {
 
                                 {consultants.length > 1 && (
                                     <div className="absolute top-[15px] left-0">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[1].photo ? (
                                                 <img
                                                     src={consultants[1].photo}
@@ -1365,6 +1369,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#549E39] font-medium">{consultants[1].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[1].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[1].region}
@@ -1374,7 +1382,7 @@ export default function Landing() {
 
                                 {consultants.length > 2 && (
                                     <div className="absolute top-[80px] left-[-5px]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[2].photo ? (
                                                 <img
                                                     src={consultants[2].photo}
@@ -1386,6 +1394,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#8AB833] font-medium">{consultants[2].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[2].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[2].region}
@@ -1395,7 +1407,7 @@ export default function Landing() {
 
                                 {consultants.length > 3 && (
                                     <div className="absolute bottom-0 left-[15%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[3].photo ? (
                                                 <img
                                                     src={consultants[3].photo}
@@ -1407,6 +1419,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#C0CF3A] font-medium">{consultants[3].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[3].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[3].region}
@@ -1416,7 +1432,7 @@ export default function Landing() {
 
                                 {consultants.length > 4 && (
                                     <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[4].photo ? (
                                                 <img
                                                     src={consultants[4].photo}
@@ -1428,6 +1444,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#549E39] font-medium">{consultants[4].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[4].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[4].region}
@@ -1437,7 +1457,7 @@ export default function Landing() {
 
                                 {consultants.length > 5 && (
                                     <div className="absolute bottom-0 right-[15%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[5].photo ? (
                                                 <img
                                                     src={consultants[5].photo}
@@ -1449,6 +1469,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#8AB833] font-medium">{consultants[5].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[5].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[5].region}
@@ -1458,7 +1482,7 @@ export default function Landing() {
 
                                 {consultants.length > 6 && (
                                     <div className="absolute top-[80px] right-[-5px]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[6].photo ? (
                                                 <img
                                                     src={consultants[6].photo}
@@ -1470,6 +1494,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#029676] font-medium">{consultants[6].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[6].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[6].region}
@@ -1479,7 +1507,7 @@ export default function Landing() {
 
                                 {consultants.length > 7 && (
                                     <div className="absolute top-[15px] right-0">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {consultants[7].photo ? (
                                                 <img
                                                     src={consultants[7].photo}
@@ -1491,6 +1519,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#455F51] font-medium">{consultants[7].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{consultants[7].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {consultants[7].region}
@@ -1514,7 +1546,7 @@ export default function Landing() {
                             <div className="relative min-h-[180px]">
                                 {analystes.length > 0 && (
                                     <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {analystes[0].photo ? (
                                                 <img
                                                     src={analystes[0].photo}
@@ -1526,6 +1558,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#549E39] font-medium">{analystes[0].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{analystes[0].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {analystes[0].specialite}
@@ -1535,7 +1571,7 @@ export default function Landing() {
 
                                 {analystes.length > 1 && (
                                     <div className="absolute top-[50px] left-[10%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {analystes[1].photo ? (
                                                 <img
                                                     src={analystes[1].photo}
@@ -1547,6 +1583,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#8AB833] font-medium">{analystes[1].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{analystes[1].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {analystes[1].specialite}
@@ -1556,7 +1596,7 @@ export default function Landing() {
 
                                 {analystes.length > 2 && (
                                     <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {analystes[2].photo ? (
                                                 <img
                                                     src={analystes[2].photo}
@@ -1568,6 +1608,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#C0CF3A] font-medium">{analystes[2].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{analystes[2].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {analystes[2].specialite}
@@ -1577,7 +1621,7 @@ export default function Landing() {
 
                                 {analystes.length > 3 && (
                                     <div className="absolute top-[50px] right-[10%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white">
+                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
                                             {analystes[3].photo ? (
                                                 <img
                                                     src={analystes[3].photo}
@@ -1589,6 +1633,10 @@ export default function Landing() {
                                                     <span className="text-xs text-[#029676] font-medium">{analystes[3].name.substring(0, 2)}</span>
                                                 </div>
                                             )}
+                                            {/* Tooltip qui apparaît au survol */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                                                <span className="text-white text-xs font-medium">{analystes[3].name}</span>
+                                            </div>
                                         </div>
                                         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
                                             {analystes[3].specialite}
