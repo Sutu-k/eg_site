@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Head } from '@inertiajs/react';
 import EGLayout from '@/Layouts/EGLayout';
+import './../../css/app.css';
+
+// Ajout des styles pour les animations de la modal
+const modalStyles = `
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+`;
 
 export default function Landing() {
+    const [showAccelerateurModal, setShowAccelerateurModal] = useState(false);
+
     return (
         <EGLayout title="EG Conseil - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest">
             <Head>
@@ -767,19 +788,45 @@ export default function Landing() {
                         </div>
                     </div>
 
-                    {/* Section CTA */}
-                    <div className="mt-16 text-center animate-fade-in-up opacity-0" style={{animationDelay: '300ms'}}>
-                        <a href="#contact"
-                           onClick={(e) => {
-                               e.preventDefault();
-                               document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
-                           }}
-                           className="inline-flex items-center px-8 py-4 bg-eg-primary text-white font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg hover:bg-eg-secondary">
-                            Discuter de vos besoins
-                            <svg className="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    {/* Bouton "En savoir plus" - À SUPPRIMER */}
+                    {/* <div className="text-center mt-12 mb-16 animate-fade-in-up opacity-0" style={{animationDelay: '750ms'}}>
+                        <button
+                            onClick={() => setShowAccelerateurModal(true)}
+                            className="bg-eg-primary hover:bg-eg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-eg hover:shadow-eg-lg transform hover:-translate-y-1 flex items-center mx-auto"
+                        >
+                            <span>Pour aller plus loin</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
-                        </a>
+                        </button>
+                    </div> */}
+
+                    {/* Section CTA */}
+                    <div className="mt-16 text-center animate-fade-in-up opacity-0" style={{animationDelay: '300ms'}}>
+                        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                            <a href="#contact"
+                               onClick={(e) => {
+                                   e.preventDefault();
+                                   document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+                               }}
+                               className="inline-flex items-center px-8 py-4 bg-eg-primary text-white font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg hover:bg-eg-secondary"
+                            >
+                                Discuter de vos besoins
+                                <svg className="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </a>
+
+                            <button
+                                onClick={() => setShowAccelerateurModal(true)}
+                                className="inline-flex items-center px-8 py-4 bg-white text-eg-primary border-2 border-eg-primary font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg hover:bg-eg-primary hover:text-white"
+                            >
+                                Pour aller plus loin
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1043,6 +1090,242 @@ export default function Landing() {
                     </div>
                 </div>
             </section>
+
+            {/* Modal Accélérateurs */}
+            {showAccelerateurModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" onClick={() => setShowAccelerateurModal(false)}>
+                    <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in-down" onClick={e => e.stopPropagation()}>
+                        <button
+                            onClick={() => setShowAccelerateurModal(false)}
+                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div className="p-8">
+                            {/* Nos Accélérateurs */}
+                            <div className="mb-12">
+                                <div className="border-l-4 border-eg-primary pl-4 mb-6">
+                                    <h2 className="text-3xl font-bold text-eg-dark">Nos Accélérateurs</h2>
+                                    <p className="text-eg-gray-dark italic">Des éléments clés qui renforcent notre impact</p>
+                                </div>
+
+                                <div className="space-y-8">
+                                    {/* Expertise internationale */}
+                                    <div className="bg-white rounded-lg p-6 shadow-eg">
+                                        <h3 className="text-xl font-bold text-eg-primary mb-3 flex items-center">
+                                            <span className="bg-eg-primary-light text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                            EXPERTISE INTERNATIONALE ADAPTÉE AU CONTEXTE LOCAL
+                                        </h3>
+                                        <div className="pl-11 text-eg-gray-dark">
+                                            <p className="mb-2">Nous intégrons l'excellence de l'expertise internationale en l'adaptant aux réalités et aux besoins spécifiques de l'Afrique de l'Ouest.</p>
+                                            <p>Notre approche est d'appliquer les meilleures pratiques globales tout en respectant les nuances et les particularités culturelles, économiques et sociales locales.</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Partenariat stratégique */}
+                                    <div className="bg-white rounded-lg p-6 shadow-eg">
+                                        <h3 className="text-xl font-bold text-eg-secondary mb-3 flex items-center">
+                                            <span className="bg-eg-secondary-light text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                                </svg>
+                                            </span>
+                                            PARTENARIAT STRATÉGIQUE
+                                        </h3>
+                                        <div className="pl-11 text-eg-gray-dark">
+                                            <p className="mb-2">Collaboration avec des expertises sectorielles pointues pour notre proposition de valeur et encore mieux servir nos clients.</p>
+                                            <p>Actuellement nous avons des partenariats stratégiques dans les secteurs suivants : Technologie, Mines et industrie agroalimentaire</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Nouvelles technologies */}
+                                    <div className="bg-white rounded-lg p-6 shadow-eg">
+                                        <h3 className="text-xl font-bold text-eg-tertiary mb-3 flex items-center">
+                                            <span className="bg-eg-tertiary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                                                </svg>
+                                            </span>
+                                            UTILISATION DES NOUVELLES TECHNOLOGIES POUR DÉCUPLER NOTRE PRODUCTIVITÉ
+                                        </h3>
+                                        <div className="pl-11 text-eg-gray-dark">
+                                            <p className="mb-4">Notre utilisation de manière responsable de l'intelligence artificielle générative permet de :</p>
+                                            <ul className="list-disc pl-5 space-y-2 mb-4">
+                                                <li>Accélérer le processus d'apprentissage, d'analyse et de création</li>
+                                                <li>Gagner en productivité et en justesse</li>
+                                                <li>Améliorer la communication</li>
+                                            </ul>
+                                            <p>L'utilisation responsable de l'IA implique de tenir compte des risques liés à la sécurité des données clients, aux biais et approximations des outils, à la propriété intellectuelle.</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Réseau d'experts */}
+                                    <div className="bg-white rounded-lg p-6 shadow-eg">
+                                        <h3 className="text-xl font-bold text-eg-highlight mb-3 flex items-center">
+                                            <span className="bg-eg-highlight text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                                                </svg>
+                                            </span>
+                                            UN RÉSEAU D'EXPERTS SUR DES PROBLÉMATIQUES POINTUES
+                                        </h3>
+                                        <div className="pl-11 text-eg-gray-dark">
+                                            <p className="mb-2">Nous avons formé un réseau d'experts hautement qualifiés, chacun spécialisé dans des domaines précis et essentiels à la compréhension et à la résolution des problématiques complexes de nos clients.</p>
+                                            <p>Ce pool d'experts est mobilisable rapidement pour fournir des analyses approfondies, des recommandations stratégiques et des solutions innovantes sur mesure.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Accompagnement IA en 4 phases */}
+                            <div>
+                                <div className="border-l-4 border-eg-accent pl-4 mb-6">
+                                    <h2 className="text-3xl font-bold text-eg-dark">Accompagnement IA en 4 phases</h2>
+                                    <p className="text-eg-gray-dark italic">Une approche structurée pour l'intégration de l'IA</p>
+                                </div>
+
+                                <div className="relative">
+                                    {/* Ligne de progression verticale */}
+                                    <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-eg-primary via-eg-tertiary to-eg-accent"></div>
+
+                                    <div className="space-y-8 relative">
+                                        {/* Phase 1 */}
+                                        <div className="flex pl-12 relative">
+                                            <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-eg-primary flex items-center justify-center text-white font-bold">1</div>
+                                            <div className="flex-1">
+                                                <h3 className="text-xl font-bold text-eg-primary mb-2">Analyse des besoins</h3>
+                                                <div className="bg-white rounded-lg p-5 shadow-eg">
+                                                    <p className="font-semibold mb-2">L'analyse des besoins (processus et environnement)</p>
+                                                    <ul className="space-y-2 text-eg-gray-dark">
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-primary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Évaluation des processus actuels pour identifier les domaines où le LLM pourrait avoir l'impact le plus significatif</span>
+                                                        </li>
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-primary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Définition des objectifs clairs pour l'intégration de l'IA générative (productivité, qualité, prise de décision…)</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Phase 2 */}
+                                        <div className="flex pl-12 relative">
+                                            <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-eg-secondary flex items-center justify-center text-white font-bold">2</div>
+                                            <div className="flex-1">
+                                                <h3 className="text-xl font-bold text-eg-secondary mb-2">Personnalisation</h3>
+                                                <div className="bg-white rounded-lg p-5 shadow-eg">
+                                                    <p className="font-semibold mb-2">Développement et/ou personnalisation de solutions LLM</p>
+                                                    <ul className="space-y-2 text-eg-gray-dark">
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Création de modèles d'IA sur mesure</span>
+                                                        </li>
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Intégration fluide avec les systèmes existants</span>
+                                                        </li>
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-secondary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Garantie de la protection des données</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Phase 3 */}
+                                        <div className="flex pl-12 relative">
+                                            <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-eg-tertiary flex items-center justify-center text-white font-bold">3</div>
+                                            <div className="flex-1">
+                                                <h3 className="text-xl font-bold text-eg-tertiary mb-2">Déploiement et formation</h3>
+                                                <div className="bg-white rounded-lg p-5 shadow-eg">
+                                                    <p className="font-semibold mb-2">Formation et renforcement des capacités</p>
+                                                    <ul className="space-y-2 text-eg-gray-dark">
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Programmes de formation : organiser des sessions de formation pour les utilisateurs clés, en mettant l'accent sur l'utilisation efficace et éthique</span>
+                                                        </li>
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-tertiary mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Soutien technique régulier pour résoudre les problèmes et optimiser l'utilisation des solutions</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Phase 4 */}
+                                        <div className="flex pl-12 relative">
+                                            <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-eg-accent flex items-center justify-center text-white font-bold">4</div>
+                                            <div className="flex-1">
+                                                <h3 className="text-xl font-bold text-eg-accent mb-2">Support et adoption</h3>
+                                                <div className="bg-white rounded-lg p-5 shadow-eg">
+                                                    <p className="font-semibold mb-2">Promotion pour l'adoption et sensibilisation</p>
+                                                    <ul className="space-y-2 text-eg-gray-dark">
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Élaborer et mettre en œuvre une stratégie de communication pour informer et sensibiliser toutes les parties prenantes aux avantages de l'utilisation des outils LLM</span>
+                                                        </li>
+                                                        <li className="flex items-start">
+                                                            <span className="text-eg-accent mr-2 mt-1 flex-shrink-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                            <span>Encourager la collaboration entre les parties prenantes pour soutenir l'intégration et la mise à l'échelle de l'IA générative</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </EGLayout>
     );
 }
