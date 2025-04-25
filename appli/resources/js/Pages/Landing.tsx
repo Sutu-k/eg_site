@@ -1698,8 +1698,8 @@ export default function Landing() {
                                         <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
                                         XX XX XX XX
                                     </p>
+                                    </div>
                                 </div>
-                            </div>
 
                             {/* Carte Nous écrire */}
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
@@ -1719,8 +1719,8 @@ export default function Landing() {
                                     <p className="text-white/80">
                                         info@eg-conseil.com
                                     </p>
+                                    </div>
                                 </div>
-                            </div>
 
                             {/* Carte Nous rencontrer */}
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
@@ -1732,7 +1732,7 @@ export default function Landing() {
                                         </svg>
                                     </div>
                                     <h3 className="text-xl font-semibold ml-4">Nous rencontrer</h3>
-                                </div>
+                                    </div>
 
                                 <div className="space-y-3">
                                     <p className="text-white/80">
@@ -1755,7 +1755,7 @@ export default function Landing() {
                                         </svg>
                                     </div>
                                     <h3 className="text-xl font-semibold ml-4">Pays d'intervention</h3>
-                                </div>
+                        </div>
 
                                 <div className="flex flex-wrap gap-2 mt-3">
                                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Guinée</span>
@@ -1789,13 +1789,13 @@ export default function Landing() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="relative">
                                             <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-1">Nom</label>
-                                            <input
-                                                type="text"
+                                    <input
+                                        type="text"
                                                 id="nom"
                                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
-                                                placeholder="Votre nom"
-                                            />
-                                        </div>
+                                        placeholder="Votre nom"
+                                    />
+                                </div>
 
                                         <div>
                                             <label htmlFor="prenom" className="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
@@ -1810,13 +1810,13 @@ export default function Landing() {
 
                                     <div>
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                        <input
-                                            type="email"
-                                            id="email"
+                                    <input
+                                        type="email"
+                                        id="email"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
-                                            placeholder="votre@email.com"
-                                        />
-                                    </div>
+                                        placeholder="votre@email.com"
+                                    />
+                                </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
@@ -1835,7 +1835,7 @@ export default function Landing() {
                                             <label htmlFor="sujet" className="block text-sm font-medium text-gray-700 mb-1">
                                                 Sujet
                                             </label>
-                                            <select
+                                    <select
                                                 id="sujet"
                                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                             >
@@ -1843,20 +1843,20 @@ export default function Landing() {
                                                 <option value="collaboration">Proposition de collaboration</option>
                                                 <option value="service">Demande de service</option>
                                                 <option value="recrutement">Recrutement</option>
-                                                <option value="autre">Autre</option>
-                                            </select>
+                                        <option value="autre">Autre</option>
+                                    </select>
                                         </div>
-                                    </div>
+                                </div>
 
                                     <div>
                                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                        <textarea
-                                            id="message"
+                                    <textarea
+                                        id="message"
                                             rows={6}
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                             placeholder="Décrivez votre demande, projet ou question..."
-                                        ></textarea>
-                                    </div>
+                                    ></textarea>
+                                </div>
 
                                     <div className="flex items-center">
                                         <input
@@ -1870,17 +1870,17 @@ export default function Landing() {
                                     </div>
 
                                     <div>
-                                        <button
-                                            type="submit"
+                                <button
+                                    type="submit"
                                             className="w-full bg-[#549E39] hover:bg-[#455F51] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center"
-                                        >
+                                >
                                             <span>Envoyer ma demande</span>
                                             <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
-                                        </button>
+                                </button>
                                     </div>
-                                </form>
+                            </form>
 
                                 {/* Réseaux sociaux */}
                                 <div className="mt-8 pt-6 border-t border-gray-200">
@@ -2146,16 +2146,23 @@ export default function Landing() {
             )}
 
             {/* Section Partenaires - Ils nous font déjà confiance */}
-            <section className="py-16 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-16 bg-gradient-to-br from-white to-eg-gray-light relative overflow-hidden">
+                {/* Éléments décoratifs */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-40 -right-40 w-96 h-96 bg-eg-primary opacity-5 rounded-full"></div>
+                    <div className="absolute top-1/3 -left-32 w-64 h-64 bg-eg-secondary opacity-5 rounded-full"></div>
+                    <div className="absolute -bottom-20 right-1/3 w-80 h-80 bg-eg-accent opacity-5 rounded-full"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     {/* En-tête de section */}
                     <div className="text-center mb-12">
                         <div className="inline-block">
-                            <span className="bg-[#455F51] text-white px-5 py-2 rounded-md text-sm font-semibold">PARTENAIRES</span>
+                            <span className="bg-eg-primary text-white px-5 py-2 rounded-md text-sm font-semibold shadow-eg">PARTENAIRES</span>
                         </div>
                         <h2 className="text-4xl font-bold text-eg-dark mt-6 mb-4 relative inline-block">
                             Ils nous font déjà confiance
-                            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#C0CF3A] rounded-full"></span>
+                            <span className="absolute -bottom-2 left-0 w-full h-1 bg-eg-tertiary rounded-full"></span>
                         </h2>
                         <p className="max-w-3xl mx-auto text-eg-gray-dark text-lg">
                             Des institutions et organisations de premier plan nous ont accordé leur confiance pour mener à bien leurs projets à travers l'Afrique.
