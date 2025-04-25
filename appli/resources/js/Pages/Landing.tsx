@@ -576,6 +576,164 @@ export default function Landing() {
                 </div>
             </section>
 
+            {/* Ce qui nous caractérise - Section des 4 piliers */}
+            <div className="mt-20 relative">
+                {/* Élément décoratif */}
+                <div className="absolute top-10 right-10 w-64 h-64 bg-eg-primary/5 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute bottom-10 left-10 w-48 h-48 bg-eg-secondary/5 rounded-full blur-3xl -z-10"></div>
+
+                <div className="text-center mb-12">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-6">Ce qui nous <span className="text-eg-primary">caractérise</span></h3>
+                    <div className="max-w-3xl mx-auto">
+                        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                            EG Conseil est défini non seulement par l'expertise et la qualité de ses services, mais aussi par un ensemble de valeurs fondamentales et un engagement ferme envers des principes qui guident chaque décision et action que nous entreprenons.
+                        </p>
+                        <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                            Notre but est de générer un impact positif et durable, en mettant en place des solutions qui favorisent la résilience et la prospérité des communautés sur le long terme.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Piliers avec animation et design moderne */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Pilier 1 - Transparence */}
+                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                        {/* Barre de couleur au top */}
+                        <div className="h-2 bg-[#C0CF3A] w-full"></div>
+
+                        <div className="p-6">
+                            {/* Icône avec cercle */}
+                            <div className="w-16 h-16 rounded-full bg-[#C0CF3A]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </div>
+
+                            {/* Titre */}
+                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Transparence</h4>
+
+                            {/* Ligne séparatrice */}
+                            <div className="w-12 h-1 bg-[#C0CF3A] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
+
+                            {/* Description */}
+                            <p className="text-gray-700 text-center">
+                                Nous opérons avec une honnêteté et une ouverture qui renforcent la confiance de nos partenaires et clients.
+                            </p>
+                        </div>
+
+                        {/* Effet de surbrillance au hover */}
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#C0CF3A]/30 rounded-xl transition-all duration-300"></div>
+                    </div>
+
+                    {/* Pilier 2 - Innovation */}
+                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                        {/* Barre de couleur au top */}
+                        <div className="h-2 bg-[#549E39] w-full"></div>
+
+                        <div className="p-6">
+                            {/* Icône avec cercle */}
+                            <div className="w-16 h-16 rounded-full bg-[#549E39]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#549E39]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+
+                            {/* Titre */}
+                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Innovation</h4>
+
+                            {/* Ligne séparatrice */}
+                            <div className="w-12 h-1 bg-[#549E39] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
+
+                            {/* Description */}
+                            <p className="text-gray-700 text-center">
+                                Nous valorisons et cultivons la pensée innovante pour rester à l'avant-garde des solutions stratégiques.
+                            </p>
+                        </div>
+
+                        {/* Effet de surbrillance au hover */}
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#549E39]/30 rounded-xl transition-all duration-300"></div>
+                    </div>
+
+                    {/* Pilier 3 - Durabilité */}
+                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                        {/* Barre de couleur au top */}
+                        <div className="h-2 bg-[#455F51] w-full"></div>
+
+                        <div className="p-6">
+                            {/* Icône avec cercle */}
+                            <div className="w-16 h-16 rounded-full bg-[#455F51]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#455F51]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+
+                            {/* Titre */}
+                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Durabilité</h4>
+
+                            {/* Ligne séparatrice */}
+                            <div className="w-12 h-1 bg-[#455F51] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
+
+                            {/* Description */}
+                            <p className="text-gray-700 text-center">
+                                Nous envisageons des stratégies qui servent les intérêts actuels sans compromettre ceux des générations futures.
+                            </p>
+                        </div>
+
+                        {/* Effet de surbrillance au hover */}
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#455F51]/30 rounded-xl transition-all duration-300"></div>
+                    </div>
+
+                    {/* Pilier 4 - Efficience */}
+                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                        {/* Barre de couleur au top */}
+                        <div className="h-2 bg-[#2C3E50] w-full"></div>
+
+                        <div className="p-6">
+                            {/* Icône avec cercle */}
+                            <div className="w-16 h-16 rounded-full bg-[#2C3E50]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#2C3E50]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+
+                            {/* Titre */}
+                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Efficience</h4>
+
+                            {/* Ligne séparatrice */}
+                            <div className="w-12 h-1 bg-[#2C3E50] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
+
+                            {/* Description */}
+                            <p className="text-gray-700 text-center">
+                                Nous visons une optimisation constante pour offrir la meilleure valeur à nos clients.
+                            </p>
+                        </div>
+
+                        {/* Effet de surbrillance au hover */}
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#2C3E50]/30 rounded-xl transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                {/* Citation inspirante */}
+                <div className="max-w-4xl mx-auto mt-16 text-center">
+                    <blockquote className="relative p-8 bg-gradient-to-r from-eg-primary/5 to-eg-secondary/10 rounded-xl">
+                        <div className="absolute top-0 left-8 transform -translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-eg-primary/30" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                        <p className="text-xl italic text-gray-700 font-medium mb-4">
+                            En somme nous unissons nos forces pour façonner aujourd'hui les solutions qui feront grandir le monde de demain.
+                        </p>
+                        <div className="absolute bottom-0 right-8 transform translate-y-1/2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-eg-secondary/30" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+
             {/* Domaines d'expertise - Design moderne et impressionnant */}
             <section id="domaines" className="py-20 bg-gradient-to-br from-eg-primary to-eg-primary-dark relative overflow-hidden">
                 {/* Éléments décoratifs */}
@@ -1128,7 +1286,7 @@ export default function Landing() {
                                             Voir détails
                                             <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                            </svg>
+                                    </svg>
                                         </button>
 
                                         {/* Lien vers la réalisation si disponible */}
@@ -1147,7 +1305,7 @@ export default function Landing() {
                                                 </svg>
                                             </a>
                                         )}
-                                    </div>
+                                </div>
                             </div>
 
                                 {/* Bouton d'info */}
@@ -1356,37 +1514,37 @@ export default function Landing() {
                                         <div className="rounded-full bg-eg-primary p-2 mr-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                                                 <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                                            </svg>
-                                        </div>
+                                        </svg>
+                                    </div>
                                         <div>
                                             <h4 className="font-bold text-eg-primary">Équipe centrale</h4>
                                             <p className="text-sm text-eg-gray-dark">Direction et spécialistes sectoriels</p>
-                                        </div>
                                     </div>
+                                </div>
 
                                     <div className="flex items-center bg-eg-secondary/10 rounded-lg p-4 m-2">
                                         <div className="rounded-full bg-eg-secondary p-2 mr-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
+                                        </svg>
+                                    </div>
                                         <div>
                                             <h4 className="font-bold text-eg-secondary">Réseau régional</h4>
                                             <p className="text-sm text-eg-gray-dark">8 consultants dans les 8 régions</p>
-                                        </div>
                                     </div>
+                                </div>
 
                                     <div className="flex items-center bg-eg-tertiary/10 rounded-lg p-4 m-2">
                                         <div className="rounded-full bg-eg-tertiary p-2 mr-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
+                                        </svg>
+                                    </div>
                                         <div>
                                             <h4 className="font-bold text-eg-tertiary">Analystes spécialisés</h4>
                                             <p className="text-sm text-eg-gray-dark">Experts par secteur et domaine</p>
-                                        </div>
                                     </div>
+                                </div>
 
                                     <div className="flex items-center bg-eg-accent/10 rounded-lg p-4 m-2">
                                         <div className="rounded-full bg-eg-accent p-2 mr-3">
@@ -1401,8 +1559,8 @@ export default function Landing() {
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </div>
-                    </div>
 
                     {/* Piliers de notre approche */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -1410,13 +1568,13 @@ export default function Landing() {
                             <div className="inline-flex items-center justify-center rounded-full p-3 bg-eg-primary/10 mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
+                                    </svg>
                             </div>
                             <h3 className="text-xl font-bold text-eg-dark mb-2">Impact social</h3>
                             <p className="text-eg-gray-dark">
                                 Chaque mission crée une valeur durable pour les communautés et organisations que nous servons.
-                            </p>
-                        </div>
+                                    </p>
+                                </div>
 
                         <div className="bg-white rounded-xl shadow-eg p-6 transform transition-all duration-500 hover:-translate-y-2 text-center">
                             <div className="inline-flex items-center justify-center rounded-full p-3 bg-eg-secondary/10 mb-4">
