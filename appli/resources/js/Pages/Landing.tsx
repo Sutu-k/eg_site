@@ -576,161 +576,86 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* Ce qui nous caractérise - Section des 4 piliers */}
-            <div className="mt-20 relative">
-                {/* Élément décoratif */}
-                <div className="absolute top-10 right-10 w-64 h-64 bg-eg-primary/5 rounded-full blur-3xl -z-10"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-eg-secondary/5 rounded-full blur-3xl -z-10"></div>
+            {/* Ce qui nous caractérise - Version épurée et professionnelle */}
+            <div className="mt-16 bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                        Ce qui nous <span className="text-eg-primary">caractérise</span>
+                    </h3>
 
-                <div className="text-center mb-12">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">Ce qui nous <span className="text-eg-primary">caractérise</span></h3>
-                    <div className="max-w-3xl mx-auto">
-                        <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                            EG Conseil est défini non seulement par l'expertise et la qualité de ses services, mais aussi par un ensemble de valeurs fondamentales et un engagement ferme envers des principes qui guident chaque décision et action que nous entreprenons.
+                    <p className="text-gray-700 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Efficience Globale est défini non seulement par l'expertise et la qualité de ses services, mais aussi par un ensemble de valeurs fondamentales et un engagement ferme envers des principes qui guident chaque décision et action que nous entreprenons. Notre but est de générer un impact positif et durable, en mettant en place des solutions qui favorisent la résilience et la prospérité des communautés sur le long terme.
+                    </p>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {/* Pilier 1 - Transparence */}
+                        <div className="relative group">
+                            <div className="flex items-center mb-3">
+                                <div className="w-9 h-9 rounded-full bg-[#C0CF3A]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <h4 className="text-base font-bold text-gray-800">Transparence</h4>
+                            </div>
+                            <p className="text-sm text-gray-600 pl-12">
+                                Honnêteté et ouverture qui renforcent la confiance.
+                            </p>
+                        </div>
+
+                        {/* Pilier 2 - Innovation */}
+                        <div className="relative group">
+                            <div className="flex items-center mb-3">
+                                <div className="w-9 h-9 rounded-full bg-[#549E39]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#549E39]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <h4 className="text-base font-bold text-gray-800">Innovation</h4>
+                            </div>
+                            <p className="text-sm text-gray-600 pl-12">
+                                À l'avant-garde des solutions stratégiques.
+                            </p>
+                        </div>
+
+                        {/* Pilier 3 - Durabilité */}
+                        <div className="relative group">
+                            <div className="flex items-center mb-3">
+                                <div className="w-9 h-9 rounded-full bg-[#455F51]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#455F51]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h4 className="text-base font-bold text-gray-800">Durabilité</h4>
+                            </div>
+                            <p className="text-sm text-gray-600 pl-12">
+                                Stratégies qui servent les générations actuelles et futures.
+                            </p>
+                        </div>
+
+                        {/* Pilier 4 - Efficience */}
+                        <div className="relative group">
+                            <div className="flex items-center mb-3">
+                                <div className="w-9 h-9 rounded-full bg-[#2C3E50]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#2C3E50]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h4 className="text-base font-bold text-gray-800">Efficience</h4>
+                            </div>
+                            <p className="text-sm text-gray-600 pl-12">
+                                Optimisation constante pour une valeur maximale.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Citation discrète */}
+                    <div className="mt-8 text-center">
+                        <p className="text-base italic text-gray-700 font-medium border-t border-gray-100 pt-6 max-w-2xl mx-auto">
+                            « En somme nous unissons nos forces pour façonner aujourd'hui les solutions qui feront grandir le monde de demain. »
                         </p>
-                        <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                            Notre but est de générer un impact positif et durable, en mettant en place des solutions qui favorisent la résilience et la prospérité des communautés sur le long terme.
-                        </p>
                     </div>
-                </div>
-
-                {/* Piliers avec animation et design moderne */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Pilier 1 - Transparence */}
-                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                        {/* Barre de couleur au top */}
-                        <div className="h-2 bg-[#C0CF3A] w-full"></div>
-
-                        <div className="p-6">
-                            {/* Icône avec cercle */}
-                            <div className="w-16 h-16 rounded-full bg-[#C0CF3A]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </div>
-
-                            {/* Titre */}
-                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Transparence</h4>
-
-                            {/* Ligne séparatrice */}
-                            <div className="w-12 h-1 bg-[#C0CF3A] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
-
-                            {/* Description */}
-                            <p className="text-gray-700 text-center">
-                                Nous opérons avec une honnêteté et une ouverture qui renforcent la confiance de nos partenaires et clients.
-                            </p>
-                        </div>
-
-                        {/* Effet de surbrillance au hover */}
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#C0CF3A]/30 rounded-xl transition-all duration-300"></div>
-                    </div>
-
-                    {/* Pilier 2 - Innovation */}
-                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                        {/* Barre de couleur au top */}
-                        <div className="h-2 bg-[#549E39] w-full"></div>
-
-                        <div className="p-6">
-                            {/* Icône avec cercle */}
-                            <div className="w-16 h-16 rounded-full bg-[#549E39]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#549E39]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                            </div>
-
-                            {/* Titre */}
-                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Innovation</h4>
-
-                            {/* Ligne séparatrice */}
-                            <div className="w-12 h-1 bg-[#549E39] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
-
-                            {/* Description */}
-                            <p className="text-gray-700 text-center">
-                                Nous valorisons et cultivons la pensée innovante pour rester à l'avant-garde des solutions stratégiques.
-                            </p>
-                        </div>
-
-                        {/* Effet de surbrillance au hover */}
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#549E39]/30 rounded-xl transition-all duration-300"></div>
-                    </div>
-
-                    {/* Pilier 3 - Durabilité */}
-                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                        {/* Barre de couleur au top */}
-                        <div className="h-2 bg-[#455F51] w-full"></div>
-
-                        <div className="p-6">
-                            {/* Icône avec cercle */}
-                            <div className="w-16 h-16 rounded-full bg-[#455F51]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#455F51]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            {/* Titre */}
-                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Durabilité</h4>
-
-                            {/* Ligne séparatrice */}
-                            <div className="w-12 h-1 bg-[#455F51] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
-
-                            {/* Description */}
-                            <p className="text-gray-700 text-center">
-                                Nous envisageons des stratégies qui servent les intérêts actuels sans compromettre ceux des générations futures.
-                            </p>
-                        </div>
-
-                        {/* Effet de surbrillance au hover */}
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#455F51]/30 rounded-xl transition-all duration-300"></div>
-                    </div>
-
-                    {/* Pilier 4 - Efficience */}
-                    <div className="group relative bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-                        {/* Barre de couleur au top */}
-                        <div className="h-2 bg-[#2C3E50] w-full"></div>
-
-                        <div className="p-6">
-                            {/* Icône avec cercle */}
-                            <div className="w-16 h-16 rounded-full bg-[#2C3E50]/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#2C3E50]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-
-                            {/* Titre */}
-                            <h4 className="text-xl font-bold text-center text-gray-800 mb-3">Efficience</h4>
-
-                            {/* Ligne séparatrice */}
-                            <div className="w-12 h-1 bg-[#2C3E50] mx-auto mb-4 group-hover:w-20 transition-all duration-300"></div>
-
-                            {/* Description */}
-                            <p className="text-gray-700 text-center">
-                                Nous visons une optimisation constante pour offrir la meilleure valeur à nos clients.
-                            </p>
-                        </div>
-
-                        {/* Effet de surbrillance au hover */}
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#2C3E50]/30 rounded-xl transition-all duration-300"></div>
-                    </div>
-                </div>
-
-                {/* Citation inspirante */}
-                <div className="max-w-4xl mx-auto mt-16 text-center">
-                    <blockquote className="relative p-8 bg-gradient-to-r from-eg-primary/5 to-eg-secondary/10 rounded-xl">
-                        <div className="absolute top-0 left-8 transform -translate-y-1/2">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-eg-primary/30" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                            </svg>
-                        </div>
-                        <p className="text-xl italic text-gray-700 font-medium mb-4">
-                            En somme nous unissons nos forces pour façonner aujourd'hui les solutions qui feront grandir le monde de demain.
-                        </p>
-                        <div className="absolute bottom-0 right-8 transform translate-y-1/2">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-eg-secondary/30" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-                            </svg>
-                        </div>
-                    </blockquote>
                 </div>
             </div>
 

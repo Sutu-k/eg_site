@@ -88,7 +88,7 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                                 <span className="flex items-center hover:opacity-90 transition-opacity duration-300">
                                     <img
                                         src="/img/logo-eg.png"
-                                        alt="EG Conseil"
+                                        alt="Efficience Globale"
                                         className="h-12 w-auto"
                                     />
                                 </span>
@@ -180,12 +180,12 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                             <div className="flex items-center">
                                 <img
                                     src="/img/logo-eg.png"
-                                    alt="EG Conseil"
+                                    alt="Efficience Globale"
                                     className="h-10 w-auto"
                                 />
                             </div>
                             <p className="mt-4 text-sm text-white/80">
-                                EG Conseil, fondée le 27 juillet 2022 à Conakry, est une société de
+                                Efficience Globale, fondée le 27 juillet 2022 à Conakry, est une société de
                                 conseil en stratégie et gestion, qui se distingue par son approche
                                 innovante et sa profonde connaissance des dynamiques locales et
                                 régionales de l'Afrique de l'Ouest.
@@ -225,7 +225,7 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                     <div className="mt-12 border-t border-white/20 pt-8">
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <p className="text-sm text-white/80">
-                                &copy; {new Date().getFullYear()} EG Conseil. Tous droits réservés.
+                                &copy; {new Date().getFullYear()} Efficience Globale. Tous droits réservés.
                             </p>
                             <div className="flex space-x-6 mt-4 md:mt-0">
                                 {/* Réseaux sociaux */}
