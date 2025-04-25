@@ -58,8 +58,8 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
         { text: 'Services', href: '/#services' },
         { text: 'Réalisations', href: '/#realisations' },
         { text: 'Notre équipe', href: '/#equipe' },
-        { text: 'Partenaires', href: '/#partenaires' },
         { text: 'Contact', href: '/#contact' },
+        { text: 'Partenaires', href: '/#partenaires' },
     ];
 
     // Fonction pour déterminer si un lien est actif
