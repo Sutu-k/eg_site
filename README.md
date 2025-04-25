@@ -14,3 +14,6 @@ Ce projet est un site vitrine landing page moderne pour EG Conseil, une sociét�
 - Formulaire de contact interactif
 - Structure modulaire avec composants réutilisables
 - Optimiser pour le SEO
+
+
+il ya des projets pour lesquels j'ai un lien de la réalisation. je veux que l'utilisateur puisse le consulter si c'est le cas: @https://siigna.org/ pour le projet avec expertise france, @https://app.powerbi.com/view?r=eyJrIjoiNTI5N2ZjZGUtOGI2NC00MmYyLWE4NjItMTVmZDU3ZTgxMjUwIiwidCI6ImI2YWUxM2RlLWY0OWQtNGI1Ni1hZWE1LWUyYjUzZDBkN2YxMCJ9 pour le projet avec l'unicef

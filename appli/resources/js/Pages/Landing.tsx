@@ -31,6 +31,7 @@ type ProjectType = {
     description: string;
     points: string[];
     partnerLogo?: string; // Logo du partenaire client
+    url?: string; // URL vers la réalisation
 }
 
 type TeamMember = {
@@ -63,7 +64,8 @@ export default function Landing() {
                 "Élaboration de documents stratégiques : Stratégie Nationale de Vaccination et Plan Stratégique Genre et Équité du MSHP",
                 "Appui à la mobilisation de subventions pour environ 50 millions USD (CDS3, FAE, FPP, TCA 2023–2025)"
             ],
-            partnerLogo: "/img/partners/gavi-logo.png"
+            partnerLogo: "/img/partners/gavi-logo.png",
+            url: "https://www.gavi.org/fr/programmes-et-impact/programmes-nationaux/guinee"
         },
         {
             id: 2,
@@ -77,7 +79,8 @@ export default function Landing() {
                 "Formation des équipes pour une meilleure utilisation et maintenance",
                 "Réduction des pertes et meilleure disponibilité des vaccins"
             ],
-            partnerLogo: "/img/partners/unicef-logo.png"
+            partnerLogo: "/img/partners/unicef-logo.png",
+            url: "https://www.unicef.org/guinea/vaccination"
         },
         {
             id: 3,
@@ -91,7 +94,8 @@ export default function Landing() {
                 "Formation des parties prenantes à l'usage de la cartographie",
                 "Renforcement de la planification et coordination"
             ],
-            partnerLogo: "/img/partners/expertise-france-logo.png"
+            partnerLogo: "/img/partners/expertise-france-logo.png",
+            url: "https://www.expertisefrance.fr/fiche-projet?id=726115"
         },
         {
             id: 4,
@@ -1220,7 +1224,24 @@ export default function Landing() {
 
                             {/* Pied de page du modal */}
                             <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                                <div className="flex justify-end">
+                                <div className="flex justify-between items-center">
+                                    {/* Lien vers la réalisation si disponible */}
+                                    {selectedProject.url && (
+                                        <a
+                                            href={selectedProject.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-6 py-2 bg-eg-secondary text-white rounded-lg hover:bg-eg-secondary-dark transition-colors duration-300 flex items-center"
+                                        >
+                                            Voir la réalisation
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                            </svg>
+                                        </a>
+                                    )}
+
+                                    {/* Bouton de fermeture */}
                                     <button
                                         className="px-6 py-2 bg-eg-primary text-white rounded-lg hover:bg-eg-primary-dark transition-colors duration-300 flex items-center"
                                         onClick={closeProjectModal}
