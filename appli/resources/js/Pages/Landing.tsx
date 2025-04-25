@@ -45,6 +45,8 @@ export default function Landing() {
     const [showAccelerateurModal, setShowAccelerateurModal] = useState(false);
     // État pour le modal des projets
     const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+    // État pour la direction du carrousel de logos
+    const [carouselDirection, setCarouselDirection] = useState<'left' | 'right'>('left');
 
     // Liste des projets pour les réalisations
     const projects: ProjectType[] = [
@@ -2175,9 +2177,18 @@ export default function Landing() {
                         <button
                             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none hover:bg-gray-100 transition-all z-10"
                             onClick={() => {
-                                const container = document.getElementById('logo-carousel');
-                                if (container) {
-                                    container.scrollLeft -= 300;
+                                setCarouselDirection('right');
+                                const carousel = document.getElementById('logo-carousel');
+                                if (carousel) {
+                                    // Arrêter l'animation en cours
+                                    carousel.style.animationPlayState = 'paused';
+                                    // Changer la direction de l'animation
+                                    carousel.classList.remove('animate-marquee-left');
+                                    carousel.classList.add('animate-marquee-right');
+                                    // Redémarrer l'animation
+                                    setTimeout(() => {
+                                        carousel.style.animationPlayState = 'running';
+                                    }, 50);
                                 }
                             }}
                         >
@@ -2190,7 +2201,7 @@ export default function Landing() {
                         <div className="carousel-container overflow-hidden relative">
                             <div
                                 id="logo-carousel"
-                                className="flex items-center animate-marquee whitespace-nowrap py-6"
+                                className={`flex items-center animate-marquee-${carouselDirection} whitespace-nowrap py-6`}
                             >
                                 {/* Première série de logos */}
                                 <div className="flex space-x-8 logo-slide">
@@ -2386,9 +2397,18 @@ export default function Landing() {
                         <button
                             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none hover:bg-gray-100 transition-all z-10"
                             onClick={() => {
-                                const container = document.getElementById('logo-carousel');
-                                if (container) {
-                                    container.scrollLeft += 300;
+                                setCarouselDirection('left');
+                                const carousel = document.getElementById('logo-carousel');
+                                if (carousel) {
+                                    // Arrêter l'animation en cours
+                                    carousel.style.animationPlayState = 'paused';
+                                    // Changer la direction de l'animation
+                                    carousel.classList.remove('animate-marquee-right');
+                                    carousel.classList.add('animate-marquee-left');
+                                    // Redémarrer l'animation
+                                    setTimeout(() => {
+                                        carousel.style.animationPlayState = 'running';
+                                    }, 50);
                                 }
                             }}
                         >
@@ -2400,16 +2420,26 @@ export default function Landing() {
 
                     {/* Styles pour l'animation du carrousel */}
                     <style dangerouslySetInnerHTML={{ __html: `
-                        @keyframes marquee {
+                        @keyframes marquee-left {
                             0% { transform: translateX(0); }
                             100% { transform: translateX(-100%); }
                         }
 
-                        .animate-marquee {
-                            animation: marquee 25s linear infinite;
+                        @keyframes marquee-right {
+                            0% { transform: translateX(-100%); }
+                            100% { transform: translateX(0); }
                         }
 
-                        .carousel-container:hover .animate-marquee {
+                        .animate-marquee-left {
+                            animation: marquee-left 25s linear infinite;
+                        }
+
+                        .animate-marquee-right {
+                            animation: marquee-right 25s linear infinite;
+                        }
+
+                        .carousel-container:hover .animate-marquee-left,
+                        .carousel-container:hover .animate-marquee-right {
                             animation-play-state: paused;
                         }
                     ` }} />
