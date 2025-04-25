@@ -58,6 +58,7 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
         { text: 'Services', href: '/#services' },
         { text: 'Réalisations', href: '/#realisations' },
         { text: 'Notre équipe', href: '/#equipe' },
+        { text: 'Partenaires', href: '/#partenaires' },
         { text: 'Contact', href: '/#contact' },
     ];
 

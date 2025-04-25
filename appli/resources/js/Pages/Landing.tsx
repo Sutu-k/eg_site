@@ -2148,7 +2148,7 @@ export default function Landing() {
             )}
 
             {/* Section Partenaires - Ils nous font déjà confiance */}
-            <section className="py-16 bg-gradient-to-br from-white to-eg-gray-light relative overflow-hidden">
+            <section id="partenaires" className="py-16 bg-gradient-to-br from-white to-eg-gray-light relative overflow-hidden">
                 {/* Éléments décoratifs */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-40 -right-40 w-96 h-96 bg-eg-primary opacity-5 rounded-full"></div>
