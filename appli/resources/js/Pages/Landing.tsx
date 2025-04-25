@@ -64,8 +64,7 @@ export default function Landing() {
                 "Élaboration de documents stratégiques : Stratégie Nationale de Vaccination et Plan Stratégique Genre et Équité du MSHP",
                 "Appui à la mobilisation de subventions pour environ 50 millions USD (CDS3, FAE, FPP, TCA 2023–2025)"
             ],
-            partnerLogo: "/img/partners/gavi-logo.png",
-            url: "https://www.gavi.org/fr/programmes-et-impact/programmes-nationaux/guinee"
+            partnerLogo: "/img/partners/gavi-logo.png"
         },
         {
             id: 2,
@@ -80,7 +79,7 @@ export default function Landing() {
                 "Réduction des pertes et meilleure disponibilité des vaccins"
             ],
             partnerLogo: "/img/partners/unicef-logo.png",
-            url: "https://www.unicef.org/guinea/vaccination"
+            url: "https://app.powerbi.com/view?r=eyJrIjoiNTI5N2ZjZGUtOGI2NC00MmYyLWE4NjItMTVmZDU3ZTgxMjUwIiwidCI6ImI2YWUxM2RlLWY0OWQtNGI1Ni1hZWE1LWUyYjUzZDBkN2YxMCJ9"
         },
         {
             id: 3,
@@ -95,7 +94,7 @@ export default function Landing() {
                 "Renforcement de la planification et coordination"
             ],
             partnerLogo: "/img/partners/expertise-france-logo.png",
-            url: "https://www.expertisefrance.fr/fiche-projet?id=726115"
+            url: "https://siigna.org"
         },
         {
             id: 4,
