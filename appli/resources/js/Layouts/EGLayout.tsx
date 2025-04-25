@@ -86,8 +86,11 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                         <div className="flex items-center">
                             <Link href="/">
                                 <span className="flex items-center hover:opacity-90 transition-opacity duration-300">
-                                    <span className="text-eg-primary text-3xl font-bold">EG</span>
-                                    <span className="ml-2 text-eg-secondary text-xl">Conseil</span>
+                                    <img
+                                        src="/img/logo-eg.png"
+                                        alt="EG Conseil"
+                                        className="h-12 w-auto"
+                                    />
                                 </span>
                             </Link>
                         </div>
@@ -175,8 +178,11 @@ const EGLayout: React.FC<EGLayoutProps> = ({ title, children }) => {
                         {/* Logo et description */}
                         <div className="col-span-1 md:col-span-1">
                             <div className="flex items-center">
-                                <span className="text-white text-3xl font-bold">EG</span>
-                                <span className="ml-2 text-eg-lime text-xl">Conseil</span>
+                                <img
+                                    src="/img/logo-eg.png"
+                                    alt="EG Conseil"
+                                    className="h-10 w-auto"
+                                />
                             </div>
                             <p className="mt-4 text-sm text-white/80">
                                 EG Conseil, fondée le 27 juillet 2022 à Conakry, est une société de
