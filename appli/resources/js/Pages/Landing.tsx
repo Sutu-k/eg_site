@@ -1285,7 +1285,7 @@ export default function Landing() {
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-16">
                         <div className="inline-block">
                             <span className="bg-eg-primary text-white px-5 py-2 rounded-md text-sm font-semibold shadow-eg">NOTRE ÉQUIPE</span>
                         </div>
@@ -1293,13 +1293,10 @@ export default function Landing() {
                             Une équipe pluridisciplinaire
                             <span className="absolute -bottom-2 left-0 w-full h-1 bg-eg-tertiary rounded-full"></span>
                         </h2>
-                        <p className="max-w-3xl mx-auto text-eg-gray-dark text-lg">
-                            Notre force réside dans la diversité de nos talents et leur expertise complémentaire.
-                        </p>
                     </div>
 
-                    {/* Direction et équipe principale - Nouvelle disposition */}
-                    <div className="flex flex-col lg:flex-row gap-10 mb-20">
+                    {/* Nouvelle disposition de la section équipe */}
+                    <div className="flex flex-col lg:flex-row gap-10 mb-16">
                         {/* Directeur à gauche */}
                         <div className="lg:w-1/3">
                             <div className="bg-white rounded-xl shadow-eg p-8 transform transition-all duration-500 hover:-translate-y-2 h-full flex flex-col items-center justify-center">
@@ -1308,7 +1305,7 @@ export default function Landing() {
                                         {/* Cercle d'effet de lumière */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-eg-primary to-eg-primary-dark opacity-10 z-10"></div>
 
-                                        {/* Image ou placeholder */}
+                                        {/* Image du DG */}
                                         {teamMembers[0].photo ? (
                                             <img
                                                 src={teamMembers[0].photo}
@@ -1319,13 +1316,13 @@ export default function Landing() {
                                             <div className="w-full h-full bg-eg-primary/10 flex items-center justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-28 w-28 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                        </svg>
-                                    </div>
+                                                </svg>
+                                            </div>
                                         )}
 
                                         {/* Élément décoratif de bordure */}
                                         <div className="absolute inset-0 border-4 border-eg-primary/30 rounded-full"></div>
-                                </div>
+                                    </div>
 
                                     {/* Badge décoratif */}
                                     <div className="absolute -bottom-2 -right-2 bg-eg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transform rotate-12">
@@ -1340,388 +1337,126 @@ export default function Landing() {
                                     <div className="inline-block bg-eg-primary/10 px-4 py-1 rounded-full mb-4">
                                         <p className="text-xl text-eg-primary font-semibold">{teamMembers[0].role}</p>
                                     </div>
-                                    <p className="text-center text-eg-gray-dark">
-                                        {teamMembers[0].description}
-                                    </p>
                                 </div>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
 
-                        {/* Équipe principale à droite */}
+                        {/* Texte de présentation à droite */}
                         <div className="lg:w-2/3">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 h-full">
-                                {teamMembers.slice(1).map((member) => (
-                                    <div key={member.id} className="group h-full">
-                                        <div className="bg-white rounded-xl shadow-eg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 group-hover:shadow-2xl h-full">
-                                            {/* Bande colorée en haut */}
-                                            <div className={`h-2 bg-${member.color} w-full`}></div>
+                            <div className="bg-white rounded-xl shadow-eg p-8 h-full flex flex-col">
+                                <p className="text-eg-gray-dark text-lg leading-relaxed mb-6">
+                                    Chez Efficience Globale, notre équipe pluridisciplinaire – stratégies, gestions et digitalisations – avance portée par trois piliers : l'impact social, pour que chaque mission crée une valeur durable ; l'innovation, qui nourrit nos solutions agiles et créatives ; et l'intégrité, garante d'un accompagnement transparent et responsable. Ensemble, nous partageons les savoirs, mobilisons les expertises les plus pertinentes au bon moment et transformons vos défis en résultats concrets, faisant de notre cabinet un partenaire engagé et fiable.
+                                </p>
+                                <blockquote className="border-l-4 border-eg-primary pl-4 py-2 mb-6 italic text-eg-primary-dark font-medium">
+                                    En somme nous unissons nos forces pour façonner aujourd'hui les solutions qui feront grandir le monde de demain.
+                                </blockquote>
 
-                                            <div className="p-6 flex flex-col items-center h-full">
-                                                {/* Photo (circulaire) */}
-                                                <div className="relative w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-500">
-                                                    {member.photo ? (
-                                                        <img
-                                                            src={member.photo}
-                                                            alt={member.name}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    ) : (
-                                                        <div className={`w-full h-full bg-${member.color}/10 flex items-center justify-center`}>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" className={`h-14 w-14 text-${member.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                        </svg>
-                                    </div>
-                                                    )}
-                                    </div>
-
-                                                {/* Informations */}
-                                                <h3 className={`text-lg font-bold text-${member.color} mb-2 text-center`}>{member.name}</h3>
-                                                <p className="text-eg-gray-dark font-medium mb-3 text-center">{member.role}</p>
-
-                                                {member.description && (
-                                                    <p className="text-eg-gray text-center text-sm mb-4">{member.description}</p>
-                                                )}
-
-                                                {/* Ligne décorative */}
-                                                <div className={`w-10 h-1 bg-${member.color} rounded-full mt-auto group-hover:w-20 transition-all duration-500`}></div>
-                                            </div>
+                                <div className="flex flex-wrap mt-auto">
+                                    <div className="flex items-center bg-eg-primary/10 rounded-lg p-4 m-2">
+                                        <div className="rounded-full bg-eg-primary p-2 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-eg-primary">Équipe centrale</h4>
+                                            <p className="text-sm text-eg-gray-dark">Direction et spécialistes sectoriels</p>
                                         </div>
                                     </div>
-                                ))}
+
+                                    <div className="flex items-center bg-eg-secondary/10 rounded-lg p-4 m-2">
+                                        <div className="rounded-full bg-eg-secondary p-2 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-eg-secondary">Réseau régional</h4>
+                                            <p className="text-sm text-eg-gray-dark">8 consultants dans les 8 régions</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center bg-eg-tertiary/10 rounded-lg p-4 m-2">
+                                        <div className="rounded-full bg-eg-tertiary p-2 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-eg-tertiary">Analystes spécialisés</h4>
+                                            <p className="text-sm text-eg-gray-dark">Experts par secteur et domaine</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center bg-eg-accent/10 rounded-lg p-4 m-2">
+                                        <div className="rounded-full bg-eg-accent p-2 mr-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-eg-accent">Partenaires techniques</h4>
+                                            <p className="text-sm text-eg-gray-dark">Développeurs et experts technologies</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                    {/* Section Consultants et Analystes */}
-                    <div className="mt-20 grid md:grid-cols-2 gap-8">
-                        {/* Consultants régionaux - Inspiré de l'image */}
-                        <div className="bg-[#C0CF3A]/10 border-2 border-dashed border-[#8AB833] rounded-xl p-6 relative">
-                            <h3 className="text-2xl font-bold text-center uppercase mb-8 text-[#455F51]">Niveau régional</h3>
-
-                            {/* Bloc central avec texte */}
-                            <div className="bg-[#549E39] rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
-                                <p className="font-bold text-xl">8 Consultants</p>
-                                <p>expérimentés dans les 8 Régions administratives</p>
-                                </div>
-
-                            {/* Photos en cercle */}
-                            <div className="relative min-h-[180px]">
-                                {/* Positions des consultants autour du centre */}
-                                {consultants.length > 0 && (
-                                    <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[0].photo ? (
-                                                <img
-                                                    src={consultants[0].photo}
-                                                    alt={consultants[0].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[0].name.substring(0, 2)}</span>
+                    {/* Piliers de notre approche */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                        <div className="bg-white rounded-xl shadow-eg p-6 transform transition-all duration-500 hover:-translate-y-2 text-center">
+                            <div className="inline-flex items-center justify-center rounded-full p-3 bg-eg-primary/10 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-eg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
                             </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[0].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[0].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 1 && (
-                                    <div className="absolute top-[15px] left-0">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[1].photo ? (
-                                                <img
-                                                    src={consultants[1].photo}
-                                                    alt={consultants[1].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#549E39] font-medium">{consultants[1].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[1].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[1].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 2 && (
-                                    <div className="absolute top-[80px] left-[-5px]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[2].photo ? (
-                                                <img
-                                                    src={consultants[2].photo}
-                                                    alt={consultants[2].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[2].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[2].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[2].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 3 && (
-                                    <div className="absolute bottom-0 left-[15%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[3].photo ? (
-                                                <img
-                                                    src={consultants[3].photo}
-                                                    alt={consultants[3].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#C0CF3A] font-medium">{consultants[3].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[3].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[3].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 4 && (
-                                    <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[4].photo ? (
-                                                <img
-                                                    src={consultants[4].photo}
-                                                    alt={consultants[4].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#549E39] font-medium">{consultants[4].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[4].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[4].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 5 && (
-                                    <div className="absolute bottom-0 right-[15%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[5].photo ? (
-                                                <img
-                                                    src={consultants[5].photo}
-                                                    alt={consultants[5].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#8AB833] font-medium">{consultants[5].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[5].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[5].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 6 && (
-                                    <div className="absolute top-[80px] right-[-5px]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[6].photo ? (
-                                                <img
-                                                    src={consultants[6].photo}
-                                                    alt={consultants[6].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#029676]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#029676] font-medium">{consultants[6].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[6].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[6].region}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {consultants.length > 7 && (
-                                    <div className="absolute top-[15px] right-0">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {consultants[7].photo ? (
-                                                <img
-                                                    src={consultants[7].photo}
-                                                    alt={consultants[7].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#455F51]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#455F51] font-medium">{consultants[7].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{consultants[7].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#549E39] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {consultants[7].region}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <h3 className="text-xl font-bold text-eg-dark mb-2">Impact social</h3>
+                            <p className="text-eg-gray-dark">
+                                Chaque mission crée une valeur durable pour les communautés et organisations que nous servons.
+                            </p>
                         </div>
 
-                        {/* Analystes - Avec la même structure que les consultants */}
-                        <div className="bg-[#455F51]/10 border-2 border-dashed border-[#029676] rounded-xl p-6 relative">
-                            <h3 className="text-2xl font-bold text-center uppercase mb-8 text-[#455F51]">Niveau central</h3>
-
-                            {/* Bloc central avec texte */}
-                            <div className="bg-[#029676] rounded-xl text-white p-4 text-center mx-auto max-w-xs mb-4">
-                                <p className="font-bold text-xl">4 Analystes</p>
-                                <p>spécialisés dans différents domaines d'expertise</p>
+                        <div className="bg-white rounded-xl shadow-eg p-6 transform transition-all duration-500 hover:-translate-y-2 text-center">
+                            <div className="inline-flex items-center justify-center rounded-full p-3 bg-eg-secondary/10 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-eg-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
                             </div>
-
-                            {/* Photos en cercle - Moins de photos pour les analystes */}
-                            <div className="relative min-h-[180px]">
-                                {analystes.length > 0 && (
-                                    <div className="absolute top-[-25px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {analystes[0].photo ? (
-                                                <img
-                                                    src={analystes[0].photo}
-                                                    alt={analystes[0].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#549E39]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#549E39] font-medium">{analystes[0].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{analystes[0].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {analystes[0].specialite}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {analystes.length > 1 && (
-                                    <div className="absolute top-[50px] left-[10%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {analystes[1].photo ? (
-                                                <img
-                                                    src={analystes[1].photo}
-                                                    alt={analystes[1].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#8AB833]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#8AB833] font-medium">{analystes[1].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{analystes[1].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {analystes[1].specialite}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {analystes.length > 2 && (
-                                    <div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {analystes[2].photo ? (
-                                                <img
-                                                    src={analystes[2].photo}
-                                                    alt={analystes[2].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#C0CF3A]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#C0CF3A] font-medium">{analystes[2].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{analystes[2].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {analystes[2].specialite}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {analystes.length > 3 && (
-                                    <div className="absolute top-[50px] right-[10%]">
-                                        <div className="w-16 h-16 rounded-full border-2 border-white shadow-md overflow-hidden bg-white group relative">
-                                            {analystes[3].photo ? (
-                                                <img
-                                                    src={analystes[3].photo}
-                                                    alt={analystes[3].name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-[#029676]/10 flex items-center justify-center">
-                                                    <span className="text-xs text-[#029676] font-medium">{analystes[3].name.substring(0, 2)}</span>
-                                                </div>
-                                            )}
-                                            {/* Tooltip qui apparaît au survol */}
-                                            <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
-                                                <span className="text-white text-xs font-medium">{analystes[3].name}</span>
-                                            </div>
-                                        </div>
-                                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#029676] text-white text-[8px] px-1 rounded-sm leading-tight whitespace-nowrap">
-                                            {analystes[3].specialite}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <h3 className="text-xl font-bold text-eg-dark mb-2">Innovation</h3>
+                            <p className="text-eg-gray-dark">
+                                Nous développons des solutions agiles et créatives adaptées aux défis complexes d'aujourd'hui.
+                            </p>
                         </div>
+
+                        <div className="bg-white rounded-xl shadow-eg p-6 transform transition-all duration-500 hover:-translate-y-2 text-center">
+                            <div className="inline-flex items-center justify-center rounded-full p-3 bg-eg-tertiary/10 mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-eg-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-eg-dark mb-2">Intégrité</h3>
+                            <p className="text-eg-gray-dark">
+                                Notre accompagnement est transparent et responsable, fondé sur des valeurs éthiques solides.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-16 text-center">
+                        <a href="#contact"
+                           onClick={(e) => {
+                               e.preventDefault();
+                               document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+                           }}
+                           className="inline-flex items-center px-8 py-4 bg-eg-primary text-white hover:bg-eg-lime hover:text-white font-semibold rounded-xl shadow-eg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-eg-lg group"
+                        >
+                            <span>Rencontrer notre équipe</span>
+                            <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </section>
