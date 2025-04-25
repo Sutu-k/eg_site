@@ -2420,7 +2420,7 @@ export default function Landing() {
                         }
 
                         .animate-marquee {
-                            animation: marquee 45s linear infinite;
+                            animation: marquee 25s linear infinite;
                         }
 
                         .carousel-container:hover .animate-marquee {
