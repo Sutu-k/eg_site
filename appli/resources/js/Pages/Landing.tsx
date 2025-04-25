@@ -2144,6 +2144,216 @@ export default function Landing() {
                     </div>
                 </div>
             )}
+
+            {/* Section Partenaires - Ils nous font déjà confiance */}
+            <section className="py-16 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* En-tête de section */}
+                    <div className="text-center mb-12">
+                        <div className="inline-block">
+                            <span className="bg-[#455F51] text-white px-5 py-2 rounded-md text-sm font-semibold">PARTENAIRES</span>
+                        </div>
+                        <h2 className="text-4xl font-bold text-eg-dark mt-6 mb-4 relative inline-block">
+                            Ils nous font déjà confiance
+                            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#C0CF3A] rounded-full"></span>
+                        </h2>
+                        <p className="max-w-3xl mx-auto text-eg-gray-dark text-lg">
+                            Des institutions et organisations de premier plan nous ont accordé leur confiance pour mener à bien leurs projets à travers l'Afrique.
+                        </p>
+                    </div>
+
+                    {/* Carrousel de logos */}
+                    <div className="relative mt-12 px-10">
+                        {/* Flèche gauche */}
+                        <button
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none hover:bg-gray-100 transition-all z-10"
+                            onClick={() => {
+                                const container = document.getElementById('logo-carousel');
+                                if (container) {
+                                    container.scrollLeft -= 300;
+                                }
+                            }}
+                        >
+                            <svg className="w-6 h-6 text-eg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Conteneur de logos avec défilement */}
+                        <div
+                            id="logo-carousel"
+                            className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-6 gap-8"
+                            style={{ scrollBehavior: 'smooth' }}
+                        >
+                            {/* Logo 1 - Gavi */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/gavi-logo.png"
+                                        alt="Gavi Alliance"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Gavi Alliance
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 2 - UNICEF */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/unicef-logo.png"
+                                        alt="UNICEF"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        UNICEF
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 3 - Ministère de la santé */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/ministere-sante-logo.png"
+                                        alt="Ministère de la santé"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Ministère de la santé
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 4 - Université Kofi Annan */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/kofi-annan-logo.png"
+                                        alt="Université Kofi Annan de Guinée"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Université Kofi Annan
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 5 - Expertise France */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/expertise-france-logo.png"
+                                        alt="Expertise France"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Expertise France
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 6 - Institut Français */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/institut-francais-logo.png"
+                                        alt="Institut Français de Guinée"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Institut Français de Guinée
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 7 - Banque Mondiale */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/world-bank-logo.png"
+                                        alt="The World Bank"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        The World Bank
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 8 - Aguipel */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/aguipel-logo.png"
+                                        alt="Aguipel"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        Aguipel
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Logo 9 - AguiDUTEN */}
+                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
+                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
+                                    <img
+                                        src="/img/partners/aguiduten-logo.png"
+                                        alt="AguiDUTEN"
+                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                        AguiDUTEN
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Flèche droite */}
+                        <button
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none hover:bg-gray-100 transition-all z-10"
+                            onClick={() => {
+                                const container = document.getElementById('logo-carousel');
+                                if (container) {
+                                    container.scrollLeft += 300;
+                                }
+                            }}
+                        >
+                            <svg className="w-6 h-6 text-eg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    {/* Animation automatique */}
+                    <script type="text/javascript" dangerouslySetInnerHTML={{
+                        __html: `
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const carousel = document.getElementById('logo-carousel');
+                                let scrollAmount = 1;
+                                let isHovered = false;
+
+                                carousel.addEventListener('mouseenter', () => { isHovered = true; });
+                                carousel.addEventListener('mouseleave', () => { isHovered = false; });
+
+                                setInterval(() => {
+                                    if (!isHovered && carousel) {
+                                        carousel.scrollLeft += scrollAmount;
+
+                                        // Si on atteint la fin, revenir au début
+                                        if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth) || carousel.scrollLeft <= 0) {
+                                            scrollAmount = -scrollAmount;
+                                        }
+                                    }
+                                }, 30);
+                            });
+                        `
+                    }} />
+                </div>
+            </section>
         </EGLayout>
     );
 }
