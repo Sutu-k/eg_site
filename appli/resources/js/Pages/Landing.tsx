@@ -30,6 +30,7 @@ type ProjectType = {
     category: string;
     description: string;
     points: string[];
+    partnerLogo?: string; // Logo du partenaire client
 }
 
 type TeamMember = {
@@ -61,7 +62,8 @@ export default function Landing() {
                 "Renforcement des capacités en gestion, planification stratégique, coordination et suivi-évaluation",
                 "Élaboration de documents stratégiques : Stratégie Nationale de Vaccination et Plan Stratégique Genre et Équité du MSHP",
                 "Appui à la mobilisation de subventions pour environ 50 millions USD (CDS3, FAE, FPP, TCA 2023–2025)"
-            ]
+            ],
+            partnerLogo: "/img/partners/gavi-logo.png"
         },
         {
             id: 2,
@@ -74,7 +76,8 @@ export default function Landing() {
                 "Création d'un outil pour suivre et optimiser la chaîne du froid",
                 "Formation des équipes pour une meilleure utilisation et maintenance",
                 "Réduction des pertes et meilleure disponibilité des vaccins"
-            ]
+            ],
+            partnerLogo: "/img/partners/unicef-logo.png"
         },
         {
             id: 3,
@@ -87,7 +90,8 @@ export default function Landing() {
                 "Cartographie des initiatives nutritionnelles en Guinée",
                 "Formation des parties prenantes à l'usage de la cartographie",
                 "Renforcement de la planification et coordination"
-            ]
+            ],
+            partnerLogo: "/img/partners/expertise-france-logo.png"
         },
         {
             id: 4,
@@ -100,7 +104,8 @@ export default function Landing() {
                 "Agents IA pour améliorer gestion, communication et suivi des OSC",
                 "Formations pour professionnaliser les OSC guinéennes",
                 "Meilleure efficacité organisationnelle et impact local"
-            ]
+            ],
+            partnerLogo: "/img/partners/institut-francais-logo.png"
         },
         {
             id: 5,
@@ -113,7 +118,8 @@ export default function Landing() {
                 "Diagnostic organisationnel : identifier les axes d'amélioration",
                 "Plan de redressement : optimisation des coûts et rentabilité",
                 "Formation des dirigeants pour une gestion durable"
-            ]
+            ],
+            partnerLogo: "/img/partners/world-bank-logo.png"
         },
         {
             id: 6,
@@ -126,7 +132,8 @@ export default function Landing() {
                 "Diagnostic approfondi des enjeux de l'unité de transformation",
                 "Élaboration de dossiers de financement",
                 "Business plan et projections stratégiques"
-            ]
+            ],
+            partnerLogo: "/img/partners/aguipel-logo.png"
         },
         {
             id: 7,
@@ -139,7 +146,8 @@ export default function Landing() {
                 "+10 projets complexes menés selon les normes internationales",
                 "Gestion de plusieurs milliards d'actifs pour : BNP Paribas, JP Morgan, AFD, Aviva...",
                 "Structuration de dossiers et outils de stress-test pour la résilience financière"
-            ]
+            ],
+            partnerLogo: "/img/partners/ministere-sante-logo.png"
         }
     ];
 
@@ -1093,6 +1101,21 @@ export default function Landing() {
                                 {/* Contenu */}
                                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                                     <h3 className="text-xl font-bold text-white mb-2 transform group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
+
+                                    {/* Logo du partenaire */}
+                                    {project.partnerLogo && (
+                                        <div className="mb-2 flex items-center">
+                                            <span className="text-white/90 text-xs mr-2">Réalisé pour :</span>
+                                            <div className="bg-white/90 p-1 rounded-md inline-block">
+                                                <img
+                                                    src={project.partnerLogo}
+                                                    alt="Partenaire"
+                                                    className="h-5 max-w-[80px] object-contain"
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
+
                                     <p className="text-white/80 text-sm mb-6 line-clamp-2 transform group-hover:translate-y-0 transition-transform duration-300">{project.subtitle}</p>
 
                                     {/* Bouton "Voir plus" qui apparaît au survol */}
@@ -1153,6 +1176,20 @@ export default function Landing() {
                                         {selectedProject.category}
                                     </span>
                                     <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
+
+                                    {/* Logo du partenaire dans le modal */}
+                                    {selectedProject.partnerLogo && (
+                                        <div className="mt-2 flex items-center">
+                                            <span className="text-white/90 text-sm mr-2">Réalisé pour :</span>
+                                            <div className="bg-white/90 p-1 rounded-md inline-block">
+                                                <img
+                                                    src={selectedProject.partnerLogo}
+                                                    alt="Partenaire"
+                                                    className="h-6 max-w-[100px] object-contain"
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <button
                                     className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 flex items-center justify-center text-white hover:bg-black/50 transition-colors duration-300"
