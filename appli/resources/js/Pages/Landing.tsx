@@ -1663,11 +1663,14 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     {/* En-tête de section */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 inline-block relative">
+                        <div className="inline-block">
+                            <span className="bg-white text-eg-primary px-5 py-2 rounded-md text-sm font-semibold">CONTACT</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 relative inline-block">
                             Contactez-nous
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C0CF3A]"></div>
+                            <span className="absolute bottom-0 left-0 w-full h-1 bg-white rounded-full"></span>
                         </h2>
-                        <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                        <p className="max-w-3xl mx-auto text-white/90 text-lg">
                             Notre équipe est disponible pour répondre à vos besoins et vous accompagner dans vos projets à travers l'Afrique.
                         </p>
                     </div>
