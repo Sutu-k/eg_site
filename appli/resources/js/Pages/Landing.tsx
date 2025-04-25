@@ -230,10 +230,10 @@ export default function Landing() {
     };
 
     return (
-        <EGLayout title="EG Conseil - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest">
+        <EGLayout title="Efficience Globale - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest">
             <Head>
-                <title>EG Conseil - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest</title>
-                <meta name="description" content="EG Conseil développe des solutions de conseil stratégique et opérationnel sur mesure pour les entreprises et organisations en Afrique de l'Ouest." />
+                <title>Efficience Globale - Conseil stratégique et opérationnel pour un impact durable en Afrique de l'Ouest</title>
+                <meta name="description" content="Efficience Globale développe des solutions de conseil stratégique et opérationnel sur mesure pour les entreprises et organisations en Afrique de l'Ouest." />
             </Head>
 
             {/* Hero Section */}
@@ -265,7 +265,7 @@ export default function Landing() {
                             </span> pour un impact durable en Afrique de l'Ouest
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl font-light">
-                            EG Conseil est un cabinet de conseil en stratégie et gestion de projets à impact en Afrique de l'Ouest.
+                        Efficience Globale est un cabinet de conseil en stratégie et gestion de projets à impact en Afrique de l'Ouest.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 opacity-0 translate-y-4 animate-fade-in-up-delay">
                             <a
@@ -329,7 +329,7 @@ export default function Landing() {
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-3">Qui sommes-nous ?</h3>
                                     <p className="text-white/90 text-base">
-                                        Fondée en juillet 2022 à Conakry, EG Conseil est votre partenaire stratégique pour un impact durable en Afrique de l'Ouest.
+                                        Fondée en juillet 2022 à Conakry, Efficience Globale est votre partenaire stratégique pour un impact durable en Afrique de l'Ouest.
                                     </p>
                                 </div>
                             </div>
@@ -344,7 +344,7 @@ export default function Landing() {
                                     </div>
                                     <div>
                                         <p className="text-gray-700 text-base leading-relaxed">
-                                            EG Conseil se distingue par son <span className="font-semibold text-eg-secondary">approche innovante</span> et sa profonde connaissance des dynamiques locales et régionales de l'Afrique de l'Ouest.
+                                        Efficience Globale se distingue par son <span className="font-semibold text-eg-secondary">approche innovante</span> et sa profonde connaissance des dynamiques locales et régionales de l'Afrique de l'Ouest.
                                         </p>
                                     </div>
                                 </div>
@@ -2302,20 +2302,6 @@ export default function Landing() {
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Aguipel
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Logo 9 - AguiDUTEN */}
-                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
-                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
-                                            <img
-                                                src="/img/partners/aguiduten-logo.png"
-                                                alt="AguiDUTEN"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                            />
-                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                                AguiDUTEN
                                             </div>
                                         </div>
                                     </div>
