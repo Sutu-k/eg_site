@@ -2200,7 +2200,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/gavi-logo.png"
                                                 alt="Gavi Alliance"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Gavi Alliance
@@ -2214,7 +2214,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/unicef-logo.png"
                                                 alt="UNICEF"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 UNICEF
@@ -2228,7 +2228,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/ministere-sante-logo.png"
                                                 alt="Ministère de la santé"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Ministère de la santé
@@ -2242,7 +2242,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/kofi-annan-logo.png"
                                                 alt="Université Kofi Annan de Guinée"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Université Kofi Annan
@@ -2256,7 +2256,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/expertise-france-logo.png"
                                                 alt="Expertise France"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Expertise France
@@ -2270,7 +2270,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/institut-francais-logo.png"
                                                 alt="Institut Français de Guinée"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Institut Français de Guinée
@@ -2284,7 +2284,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/world-bank-logo.png"
                                                 alt="The World Bank"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 The World Bank
@@ -2298,7 +2298,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/aguipel-logo.png"
                                                 alt="Aguipel"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Aguipel
@@ -2315,7 +2315,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/gavi-logo.png"
                                                 alt="Gavi Alliance"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Gavi Alliance
@@ -2329,7 +2329,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/unicef-logo.png"
                                                 alt="UNICEF"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 UNICEF
@@ -2343,7 +2343,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/ministere-sante-logo.png"
                                                 alt="Ministère de la santé"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Ministère de la santé
@@ -2357,7 +2357,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/kofi-annan-logo.png"
                                                 alt="Université Kofi Annan de Guinée"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Université Kofi Annan
@@ -2371,7 +2371,7 @@ export default function Landing() {
                                             <img
                                                 src="/img/partners/expertise-france-logo.png"
                                                 alt="Expertise France"
-                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                                className="max-h-20 max-w-full transition-all duration-300"
                                             />
                                             <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
                                                 Expertise France
