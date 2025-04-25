@@ -1650,145 +1650,146 @@ export default function Landing() {
             </section>
 
             {/* Section Contact */}
-            <section id="contact" className="py-20 bg-[#455F51] text-white relative overflow-hidden">
+            <section id="contact" className="py-20 bg-gradient-to-br from-[#455F51] to-[#395244] text-white relative overflow-hidden">
                 {/* Éléments décoratifs */}
-                <div className="absolute inset-0 pointer-events-none opacity-10">
-                    <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#C0CF3A] rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-[#549E39] rounded-tr-full"></div>
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#C0CF3A] opacity-10 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-[#549E39] opacity-10 rounded-tr-full"></div>
+                    <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white opacity-5 rounded-full"></div>
+                    <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-white opacity-5 rounded-full"></div>
+                    <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-[#C0CF3A] opacity-5 rounded-full"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Colonne Gauche - Carte d'Afrique */}
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6 text-white">Nos zones d'intervention</h2>
-                            <p className="text-gray-100 mb-8">
-                                Nos experts interviennent partout en Afrique et plus particulièrement dans les pays suivants :
-                            </p>
+                    {/* En-tête de section */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 inline-block relative">
+                            Contactez-nous
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C0CF3A]"></div>
+                        </h2>
+                        <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                            Notre équipe est disponible pour répondre à vos besoins et vous accompagner dans vos projets à travers l'Afrique.
+                        </p>
+                    </div>
 
-                            {/* Carte d'Afrique stylisée */}
-                            <div className="relative">
-                                <svg viewBox="0 0 800 900" className="w-full h-auto max-w-lg mx-auto">
-                                    {/* Contours de l'Afrique */}
-                                    <path
-                                        d="M450,70 Q520,120 530,200 Q550,300 580,350 Q620,400 630,480 Q650,600 600,650 Q550,700 500,750 Q450,800 400,820 Q350,840 300,800 Q250,760 220,700 Q190,640 170,580 Q150,520 140,450 Q130,380 150,320 Q170,260 200,210 Q230,160 280,120 Q330,80 380,70 Q410,65 450,70 Z"
-                                        fill="#8AB833"
-                                        fillOpacity="0.1"
-                                        stroke="#C0CF3A"
-                                        strokeWidth="2"
-                                    />
-
-                                    {/* Pays en surbrillance */}
-                                    {/* Guinée */}
-                                    <path
-                                        d="M260,350 Q270,340 280,345 Q290,350 300,345 Q310,340 320,350 Q330,360 325,370 Q320,380 310,385 Q300,390 290,385 Q280,380 270,370 Q260,360 260,350 Z"
-                                        fill="#549E39"
-                                        className="hover:fill-[#C0CF3A] transition-colors duration-300"
-                                    />
-                                    <text x="290" y="365" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">GIN</text>
-
-                                    {/* RDC */}
-                                    <path
-                                        d="M450,500 Q470,490 490,500 Q510,510 530,505 Q550,500 560,520 Q570,540 560,560 Q550,580 530,590 Q510,600 490,590 Q470,580 460,560 Q450,540 450,500 Z"
-                                        fill="#549E39"
-                                        className="hover:fill-[#C0CF3A] transition-colors duration-300"
-                                    />
-                                    <text x="505" y="545" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">RDC</text>
-
-                                    {/* Cameroun */}
-                                    <path
-                                        d="M400,440 Q410,430 420,435 Q430,440 440,435 Q450,430 460,440 Q470,450 465,460 Q460,470 450,475 Q440,480 430,475 Q420,470 410,460 Q400,450 400,440 Z"
-                                        fill="#549E39"
-                                        className="hover:fill-[#C0CF3A] transition-colors duration-300"
-                                    />
-                                    <text x="430" y="455" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">CMR</text>
-
-                                    {/* Côte d'Ivoire */}
-                                    <path
-                                        d="M300,400 Q310,390 320,395 Q330,400 340,395 Q350,390 360,400 Q370,410 365,420 Q360,430 350,435 Q340,440 330,435 Q320,430 310,420 Q300,410 300,400 Z"
-                                        fill="#549E39"
-                                        className="hover:fill-[#C0CF3A] transition-colors duration-300"
-                                    />
-                                    <text x="330" y="415" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">CIV</text>
-
-                                    {/* Gabon */}
-                                    <path
-                                        d="M380,500 Q390,490 400,495 Q410,500 420,495 Q430,490 440,500 Q450,510 445,520 Q440,530 430,535 Q420,540 410,535 Q400,530 390,520 Q380,510 380,500 Z"
-                                        fill="#549E39"
-                                        className="hover:fill-[#C0CF3A] transition-colors duration-300"
-                                    />
-                                    <text x="410" y="515" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">GAB</text>
-
-                                    {/* Comores */}
-                                    <circle cx="590" cy="620" r="15" fill="#549E39" className="hover:fill-[#C0CF3A] transition-colors duration-300" />
-                                    <text x="590" y="624" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">COM</text>
-
-                                    {/* Légende */}
-                                    <rect x="250" y="750" width="300" height="60" rx="10" fill="white" fillOpacity="0.1" />
-                                    <circle cx="270" y="770" r="8" fill="#549E39" />
-                                    <text x="290" y="774" fill="white" fontSize="14">Pays d'intervention</text>
-                                    <circle cx="270" y="800" r="8" fill="#C0CF3A" />
-                                    <text x="290" y="804" fill="white" fontSize="14">Pays au survol</text>
-                                </svg>
-
-                                {/* Contacts en overlay sur la carte */}
-                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#455F51] to-transparent pt-20 pb-4">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
-                                        <div className="flex items-center">
-                                            <svg className="w-5 h-5 mr-2 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                            <span>contact@efficienceglobale.com</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <svg className="w-5 h-5 mr-2 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                            </svg>
-                                            <span>+224 xxx xxx xxx</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <svg className="w-5 h-5 mr-2 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                            <span>Conakry, Guinée</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <svg className="w-5 h-5 mr-2 text-[#C0CF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                            </svg>
-                                            <span>www.efficienceglobale.com</span>
-                                        </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                        {/* Cartes d'informations de contact */}
+                        <div className="lg:col-span-1 space-y-6">
+                            {/* Carte Nous joindre */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                <div className="flex items-center mb-4">
+                                    <div className="bg-[#C0CF3A] p-3 rounded-lg">
+                                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
                                     </div>
+                                    <h3 className="text-xl font-semibold ml-4">Nous joindre</h3>
+                                </div>
 
-                                    {/* Réseaux sociaux */}
-                                    <div className="mt-6 flex justify-center space-x-4">
-                                        <a href="#" className="hover:text-[#C0CF3A] transition-colors duration-300">
-                                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                            </svg>
-                                        </a>
+                                <div className="space-y-3">
+                                    <p className="flex items-center text-white/80">
+                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
+                                        XX XX XX XX
+                                    </p>
+                                    <p className="flex items-center text-white/80">
+                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
+                                        XX XX XX XX
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Carte Nous écrire */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                <div className="flex items-center mb-4">
+                                    <div className="bg-[#C0CF3A] p-3 rounded-lg">
+                                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
                                     </div>
+                                    <h3 className="text-xl font-semibold ml-4">Nous écrire</h3>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-white/80">
+                                        contact@efficienceglobale.com
+                                    </p>
+                                    <p className="text-white/80">
+                                        info@eg-conseil.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Carte Nous rencontrer */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                <div className="flex items-center mb-4">
+                                    <div className="bg-[#C0CF3A] p-3 rounded-lg">
+                                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-xl font-semibold ml-4">Nous rencontrer</h3>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-white/80">
+                                        <span className="block font-medium text-white">Siège social</span>
+                                        Conakry, Guinée
+                                    </p>
+                                    <p className="text-white/80">
+                                        <span className="block font-medium text-white">Bureau régional</span>
+                                        Dakar, Sénégal
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Pays d'intervention */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                <div className="flex items-center mb-4">
+                                    <div className="bg-[#C0CF3A] p-3 rounded-lg">
+                                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-xl font-semibold ml-4">Pays d'intervention</h3>
+                                </div>
+
+                                <div className="flex flex-wrap gap-2 mt-3">
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Guinée</span>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Cameroun</span>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">RDC</span>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Côte d'Ivoire</span>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Gabon</span>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#549E39]/20 text-white">Comores</span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Colonne Droite - Formulaire de contact */}
-                        <div>
+                        {/* Formulaire de contact */}
+                        <div className="lg:col-span-2">
                             <div className="bg-white rounded-2xl shadow-xl p-8">
-                                <h2 className="text-2xl font-bold text-[#455F51] mb-2">Entrer en contact avec nous</h2>
-                                <p className="text-gray-600 mb-6">
-                                    Nous sommes à votre écoute pour toute demande de collaboration ou d'information complémentaire.
-                                </p>
+                                <div className="flex items-center mb-6">
+                                    <div className="flex-shrink-0 bg-[#455F51] rounded-lg p-3 mr-4">
+                                        <svg className="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-[#455F51]">Entrer en contact avec nous</h2>
+                                        <p className="text-gray-600">
+                                            Nous sommes à votre écoute pour toute demande
+                                        </p>
+                                    </div>
+                                </div>
 
                                 <form className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
+                                        <div className="relative">
                                             <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-1">Nom</label>
                                             <input
                                                 type="text"
                                                 id="nom"
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                                 placeholder="Votre nom"
                                             />
                                         </div>
@@ -1798,7 +1799,7 @@ export default function Landing() {
                                             <input
                                                 type="text"
                                                 id="prenom"
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                                 placeholder="Votre prénom"
                                             />
                                         </div>
@@ -1809,7 +1810,7 @@ export default function Landing() {
                                         <input
                                             type="email"
                                             id="email"
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                             placeholder="votre@email.com"
                                         />
                                     </div>
@@ -1822,21 +1823,25 @@ export default function Landing() {
                                             <input
                                                 type="tel"
                                                 id="telephone"
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                                 placeholder="+224 XX XX XX XX"
                                             />
                                         </div>
 
                                         <div>
-                                            <label htmlFor="organisation" className="block text-sm font-medium text-gray-700 mb-1">
-                                                Organisation <span className="text-gray-400">(optionnel)</span>
+                                            <label htmlFor="sujet" className="block text-sm font-medium text-gray-700 mb-1">
+                                                Sujet
                                             </label>
-                                            <input
-                                                type="text"
-                                                id="organisation"
-                                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
-                                                placeholder="Votre organisation"
-                                            />
+                                            <select
+                                                id="sujet"
+                                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                            >
+                                                <option value="">Sélectionnez un sujet</option>
+                                                <option value="collaboration">Proposition de collaboration</option>
+                                                <option value="service">Demande de service</option>
+                                                <option value="recrutement">Recrutement</option>
+                                                <option value="autre">Autre</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -1844,16 +1849,27 @@ export default function Landing() {
                                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                                         <textarea
                                             id="message"
-                                            rows={5}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
+                                            rows={6}
+                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#549E39] focus:border-transparent transition-all duration-300"
                                             placeholder="Décrivez votre demande, projet ou question..."
                                         ></textarea>
+                                    </div>
+
+                                    <div className="flex items-center">
+                                        <input
+                                            id="consent"
+                                            type="checkbox"
+                                            className="h-4 w-4 text-[#549E39] focus:ring-[#549E39] border-gray-300 rounded"
+                                        />
+                                        <label htmlFor="consent" className="ml-2 block text-sm text-gray-600">
+                                            J'accepte que mes données soient traitées pour me recontacter
+                                        </label>
                                     </div>
 
                                     <div>
                                         <button
                                             type="submit"
-                                            className="w-full bg-[#549E39] hover:bg-[#455F51] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
+                                            className="w-full bg-[#549E39] hover:bg-[#455F51] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center"
                                         >
                                             <span>Envoyer ma demande</span>
                                             <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1862,6 +1878,28 @@ export default function Landing() {
                                         </button>
                                     </div>
                                 </form>
+
+                                {/* Réseaux sociaux */}
+                                <div className="mt-8 pt-6 border-t border-gray-200">
+                                    <p className="text-sm text-gray-700 mb-3">Suivez-nous sur les réseaux sociaux</p>
+                                    <div className="flex space-x-4">
+                                        <a href="#" className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors duration-300">
+                                            <svg className="w-5 h-5 text-[#455F51]" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors duration-300">
+                                            <svg className="w-5 h-5 text-[#455F51]" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" className="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors duration-300">
+                                            <svg className="w-5 h-5 text-[#455F51]" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
