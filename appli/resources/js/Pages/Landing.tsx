@@ -2163,7 +2163,7 @@ export default function Landing() {
                     </div>
 
                     {/* Carrousel de logos */}
-                    <div className="relative mt-12 px-10">
+                    <div className="relative mt-12 px-10 overflow-hidden">
                         {/* Flèche gauche */}
                         <button
                             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none hover:bg-gray-100 transition-all z-10"
@@ -2179,134 +2179,211 @@ export default function Landing() {
                             </svg>
                         </button>
 
-                        {/* Conteneur de logos avec défilement */}
-                        <div
-                            id="logo-carousel"
-                            className="flex overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-6 gap-8"
-                            style={{ scrollBehavior: 'smooth' }}
-                        >
-                            {/* Logo 1 - Gavi */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/gavi-logo.png"
-                                        alt="Gavi Alliance"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Gavi Alliance
+                        {/* Conteneur de logos avec défilement automatique */}
+                        <div className="carousel-container overflow-hidden relative">
+                            <div
+                                id="logo-carousel"
+                                className="flex items-center animate-marquee whitespace-nowrap py-6"
+                            >
+                                {/* Première série de logos */}
+                                <div className="flex space-x-8 logo-slide">
+                                    {/* Logo 1 - Gavi */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/gavi-logo.png"
+                                                alt="Gavi Alliance"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Gavi Alliance
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 2 - UNICEF */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/unicef-logo.png"
+                                                alt="UNICEF"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                UNICEF
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 3 - Ministère de la santé */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/ministere-sante-logo.png"
+                                                alt="Ministère de la santé"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Ministère de la santé
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 4 - Université Kofi Annan */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/kofi-annan-logo.png"
+                                                alt="Université Kofi Annan de Guinée"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Université Kofi Annan
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 5 - Expertise France */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/expertise-france-logo.png"
+                                                alt="Expertise France"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Expertise France
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 6 - Institut Français */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/institut-francais-logo.png"
+                                                alt="Institut Français de Guinée"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Institut Français de Guinée
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 7 - Banque Mondiale */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/world-bank-logo.png"
+                                                alt="The World Bank"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                The World Bank
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 8 - Aguipel */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/aguipel-logo.png"
+                                                alt="Aguipel"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Aguipel
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Logo 9 - AguiDUTEN */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/aguiduten-logo.png"
+                                                alt="AguiDUTEN"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                AguiDUTEN
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Logo 2 - UNICEF */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/unicef-logo.png"
-                                        alt="UNICEF"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        UNICEF
+                                {/* Deuxième série de logos (dupliqués pour créer l'effet de boucle infinie) */}
+                                <div className="flex space-x-8 logo-slide">
+                                    {/* Logo 1 - Gavi (dupliqué) */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/gavi-logo.png"
+                                                alt="Gavi Alliance"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Gavi Alliance
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Logo 3 - Ministère de la santé */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/ministere-sante-logo.png"
-                                        alt="Ministère de la santé"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Ministère de la santé
+                                    {/* Logo 2 - UNICEF (dupliqué) */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/unicef-logo.png"
+                                                alt="UNICEF"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                UNICEF
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Logo 4 - Université Kofi Annan */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/kofi-annan-logo.png"
-                                        alt="Université Kofi Annan de Guinée"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Université Kofi Annan
+                                    {/* Logo 3 - Ministère de la santé (dupliqué) */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/ministere-sante-logo.png"
+                                                alt="Ministère de la santé"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Ministère de la santé
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Logo 5 - Expertise France */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/expertise-france-logo.png"
-                                        alt="Expertise France"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Expertise France
+                                    {/* Logo 4 - Université Kofi Annan (dupliqué) */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/kofi-annan-logo.png"
+                                                alt="Université Kofi Annan de Guinée"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Université Kofi Annan
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Logo 6 - Institut Français */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/institut-francais-logo.png"
-                                        alt="Institut Français de Guinée"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Institut Français de Guinée
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Logo 7 - Banque Mondiale */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/world-bank-logo.png"
-                                        alt="The World Bank"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        The World Bank
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Logo 8 - Aguipel */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/aguipel-logo.png"
-                                        alt="Aguipel"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        Aguipel
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Logo 9 - AguiDUTEN */}
-                            <div className="flex-shrink-0 flex flex-col items-center w-48 group snap-start">
-                                <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300">
-                                    <img
-                                        src="/img/partners/aguiduten-logo.png"
-                                        alt="AguiDUTEN"
-                                        className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
-                                    />
-                                    <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
-                                        AguiDUTEN
+                                    {/* Logo 5 - Expertise France (dupliqué) */}
+                                    <div className="flex-shrink-0 flex flex-col items-center w-48 group">
+                                        <div className="p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C0CF3A] h-32 flex items-center justify-center transition-all duration-300 relative">
+                                            <img
+                                                src="/img/partners/expertise-france-logo.png"
+                                                alt="Expertise France"
+                                                className="max-h-20 max-w-full filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            />
+                                            <div className="opacity-0 group-hover:opacity-100 absolute bottom-0 left-0 right-0 bg-[#455F51] text-white text-center text-sm py-1 rounded-b-xl transition-opacity duration-300">
+                                                Expertise France
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2328,30 +2405,21 @@ export default function Landing() {
                         </button>
                     </div>
 
-                    {/* Animation automatique */}
-                    <script type="text/javascript" dangerouslySetInnerHTML={{
-                        __html: `
-                            document.addEventListener('DOMContentLoaded', function() {
-                                const carousel = document.getElementById('logo-carousel');
-                                let scrollAmount = 1;
-                                let isHovered = false;
+                    {/* Styles pour l'animation du carrousel */}
+                    <style dangerouslySetInnerHTML={{ __html: `
+                        @keyframes marquee {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-100%); }
+                        }
 
-                                carousel.addEventListener('mouseenter', () => { isHovered = true; });
-                                carousel.addEventListener('mouseleave', () => { isHovered = false; });
+                        .animate-marquee {
+                            animation: marquee 45s linear infinite;
+                        }
 
-                                setInterval(() => {
-                                    if (!isHovered && carousel) {
-                                        carousel.scrollLeft += scrollAmount;
-
-                                        // Si on atteint la fin, revenir au début
-                                        if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth) || carousel.scrollLeft <= 0) {
-                                            scrollAmount = -scrollAmount;
-                                        }
-                                    }
-                                }, 30);
-                            });
-                        `
-                    }} />
+                        .carousel-container:hover .animate-marquee {
+                            animation-play-state: paused;
+                        }
+                    ` }} />
                 </div>
             </section>
         </EGLayout>
