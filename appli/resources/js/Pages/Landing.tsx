@@ -1587,12 +1587,9 @@ export default function Landing() {
                                 <div className="space-y-3">
                                     <p className="flex items-center text-white/80">
                                         <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
-                                        XX XX XX XX
+                                        625 35 77 27
                                     </p>
-                                    <p className="flex items-center text-white/80">
-                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
-                                        XX XX XX XX
-                                    </p>
+                                   
                                     </div>
                                 </div>
 
@@ -1609,11 +1606,9 @@ export default function Landing() {
 
                                 <div className="space-y-3">
                                     <p className="text-white/80">
-                                        contact@efficienceglobale.com
+                                        oumar.camara@efficienceglobale.com
                                     </p>
-                                    <p className="text-white/80">
-                                        info@eg-conseil.com
-                                    </p>
+                                 
                                     </div>
                                 </div>
 
