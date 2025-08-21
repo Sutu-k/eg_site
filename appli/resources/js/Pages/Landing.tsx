@@ -1586,8 +1586,8 @@ export default function Landing() {
 
                                 <div className="space-y-3">
                                     <p className="flex items-center text-white/80">
-                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
-                                        625 35 77 27
+                                        <span className="inline-block w-8 text-[#C0CF3A]">+224 </span> 
+                                         625 35 77 27
                                     </p>
                                    
                                     </div>
