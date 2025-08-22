@@ -1585,16 +1585,9 @@ export default function Landing() {
                                 </div>
 
                                 <div className="space-y-3">
+                                  
                                     <p className="flex items-center text-white/80">
-                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
-                                        XX XX XX XX
-                                    </p>
-                                    <p className="flex items-center text-white/80">
-                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span>
-                                        XX XX XX XX
-                                    </p>
-                                    <p className="flex items-center text-white/80">
-                                        <span className="inline-block w-8 text-[#C0CF3A]">+224</span> 
+                                        <span className="inline-block w-8 text-[#C0CF3A] mr-[5px]">+224</span> 
                                          625 35 77 27
                                     </p>
                                    
