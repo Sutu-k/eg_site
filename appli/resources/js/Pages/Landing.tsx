@@ -495,10 +495,10 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
                         <div className="inline-block">
-                            <span className="bg-white text-eg-primary px-5 py-2 rounded-md text-sm font-semibold">DOMAINES D'INTERVENTION</span>
+                            <span className="bg-white text-eg-primary px-5 py-2 rounded-md text-sm font-semibold">PÉRIMÈTRE D'ACTIVITÉ</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mt-6 mb-4 relative inline-block">
-                            Nos expertises
+                            Domaines d'Intervention
                             <span className="absolute bottom-0 left-0 w-full h-1 bg-white rounded-full"></span>
                         </h2>
                         <p className="max-w-3xl mx-auto text-white/90 text-lg">
@@ -622,9 +622,9 @@ export default function Landing() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-3">RSE</h3>
+                                <h3 className="text-2xl font-bold text-white mb-3">TIC</h3>
                                 <p className="text-white/90">
-                                Accompagnement des organisations publiques et privées dans l'intégration de l'équité, du genre et des enjeux environnementaux dans leurs stratégies de responsabilité sociétale.
+                                Nous exploitons la puissance des nouvelles technologies, notamment l’IA pour rendre les systèmes de gestion plus intelligents, plus efficaces et mieux adaptés aux besoins de demain.
                                 </p>
                                 <div className="mt-6 pt-6 border-t border-white/20">
                                     <a href="#contact" onClick={(e) => {
