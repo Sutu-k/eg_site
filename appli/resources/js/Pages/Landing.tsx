@@ -612,7 +612,7 @@ export default function Landing() {
                         {/* RSE */}
                         <div className="group relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
                             {/* Image de fond */}
-                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/rse-afrique.jpg')" }}></div>
+                            <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: "url('/img/domaines/tic-afrique.jpg')" }}></div>
                             {/* Overlay au survol */}
                             <div className="absolute inset-0 bg-gradient-to-br from-eg-lime to-eg-lime-dark opacity-70 group-hover:opacity-90 transition-opacity duration-500 z-0"></div>
                             <div className="h-1 bg-eg-lime transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
