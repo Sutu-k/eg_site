@@ -1454,10 +1454,7 @@ export default function Landing() {
                                         <span className="block font-medium text-white">Siège social</span>
                                         Conakry, Guinée
                                     </p>
-                                    <p className="text-white/80">
-                                        <span className="block font-medium text-white">Bureau régional</span>
-                                        Conakry, Guinée
-                                    </p>
+                                  
                                 </div>
                             </div>
 
